@@ -1,0 +1,16 @@
+manifest_version: 1
+cycle_id: "2025-09-02"
+snapshot_rev: "git:abcdef1234"
+rulebook_hash: "sha256:rulebookhashhere"
+governance:
+  tags: [planning, fe, release]
+  fields:
+    owner: "fe-planning@company"
+    risk: "low"
+    compliance: ["none"]
+sealed: true
+artifacts:
+  - path: frameworks/planning-fe/tasks/2025-09-02-fe_task_breakdown.yaml
+    sha256: "479367e1b4ed08a8ecf79fa76887f0ea290dcc1d003d42c937377a77929b2481"
+  - path: frameworks/planning-fe/storymaps/2025-09-02-story_map.md
+    sha256: "3d4bf07077d2655a32a2fd369bc501735ddffc21d7ef0819808b6f725dd34fd4"

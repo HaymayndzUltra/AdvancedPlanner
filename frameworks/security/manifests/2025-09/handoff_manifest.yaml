@@ -1,0 +1,22 @@
+manifest_version: 1
+cycle: "2025-09"
+snapshot_rev: "git:abcdef1234"
+rulebook_hash: "sha256:rulebookhashhere"
+governance:
+  tags: [security, release, critical_zero]
+  rationale: "Release readiness: Critical=0; waivers tracked."
+  expiry: "2025-10-31"
+sealed: true
+artifacts:
+  - name: findings
+    path: frameworks/security/findings.yaml
+    sha256: "46303faff3027bd0ac3c04c977f6d6f66f552f72ae2ed0743942f6c96797bbf8"
+  - name: exceptions
+    path: frameworks/security/policy/exceptions.yaml
+    sha256: "285c0830b6da58a38ad2658ccc39ae95cf6e4c31cf1ab8f8c3d95e21d554d683"
+quality_gates:
+  schema_lint: pass
+  cross_stream_consistency: pass
+  parity_coverage:
+    status: pass
+    coverage_pct: 100.0
