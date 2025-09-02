@@ -252,6 +252,204 @@ END FILE: /workspace/frameworks/qa-test/artifacts/2025-09/traceability_map.md
 
 
 ================================================================================
+START FILE: /workspace/frameworks/qa-test/cli/qa_framework.py
+#!/usr/bin/env python3
+import argparse
+import hashlib
+import json
+import os
+import sys
+import time
+from pathlib import Path
+
+try:
+	import yaml
+except ImportError:
+	print("PyYAML not installed. Please run: pip install pyyaml jsonschema", file=sys.stderr)
+	raise
+
+try:
+	from jsonschema import validate, Draft202012Validator
+except ImportError:
+	print("jsonschema not installed. Please run: pip install jsonschema", file=sys.stderr)
+	raise
+
+# Determine repository root (parent of 'frameworks')
+REPO_ROOT = Path(__file__).resolve().parents[3]
+QA_ROOT = REPO_ROOT / "frameworks/qa-test"
+SCHEMAS = QA_ROOT / "schemas"
+ARTIFACTS_ROOT = QA_ROOT / "artifacts"
+RULEBOOK = QA_ROOT / "rules/rulebook.yaml"
+
+
+def load_yaml(path: Path):
+	with open(path, "r", encoding="utf-8") as f:
+		return yaml.safe_load(f)
+
+
+def load_json_schema(name: str):
+	with open(SCHEMAS / name, "r", encoding="utf-8") as f:
+		return json.load(f)
+
+
+def sha256_file(path: Path) -> str:
+	sha = hashlib.sha256()
+	with open(path, "rb") as f:
+		for chunk in iter(lambda: f.read(8192), b""):
+			sha.update(chunk)
+	return sha.hexdigest()
+
+
+def schema_lint(artifacts_dir: Path) -> bool:
+	ok = True
+	# test_matrix.yaml
+	tm_path = artifacts_dir / "test_matrix.yaml"
+	if tm_path.exists():
+		try:
+			schema = load_json_schema("test_matrix.schema.json")
+			Draft202012Validator(schema).validate(load_yaml(tm_path))
+			print(f"schema_lint: OK {tm_path}")
+		except Exception as e:
+			print(f"schema_lint: FAIL {tm_path}: {e}")
+			ok = False
+	# handoff manifest checked at sealing time
+	# qa_evidence_index.yaml
+	ei_path = artifacts_dir / "qa_evidence_index.yaml"
+	if ei_path.exists():
+		try:
+			schema = load_json_schema("qa_evidence_index.schema.json")
+			Draft202012Validator(schema).validate(load_yaml(ei_path))
+			print(f"schema_lint: OK {ei_path}")
+		except Exception as e:
+			print(f"schema_lint: FAIL {ei_path}: {e}")
+			ok = False
+	# compliance_map.md not strictly YAML; skip strict schema
+	return ok
+
+
+def cross_stream_consistency(planning_fe: Path, planning_be: Path, artifacts_dir: Path) -> bool:
+	"""Ensure story_ref and endpoint_ref referenced in test_matrix exist in planning docs."""
+	ok = True
+	fe = load_yaml(planning_fe) if planning_fe.exists() else {"backlog": []}
+	be = load_yaml(planning_be) if planning_be.exists() else {"backlog": []}
+	fe_ids = {item.get("id") for item in fe.get("backlog", [])}
+	be_endpoints = set()
+	for item in be.get("backlog", []):
+		for ep in item.get("endpoints", []) or []:
+			be_endpoints.add(ep.get("id"))
+
+	tm = load_yaml(artifacts_dir / "test_matrix.yaml")
+	for m in tm.get("mappings", []):
+		story = m.get("story_ref")
+		endpoint = m.get("endpoint_ref")
+		if story and story not in fe_ids:
+			print(f"consistency: FAIL unknown story_ref {story}")
+			ok = False
+		if endpoint and endpoint not in be_endpoints:
+			print(f"consistency: FAIL unknown endpoint_ref {endpoint}")
+			ok = False
+	return ok
+
+
+def compute_parity_coverage(planning_fe: Path, artifacts_dir: Path, parity_threshold: float) -> tuple[bool, float]:
+	fe = load_yaml(planning_fe) if planning_fe.exists() else {"backlog": []}
+	planned = [i for i in fe.get("backlog", []) if "critical_path" in (i.get("tags") or [])]
+	planned_ids = {i.get("id") for i in planned}
+	tm = load_yaml(artifacts_dir / "test_matrix.yaml")
+	mapped_ids = {m.get("story_ref") for m in tm.get("mappings", [])}
+	mapped_critical = planned_ids & mapped_ids
+	parity = (len(mapped_critical) / len(planned_ids)) if planned_ids else 1.0
+	return parity >= parity_threshold, parity * 100.0
+
+
+def seal_manifest(cycle: str, artifacts_dir: Path, out_path: Path, parity_pct: float, gates: dict):
+	rulebook_hash = hashlib.sha256((RULEBOOK.read_text(encoding="utf-8")).encode("utf-8")).hexdigest()
+	artifact_entries = []
+	for rel in [
+		"test_matrix.yaml",
+		"traceability_map.md",
+		"qa_evidence_index.yaml",
+		"compliance_map.md",
+		"policy_exceptions.md",
+		"integration_hooks.md",
+		"qa_risk_register.md",
+	]:
+		p = artifacts_dir / rel
+		if p.exists():
+			artifact_entries.append({
+				"name": Path(rel).stem,
+				"path": str(p.relative_to(REPO_ROOT)),
+				"sha256": sha256_file(p)
+			})
+
+	manifest = {
+		"manifest_version": 1,
+		"cycle": cycle,
+		"snapshot_rev": load_yaml(artifacts_dir / "test_matrix.yaml").get("snapshot_rev"),
+		"rulebook_hash": f"sha256:{rulebook_hash}",
+		"sealed": True,
+		"artifacts": artifact_entries,
+		"quality_gates": {
+			"schema_lint": "pass" if gates.get("schema_lint") else "fail",
+			"cross_stream_consistency": "pass" if gates.get("consistency") else "fail",
+			"parity_coverage": {
+				"status": "pass" if gates.get("parity") else "fail",
+				"coverage_pct": round(parity_pct, 2)
+			}
+		}
+	}
+	with open(out_path, "w", encoding="utf-8") as f:
+		yaml.safe_dump(manifest, f, sort_keys=False)
+	print(f"sealed manifest: {out_path}")
+
+
+def main():
+	parser = argparse.ArgumentParser(description="QA Framework CLI")
+	parser.add_argument("command", choices=["lint", "gates", "seal", "all"], help="Action to perform")
+	parser.add_argument("--cycle", dest="cycle", default="2025-09")
+	args = parser.parse_args()
+
+	artifacts_dir = ARTIFACTS_ROOT / args.cycle
+	planning_fe = REPO_ROOT / "frameworks/planning-fe/tasks/2025-09-02-fe_task_breakdown.yaml"
+	planning_be = REPO_ROOT / "frameworks/planning-be/backlog/2025-09-02-be_backlog.yaml"
+	rulebook = load_yaml(RULEBOOK)
+	parity_threshold = float(rulebook.get("policy", {}).get("parity_threshold", 0.9))
+
+	if args.command in ("lint", "all"):
+		ok = schema_lint(artifacts_dir)
+		if args.command == "lint":
+			return 0 if ok else 1
+
+	if args.command in ("gates", "all"):
+		ok_lint = schema_lint(artifacts_dir)
+		ok_consistency = cross_stream_consistency(planning_fe, planning_be, artifacts_dir)
+		ok_parity, parity_pct = compute_parity_coverage(planning_fe, artifacts_dir, parity_threshold)
+		print(f"gates: schema_lint={ok_lint}, consistency={ok_consistency}, parity>={parity_threshold} => {ok_parity} ({parity_pct:.1f}%)")
+		if args.command == "gates":
+			return 0 if (ok_lint and ok_consistency and ok_parity) else 2
+
+	if args.command in ("seal", "all"):
+		ok_lint = schema_lint(artifacts_dir)
+		ok_consistency = cross_stream_consistency(planning_fe, planning_be, artifacts_dir)
+		ok_parity, parity_pct = compute_parity_coverage(planning_fe, artifacts_dir, parity_threshold)
+		gates = {"schema_lint": ok_lint, "consistency": ok_consistency, "parity": ok_parity}
+		out_path = artifacts_dir / "handoff_manifest.yaml"
+		seal_manifest(args.cycle, artifacts_dir, out_path, parity_pct, gates)
+		# Validate manifest against schema
+		schema = load_json_schema("handoff_manifest.schema.json")
+		Draft202012Validator(schema).validate(load_yaml(out_path))
+		print("manifest schema: OK")
+		return 0 if all(gates.values()) else 3
+
+	return 0
+
+
+if __name__ == "__main__":
+	sys.exit(main())
+END FILE: /workspace/frameworks/qa-test/cli/qa_framework.py
+
+
+================================================================================
 START FILE: /workspace/frameworks/qa-test/digests/2025-09-02-digest.md
 ## Cycle Digest — 2025-09-02
 
@@ -291,3 +489,213 @@ Artifacts
 - qa_risk_register.md
 - handoff_manifest.yaml (sealed)
 END FILE: /workspace/frameworks/qa-test/digests/2025-09-02-digest.md
+
+
+================================================================================
+START FILE: /workspace/frameworks/qa-test/rules/rulebook.yaml
+# QA Framework Rulebook
+schema_version: 1
+name: qa_framework_rulebook
+version: 0.1.0
+updated_at: 2025-09-02T00:00:00Z
+owners:
+  - qa-platform@company
+policy:
+  parity_threshold: 0.90            # mapped_stories / total_stories must be >= this
+  critical_path_coverage_required: 1.0  # 100% coverage required for critical stories
+  allow_exceptions: true
+  exception_requirements:
+    approver_roles: ["QA Lead", "Compliance"]
+    max_duration_days: 60
+
+governance:
+  tags_taxonomy:
+    - PII
+    - auth
+    - license
+    - infra
+    - crypto
+    - logging
+    - egress
+    - privacy
+  critical_zero_rule: true
+
+artifacts:
+  required:
+    - test_matrix.yaml
+    - traceability_map.md
+    - qa_evidence_index.md
+    - handoff_manifest.yaml
+    - digest.md
+    - policy_exceptions.md
+    - compliance_map.md
+    - integration_hooks.md
+    - qa_risk_register.md
+END FILE: /workspace/frameworks/qa-test/rules/rulebook.yaml
+
+
+================================================================================
+START FILE: /workspace/frameworks/qa-test/schemas/compliance_map.schema.json
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/compliance_map.schema.json",
+  "title": "Compliance Map",
+  "type": "object",
+  "required": ["schema_version", "cycle_id", "mappings"],
+  "properties": {
+    "schema_version": {"type": "integer", "minimum": 1},
+    "cycle_id": {"type": "string"},
+    "mappings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["control", "test_ids"],
+        "properties": {
+          "standard": {"type": "string", "enum": ["ISO27001", "SOC2", "GDPR", "PCI-DSS", "HIPAA", "OTHER"]},
+          "control": {"type": "string"},
+          "test_ids": {"type": "array", "items": {"type": "string"}},
+          "evidence_refs": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
+END FILE: /workspace/frameworks/qa-test/schemas/compliance_map.schema.json
+
+
+================================================================================
+START FILE: /workspace/frameworks/qa-test/schemas/handoff_manifest.schema.json
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/handoff_manifest.schema.json",
+  "title": "QA Handoff Manifest",
+  "type": "object",
+  "required": ["manifest_version", "cycle", "snapshot_rev", "rulebook_hash", "artifacts", "quality_gates"],
+  "properties": {
+    "manifest_version": {"type": "integer", "minimum": 1},
+    "cycle": {"type": "string"},
+    "snapshot_rev": {"type": "string"},
+    "rulebook_hash": {"type": "string"},
+    "sealed": {"type": "boolean"},
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "path", "sha256"],
+        "properties": {
+          "name": {"type": "string"},
+          "path": {"type": "string"},
+          "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "quality_gates": {
+      "type": "object",
+      "required": ["schema_lint", "cross_stream_consistency", "parity_coverage"],
+      "properties": {
+        "schema_lint": {"type": "string", "enum": ["pass", "fail"]},
+        "cross_stream_consistency": {"type": "string", "enum": ["pass", "fail"]},
+        "parity_coverage": {
+          "type": "object",
+          "required": ["status", "coverage_pct"],
+          "properties": {
+            "status": {"type": "string", "enum": ["pass", "fail"]},
+            "coverage_pct": {"type": "number", "minimum": 0, "maximum": 100}
+          },
+          "additionalProperties": false
+        },
+        "compliance_check": {"type": "string", "enum": ["pass", "fail"]}
+      },
+      "additionalProperties": true
+    },
+    "signing": {
+      "type": "object",
+      "properties": {
+        "signed_by": {"type": "string"},
+        "signature": {"type": "string"},
+        "signed_at": {"type": "string"}
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}
+END FILE: /workspace/frameworks/qa-test/schemas/handoff_manifest.schema.json
+
+
+================================================================================
+START FILE: /workspace/frameworks/qa-test/schemas/qa_evidence_index.schema.json
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/qa_evidence_index.schema.json",
+  "title": "QA Evidence Index",
+  "type": "object",
+  "required": ["schema_version", "cycle_id", "files"],
+  "properties": {
+    "schema_version": {"type": "integer", "minimum": 1},
+    "cycle_id": {"type": "string"},
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "sha256"],
+        "properties": {
+          "path": {"type": "string"},
+          "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "size_bytes": {"type": "integer", "minimum": 0},
+          "content_type": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
+END FILE: /workspace/frameworks/qa-test/schemas/qa_evidence_index.schema.json
+
+
+================================================================================
+START FILE: /workspace/frameworks/qa-test/schemas/test_matrix.schema.json
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/test_matrix.schema.json",
+  "title": "QA Test Matrix",
+  "type": "object",
+  "required": ["schema_version", "cycle_id", "snapshot_rev", "mappings"],
+  "properties": {
+    "schema_version": {"type": "integer", "minimum": 1},
+    "cycle_id": {"type": "string"},
+    "snapshot_rev": {"type": "string"},
+    "rulebook_hash": {"type": "string"},
+    "mappings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["story_ref", "test_id", "type", "env", "coverage"],
+        "properties": {
+          "story_ref": {"type": "string"},
+          "endpoint_ref": {"type": "string"},
+          "test_id": {"type": "string"},
+          "type": {"type": "string", "enum": ["unit", "integration", "e2e", "manual"]},
+          "env": {"type": "string", "enum": ["dev", "staging", "prod"]},
+          "coverage": {"type": "number", "minimum": 0.0, "maximum": 1.0},
+          "evidence_ref": {"type": "string"},
+          "governance": {
+            "type": "object",
+            "properties": {
+              "tags": {"type": "array", "items": {"type": "string"}}
+            },
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
+END FILE: /workspace/frameworks/qa-test/schemas/test_matrix.schema.json
