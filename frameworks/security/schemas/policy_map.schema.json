@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Policy Map Front Matter",
+  "type": "object",
+  "required": ["schema_version", "policies"],
+  "properties": {
+    "schema_version": { "type": ["string", "number"] },
+    "policies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "purpose", "rules", "tags", "owners"],
+        "properties": {
+          "id": { "type": "string" },
+          "purpose": { "type": "string" },
+          "rules": { "type": "array", "items": { "type": "string" } },
+          "tags": { "type": "array", "items": { "type": "string" } },
+          "owners": {
+            "oneOf": [
+              { "type": "string" },
+              { "type": "array", "items": { "type": "string" } }
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Handoff Manifest",
+  "type": "object",
+  "required": ["manifest_version", "cycle", "snapshot_rev", "rulebook_hash", "artifacts", "quality_gates"],
+  "properties": {
+    "manifest_version": { "type": ["integer", "string"] },
+    "cycle": { "type": "string" },
+    "snapshot_rev": { "type": "string" },
+    "rulebook_hash": { "type": "string", "pattern": "^sha256:" },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "path", "sha256"],
+        "properties": {
+          "name": { "type": "string" },
+          "path": { "type": "string" },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "quality_gates": {
+      "type": "object",
+      "properties": {
+        "schema_lint": { "type": "string" },
+        "cross_stream_consistency": { "type": "string" },
+        "parity_coverage": { "oneOf": [
+          { "type": "string" },
+          { "type": "object", "properties": { "status": {"type": "string"}, "coverage_pct": {"type": "number"} }, "required": ["status"], "additionalProperties": true }
+        ]}
+      },
+      "additionalProperties": true
+    },
+    "signing": { "type": "object", "additionalProperties": true },
+    "sealed": { "type": "boolean" }
+  },
+  "additionalProperties": true
+}
