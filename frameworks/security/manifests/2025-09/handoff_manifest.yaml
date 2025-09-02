@@ -1,7 +1,7 @@
 manifest_version: 1
 cycle: "2025-09"
 snapshot_rev: "62ebbd7ce733388a18fb1fedcd4bbd32dc7f6a6b"
-rulebook_hash: "sha256:TBD"
+rulebook_hash: "sha256:c87fe4c45efd3193e8907ceedc97664f27bea68ca899a0ed752de688027d25dc"
 sealed: true
 lifecycle_state: PACKAGED
 governance:
@@ -9,10 +9,10 @@ governance:
 artifacts:
   - name: findings
     path: frameworks/security/findings.yaml
-    sha256: "613412710662c37fb248ce51ccb183646dd7fe62541e3a60e91198083874be1f"
+    sha256: "db4ad8ddff6b430549c7a476792af7ead207bf66f06ac4062659fab7964af0a0"
   - name: waivers
     path: frameworks/security/waivers.yaml
-    sha256: "9b1548e8ca059471a84663e9bad43e93bc2148f65fb2104519883834166f05fe"
+    sha256: "373d54d7890f7954f497b0ad7b386e4ebad48b0a9875c8b49c961ee29ae9b22f"
 quality_gates:
   - name: schema_lint
     result: pass
