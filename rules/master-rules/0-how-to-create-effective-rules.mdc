@@ -132,3 +132,4 @@ To ensure the critical YAML frontmatter is always formatted correctly, the assis
 
 ### Alternative for Automated Workflows (CLI)
 For scripted workflows, direct file manipulation is an option. Use `echo` to prepend the metadata block, as it is generally more reliable than `cat <<'EOF'`.
+

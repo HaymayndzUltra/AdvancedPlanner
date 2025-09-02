@@ -163,3 +163,4 @@ alwaysApply: false
 3.  **Explicit Pivot:** The user explicitly signals a major change in direction (e.g., "Ok, let's abandon this approach and try something else" or "Now let's focus on the backend API").
 
 When a trigger is detected, you **SHOULD** first announce your intent, for instance: *"I detect a context shift to {new_domain}. I will re-run the discovery protocol to load the most relevant rules and documentation for this new task."* This ensures transparency and avoids unnecessary token consumption on minor follow-ups.
+

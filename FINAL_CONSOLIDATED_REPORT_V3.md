@@ -1,10 +1,6 @@
-# FINAL_CONSOLIDATED_REPORT_V2
+# FINAL CONSOLIDATED REPORT V3
 
-This file merges both background agent V2 outputs into one authoritative consolidated report.
-
-
-
-# Source: CHANGESET_AND_GLOBAL1_V2.md
+## Section from CHANGESET_AND_GLOBAL1_V2.md
 
 # GLOBAL_ANALYSIS_vNext.md
 
@@ -386,8 +382,7 @@ jobs:
 
 ---
 
-
-# Source: CHANGESET_AND_GLOBAL2_V2.md
+## Section from CHANGESET_AND_GLOBAL2_V2.md
 
 
 # GLOBAL_ANALYSIS_vNext.md
@@ -707,6 +702,3 @@ enforcement_mode: block_on_fail
 - Every manifest/digest must carry: snapshot_rev, rulebook_hash, governance.tags[]
 - Sealed manifests (QA/Planning/Observability/Security) must include checksums for artifacts and be immutable once sealed
 
-
-
----

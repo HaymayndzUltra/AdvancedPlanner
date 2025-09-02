@@ -68,3 +68,4 @@ The project's codebase and its documentation (especially `README.md` files) must
 3.  The AI reads the README and sees that the "Configuration" section does not list the new `timeout` property.
 4.  The AI uses a file editing tool (in accordance with the **Tool Usage Protocol**) to add the new property to the documentation table in `README.md`.
 5.  The AI communicates: *"I have implemented the `timeout` property. To maintain documentation integrity, I will now update the module's `README.md` before finalizing the task."*
+
