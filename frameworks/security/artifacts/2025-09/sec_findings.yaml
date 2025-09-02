@@ -1,0 +1,29 @@
+schema_version: 1.0
+run_id: 2025-09-02.01
+snapshot_rev: "git:abcdef1234"
+rulebook_hash: "sha256:rulebookhashhere"
+stream: "payments-service"
+cycle: "2025-09"
+owners:
+  - team: "payments-sec"
+  - team: "app-platform"
+tags: [PII, auth]
+findings:
+  - id: F-0001
+    title: "PII in logs"
+    severity: Critical
+    category: data_exposure
+    tags: [PII, logging]
+    status: Open
+    evidence_uri: s3://bucket/logs/sample
+    first_seen: 2025-08-28
+    last_seen: 2025-09-02
+    affected_assets: ["payments-api", "worker-ingest"]
+    controls: [LOG-RED-001, DLP-002]
+    references: [CWE-312]
+  - id: F-0002
+    title: "Missing license header"
+    severity: Low
+    category: license
+    tags: [license]
+    status: Resolved
