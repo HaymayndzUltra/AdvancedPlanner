@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "test_matrix",
+  "type": "object",
+  "required": ["schema_version", "cycle", "mappings"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "cycle": {"type": "string"},
+    "governance": {
+      "type": "object",
+      "properties": {"tags": {"type": "array", "items": {"type": "string"}}},
+      "additionalProperties": false
+    },
+    "mappings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["story_ref", "test_id", "type", "env", "coverage"],
+        "properties": {
+          "story_ref": {"type": "string"},
+          "endpoint_ref": {"type": "string"},
+          "test_id": {"type": "string"},
+          "type": {"type": "string", "enum": ["unit", "integration", "e2e", "contract", "perf", "security"]},
+          "env": {"type": "string", "enum": ["local", "ci", "staging", "prod"]},
+          "coverage": {"type": "number", "minimum": 0, "maximum": 1},
+          "evidence_ref": {"type": "string"},
+          "governance": {
+            "type": "object",
+            "properties": {"tags": {"type": "array", "items": {"type": "string"}}},
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

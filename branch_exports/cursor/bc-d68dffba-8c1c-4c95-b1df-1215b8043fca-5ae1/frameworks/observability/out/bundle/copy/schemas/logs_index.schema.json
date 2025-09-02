@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/logs_index.schema.json",
+  "title": "logs_index",
+  "type": "object",
+  "required": ["version", "streams"],
+  "properties": {
+    "version": { "type": ["integer", "string"] },
+    "streams": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "owner", "retention_days", "schema"],
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "owner": { "type": "string", "minLength": 1 },
+          "retention_days": { "type": "integer", "minimum": 1 },
+          "pii": { "type": ["boolean", "string"] },
+          "schema_version": { "type": ["integer", "string"] },
+          "schema": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["field", "type"],
+              "properties": {
+                "field": { "type": "string", "minLength": 1 },
+                "type": { "type": "string", "enum": ["datetime", "string", "int", "float", "boolean"] }
+              }
+            }
+          },
+          "tags": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
+

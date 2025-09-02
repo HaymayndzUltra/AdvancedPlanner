@@ -1,0 +1,24 @@
+manifest_version: 1
+cycle: 2025-09
+snapshot_rev: git:abcdef1234
+rulebook_hash: sha256:rulebookhashhere
+artifacts:
+- name: test_matrix
+  path: artifacts/2025-09/test_matrix.yaml
+  sha256: 09af9d02a86dcba25585e7a7ed1fc57239e5a65506add9d92836d0fa65463807
+- name: traceability_map
+  path: artifacts/2025-09/traceability_map.md
+  sha256: 98149d27a09dd05a906bdde1edcca5de05b1d82cd0d6e7c9b527ce06c7b8e7aa
+- name: qa_evidence_index
+  path: artifacts/2025-09/qa_evidence_index.yaml
+  sha256: c13713ee27d7bc23f0a7816049a8137518976e263eb5e1a743840d2c90bb7610
+quality_gates:
+  schema_lint: pass
+  cross_stream_consistency: pass
+  parity_coverage:
+    status: pass
+    coverage_pct: 92
+signing:
+  signed_by: qa-bot@local
+  signature: ''
+  signed_at: '2025-09-02T03:30:22.845680Z'

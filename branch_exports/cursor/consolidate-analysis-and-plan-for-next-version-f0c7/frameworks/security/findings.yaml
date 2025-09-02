@@ -1,0 +1,17 @@
+sandbox: false
+schema_version: 1
+cycle: "2025-09"
+snapshot_rev: "git:abcdef1234"
+rulebook_hash: "sha256:rulebookhashhere"
+owners:
+  - team: "security-platform"
+governance:
+  tags: [security, critical_zero, release]
+summary:
+  critical_open: 0
+  high_open: 0
+  medium_open: 0
+  low_open: 0
+findings: []
+lifecycle_state: READY_FOR_HANDOFF
+

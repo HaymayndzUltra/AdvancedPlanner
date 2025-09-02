@@ -1,0 +1,10 @@
+schema_version: 1
+cycle: "2025-09"
+snapshot_rev: "8b44383c6d8c786ef191fc0566c5451417e16cfe"
+rulebook_hash: "sha256:TBD"
+governance:
+  tags: [security]
+summary:
+  critical_open: 0
+findings: []
+lifecycle_state: READY_FOR_HANDOFF

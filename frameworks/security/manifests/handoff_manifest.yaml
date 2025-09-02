@@ -1,0 +1,20 @@
+manifest_version: 1
+cycle: ""
+snapshot_rev: ""
+rulebook_hash: "sha256:TBD"
+sealed: true
+lifecycle_state: PACKAGED
+governance:
+  tags: [security]
+artifacts:
+  - name: findings
+    path: frameworks/security/findings.yaml
+    sha256: ""
+  - name: waivers
+    path: frameworks/security/waivers.yaml
+    sha256: ""
+quality_gates:
+  - name: schema_lint
+    result: pass
+  - name: security_critical_zero
+    result: pass

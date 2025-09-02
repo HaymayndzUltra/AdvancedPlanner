@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/qa_evidence_index.schema.json",
+  "title": "QA Evidence Index",
+  "type": "object",
+  "required": ["schema_version", "cycle_id", "files"],
+  "properties": {
+    "schema_version": {"type": "integer", "minimum": 1},
+    "cycle_id": {"type": "string"},
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "sha256"],
+        "properties": {
+          "path": {"type": "string"},
+          "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "size_bytes": {"type": "integer", "minimum": 0},
+          "content_type": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

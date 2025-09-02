@@ -1,0 +1,12 @@
+schema_version: 1
+gates:
+  schema_lint: true
+  cross_stream_consistency: true
+  parity_coverage:
+    enabled: true
+    threshold: 0.9
+  security_critical_zero:
+    enabled: true
+    source: frameworks/security/findings.yaml
+    exceptions: frameworks/security/policy/exceptions.yaml
+enforcement_mode: block_on_fail

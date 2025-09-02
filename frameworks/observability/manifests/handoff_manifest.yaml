@@ -1,0 +1,15 @@
+manifest_version: 1
+cycle: ""
+snapshot_rev: ""
+rulebook_hash: "sha256:TBD"
+sealed: true
+lifecycle_state: PACKAGED
+governance:
+  tags: [observability]
+artifacts:
+  - name: obs_digest
+    path: frameworks/observability/digests/-digest.md
+    sha256: ""
+quality_gates:
+  - name: schema_lint
+    result: pass

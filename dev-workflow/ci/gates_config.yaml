@@ -1,0 +1,27 @@
+enforcement: block_on_fail
+cycle: ""
+paths:
+  security:
+    findings: frameworks/security/findings.yaml
+    exceptions: frameworks/security/waivers.yaml
+    manifest: frameworks/security/manifests//handoff_manifest.yaml
+    digest: frameworks/security/digests/-digest.md
+  qa:
+    manifest: frameworks/qa-test/manifests//handoff_manifest.yaml
+    digest: frameworks/qa-test/digests/-digest.md
+  planning:
+    fe_manifest: frameworks/planning-fe/manifests/-handoff_manifest.yaml
+    be_manifest: frameworks/planning-be/manifests/-handoff_manifest.yaml
+    central_manifest: frameworks/planning/manifests//handoff_manifest.yaml
+    fe_digest: frameworks/planning-fe/digests/-digest.md
+    be_digest: frameworks/planning-be/digests/-digest.md
+  observability:
+    manifest: frameworks/observability/manifests//handoff_manifest.yaml
+    digest: frameworks/observability/digests/-digest.md
+
+checks:
+  - schema_lint
+  - checksums_present
+  - security_critical_zero
+  - snapshot_consistency
+  - evidence_present
