@@ -1,0 +1,17 @@
+schema_version: 1
+cycle: "2025-09"
+snapshot_rev: git:abcdef1234
+rulebook_hash: sha256:rulebookhashhere
+governance:
+  tags: [security, exception, risk_acceptance]
+exceptions:
+  - id: EX-2025-09-SEC-001
+    rule_id: Critical=0
+    scope: payments-api/orders-pagination
+    rationale: Temporary acceptance while remediation in flight
+    compensating_controls: Increased monitoring on error rate and auth anomalies
+    approver: CISO <ciso@example.com>
+    owner: security-lead@example.com
+    requested: 2025-09-02
+    expiry: 2025-10-15
+

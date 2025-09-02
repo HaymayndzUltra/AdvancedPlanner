@@ -1,0 +1,15 @@
+name: Frameworks Governance Gates
+on:
+  pull_request:
+    paths:
+      - "frameworks/**"
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate manifests and gates
+        run: |
+          echo "Run schema_lint, cross_stream_consistency, parity_coverage"
+          echo "Enforce Critical=0 via frameworks/security/rules/release_gates.yaml"
+

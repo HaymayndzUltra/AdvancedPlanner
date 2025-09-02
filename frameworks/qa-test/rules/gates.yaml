@@ -1,0 +1,12 @@
+schema_version: 1
+parity_threshold: 0.90
+gates:
+  - name: "schema_lint"
+    required: true
+  - name: "cross_stream_consistency"
+    required: true
+  - name: "parity_coverage"
+    required: true
+governance:
+  tags: [qa, gate]
+
