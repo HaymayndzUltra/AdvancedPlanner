@@ -1,0 +1,18 @@
+name: QA Framework Checks
+on:
+  push:
+    paths:
+      - frameworks/qa-test/**
+  pull_request:
+    paths:
+      - frameworks/qa-test/**
+jobs:
+  lint-qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.11
+      - run: python -m pip install -r frameworks/qa-test/tools/requirements.txt
+      - run: python frameworks/qa-test/tools/qa_cli.py schema_lint
