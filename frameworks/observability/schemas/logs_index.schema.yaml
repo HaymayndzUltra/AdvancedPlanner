@@ -1,0 +1,38 @@
+$schema: "http://json-schema.org/draft-07/schema#"
+title: "logs_index"
+type: object
+required: [version, streams]
+properties:
+  version:
+    type: integer
+  streams:
+    type: array
+    items:
+      type: object
+      required: [name, owner, retention_days, schema]
+      properties:
+        name:
+          type: string
+        owner:
+          type: string
+        retention_days:
+          type: integer
+          minimum: 1
+        pii:
+          type: boolean
+        schema_version:
+          type: integer
+        schema:
+          type: array
+          items:
+            type: object
+            required: [field, type]
+            properties:
+              field:
+                type: string
+              type:
+                type: string
+        tags:
+          type: array
+          items:
+            type: string
