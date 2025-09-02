@@ -5,7 +5,7 @@ print_usage() {
   echo "Usage: $0 [ROOT_DIR] [DEST_DIR] [AGG_FILE]" >&2
   echo "  ROOT_DIR: Repo root (default: git root or current dir)" >&2
   echo "  DEST_DIR: Copy destination directory (default: ROOT_DIR/_ref_copy)" >&2
-  echo "  AGG_FILE: Concatenated reference file (default: ROOT_DIR/_reference_all_files.txt)" >&2
+  echo "  AGG_FILE: Concatenated reference file (default: ROOT_DIR/copy.md)" >&2
 }
 
 if [[ ${1:-} == "-h" || ${1:-} == "--help" ]]; then
@@ -15,7 +15,7 @@ fi
 
 ROOT_DIR=${1:-"$(git rev-parse --show-toplevel 2>/dev/null || pwd)"}
 DEST_DIR=${2:-"$ROOT_DIR/_ref_copy"}
-AGG_FILE=${3:-"$ROOT_DIR/_reference_all_files.txt"}
+AGG_FILE=${3:-"$ROOT_DIR/copy.md"}
 
 mkdir -p "$DEST_DIR"
 
@@ -34,7 +34,7 @@ mapfile -t files < <(
     find . -type f \
       ! -path "./.git/*" \
       ! -path "./_ref_copy/*" \
-      ! -name "_reference_all_files.txt"
+      ! -name "copy.md"
   fi
 )
 
@@ -57,7 +57,7 @@ should_skip() {
   if [[ "$file" == ".git"* ]]; then return 0; fi
   if [[ "$file" == "${DEST_DIR#$ROOT_DIR/}"* ]]; then return 0; fi
   if [[ "$ROOT_DIR/$file" == "$AGG_FILE" ]]; then return 0; fi
-  if [[ "$file" == "_reference_all_files.txt" ]]; then return 0; fi
+  if [[ "$file" == "copy.md" ]]; then return 0; fi
   if [[ "$file" == "_ref_copy"* ]]; then return 0; fi
   return 1
 }
