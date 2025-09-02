@@ -1,0 +1,18 @@
+manifest_version: 1
+cycle: "2025-09"
+snapshot_rev: "62ebbd7ce733388a18fb1fedcd4bbd32dc7f6a6b"
+rulebook_hash: "sha256:TBD"
+sealed: true
+lifecycle_state: PACKAGED
+governance:
+  tags: [planning, fe]
+artifacts:
+  - name: fe_tasks
+    path: frameworks/planning-fe/tasks/2025-09-02-fe_task_breakdown.yaml
+    sha256: "82b79fbefc85d94743e5d6cde6286a4d0bd1303d54758f0c9f6e9fa9769cccfc"
+  - name: fe_story_map
+    path: frameworks/planning-fe/storymaps/2025-09-02-story_map.md
+    sha256: "4f5b60aa915df9ebf960020da558cb7a721e778792aa9d5a1efb813a619e08ff"
+quality_gates:
+  - name: schema_lint
+    result: pass

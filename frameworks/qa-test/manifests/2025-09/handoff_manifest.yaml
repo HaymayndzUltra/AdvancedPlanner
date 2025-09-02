@@ -1,0 +1,21 @@
+manifest_version: 1
+cycle: "2025-09"
+snapshot_rev: "62ebbd7ce733388a18fb1fedcd4bbd32dc7f6a6b"
+rulebook_hash: "sha256:TBD"
+sealed: true
+lifecycle_state: PACKAGED
+governance:
+  tags: [qa]
+artifacts:
+  - name: test_matrix
+    path: frameworks/qa-test/evidence/test_matrix.yaml
+    sha256: "dd0de3553329656b6cb882dbfb6515d2e11f21752a5fbb569f62da468f3cbe13"
+  - name: evidence_index
+    path: frameworks/qa-test/evidence/evidence_index.yaml
+    sha256: "8363c0d192a8849177c067efa04a0f6a0b8c5b838148b448236b6268bcb4d843"
+  - name: traceability_map
+    path: frameworks/qa-test/traceability_map.md
+    sha256: "66b9735bb054ceea8236219c178148f2c4df218ba2150081c97713abf1744880"
+quality_gates:
+  - name: schema_lint
+    result: pass

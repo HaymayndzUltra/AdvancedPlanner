@@ -1,0 +1,18 @@
+manifest_version: 1
+cycle: "2025-09"
+snapshot_rev: "62ebbd7ce733388a18fb1fedcd4bbd32dc7f6a6b"
+rulebook_hash: "sha256:TBD"
+sealed: true
+lifecycle_state: PACKAGED
+governance:
+  tags: [planning]
+artifacts:
+  - name: planning_fe_tasks
+    path: frameworks/planning-fe/tasks/2025-09-02-fe_task_breakdown.yaml
+    sha256: "82b79fbefc85d94743e5d6cde6286a4d0bd1303d54758f0c9f6e9fa9769cccfc"
+  - name: planning_be_backlog
+    path: frameworks/planning-be/backlog/2025-09-02-be_backlog.yaml
+    sha256: "567a77bcfb0df8aeaf896aff9a28025681a699c3376e7df8b4b7501465c6ada3"
+quality_gates:
+  - name: schema_lint
+    result: pass

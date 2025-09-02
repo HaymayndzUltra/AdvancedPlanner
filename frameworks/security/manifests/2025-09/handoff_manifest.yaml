@@ -1,0 +1,20 @@
+manifest_version: 1
+cycle: "2025-09"
+snapshot_rev: "62ebbd7ce733388a18fb1fedcd4bbd32dc7f6a6b"
+rulebook_hash: "sha256:TBD"
+sealed: true
+lifecycle_state: PACKAGED
+governance:
+  tags: [security]
+artifacts:
+  - name: findings
+    path: frameworks/security/findings.yaml
+    sha256: "507ac736c534c1bb158fa695e237b8e0581c59217c2a7df43a3eed033ef10897"
+  - name: waivers
+    path: frameworks/security/waivers.yaml
+    sha256: "c0fd8c796c55c8c7fe562b82fcf2cb1505fc6215c5a366414c4ccb9697a808a6"
+quality_gates:
+  - name: schema_lint
+    result: pass
+  - name: security_critical_zero
+    result: pass
