@@ -9,10 +9,10 @@ governance:
 artifacts:
   - name: findings
     path: frameworks/security/findings.yaml
-    sha256: "507ac736c534c1bb158fa695e237b8e0581c59217c2a7df43a3eed033ef10897"
+    sha256: "613412710662c37fb248ce51ccb183646dd7fe62541e3a60e91198083874be1f"
   - name: waivers
     path: frameworks/security/waivers.yaml
-    sha256: "c0fd8c796c55c8c7fe562b82fcf2cb1505fc6215c5a366414c4ccb9697a808a6"
+    sha256: "9b1548e8ca059471a84663e9bad43e93bc2148f65fb2104519883834166f05fe"
 quality_gates:
   - name: schema_lint
     result: pass
