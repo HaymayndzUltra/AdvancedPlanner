@@ -1,0 +1,7 @@
+schema_version: "1.0"
+cycle: "2025-09"
+evidence:
+  - id: PAY-API-CT-001
+    path: frameworks/qa-test/evidence/2025-09/PAY-API-CT-001.log
+    sha256: ""
+    tags: [contract, PII, auth]

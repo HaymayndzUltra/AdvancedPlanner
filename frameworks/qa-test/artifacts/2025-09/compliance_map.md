@@ -1,0 +1,5 @@
+# Compliance Map — 2025-09
+
+- ISO27001 A.12.1 → PAY-API-CT-001
+- SOC2 CC6.1 → PAY-API-CT-001
+- GDPR Art.32 → PAY-API-CT-001
