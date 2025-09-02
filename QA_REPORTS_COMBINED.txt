@@ -1,0 +1,293 @@
+
+
+================================================================================
+START FILE: /workspace/frameworks/planning-be/backlog/2025-09-02-be_backlog.yaml
+version: 1
+cycle_id: 2025-09-02
+snapshot_rev: git:abcdef1234
+owners:
+  - team: payments-backend
+    lead: dave@example.com
+backlog:
+  - id: BE-CRIT-001
+    title: Address Validation API - PII-safe logging
+    priority: P0
+    effort_points: 8
+    owner: dave
+    tags: [critical_path, PII]
+    endpoints:
+      - name: POST /addresses/validate
+        id: ep-address-validate
+    acceptance_criteria:
+      - No PII in logs; structured fields only
+      - 99.9% availability SLO
+  - id: BE-201
+    title: Orders API - Cursor Pagination
+    priority: P1
+    effort_points: 5
+    owner: erin
+    endpoints:
+      - name: GET /orders
+        id: ep-orders-list
+    acceptance_criteria:
+      - Cursor-based pagination with limit up to 100
+END FILE: /workspace/frameworks/planning-be/backlog/2025-09-02-be_backlog.yaml
+
+
+================================================================================
+START FILE: /workspace/frameworks/planning-fe/tasks/2025-09-02-fe_task_breakdown.yaml
+version: 1
+cycle_id: 2025-09-02
+snapshot_rev: git:abcdef1234
+owners:
+  - team: web-frontend
+    lead: alice@example.com
+backlog:
+  - id: FE-CRIT-001
+    title: Checkout - Address Validation UX
+    priority: P0
+    effort_points: 5
+    owner: alice
+    tags: [critical_path, PII]
+    dependencies: [BE-CRIT-001]
+    acceptance_criteria:
+      - Invalid addresses prompt corrections with inline hints
+      - Validation errors logged without PII
+  - id: FE-CRIT-002
+    title: Checkout - Payment Method Selector Accessibility
+    priority: P0
+    effort_points: 3
+    owner: bob
+    tags: [critical_path, a11y]
+    dependencies: []
+    acceptance_criteria:
+      - Keyboard-only navigation supported
+      - Screen readers announce selection state
+  - id: FE-102
+    title: Order History - Pagination
+    priority: P1
+    effort_points: 3
+    owner: carol
+    tags: [feature]
+    dependencies: [BE-201]
+    acceptance_criteria:
+      - Lazy load next page on scroll end
+END FILE: /workspace/frameworks/planning-fe/tasks/2025-09-02-fe_task_breakdown.yaml
+
+
+================================================================================
+START FILE: /workspace/frameworks/qa-test/artifacts/2025-09/compliance_map.md
+### Compliance Map — 2025-09
+
+- standard: ISO27001
+  control: LOG-RED-001
+  test_ids: [QA-API-ADDR-VAL-001]
+  evidence_refs: [evidence/addr_validate_postman.json]
+
+- standard: GDPR
+  control: DLP-002
+  test_ids: [QA-API-ADDR-VAL-001]
+  evidence_refs: [evidence/addr_validate_postman.json]
+
+- standard: SOC2
+  control: A11Y-UX-001
+  test_ids: [QA-FE-A11Y-SEL-001]
+  evidence_refs: [evidence/a11y_report.html]
+END FILE: /workspace/frameworks/qa-test/artifacts/2025-09/compliance_map.md
+
+
+================================================================================
+START FILE: /workspace/frameworks/qa-test/artifacts/2025-09/handoff_manifest.yaml
+manifest_version: 1
+cycle: 2025-09
+snapshot_rev: git:abcdef1234
+rulebook_hash: sha256:72f929a15c9bc8d8f14807879b1847bbb94d23cce593ce9d6063dd95d9fbe919
+sealed: true
+artifacts:
+- name: test_matrix
+  path: frameworks/qa-test/artifacts/2025-09/test_matrix.yaml
+  sha256: 79d5cc75cafa1a6ccbaea1ef9738f514f5962973123871aefbca2aba279a893e
+- name: traceability_map
+  path: frameworks/qa-test/artifacts/2025-09/traceability_map.md
+  sha256: 304bbd0695523bdd980c26f5acff9743e344cc87a0ce6a544355f6e1a207251d
+- name: qa_evidence_index
+  path: frameworks/qa-test/artifacts/2025-09/qa_evidence_index.yaml
+  sha256: 9bc8a2b739edbd948da7761904c1e64c4cb2009f2d31533f792070388d50a8d8
+- name: compliance_map
+  path: frameworks/qa-test/artifacts/2025-09/compliance_map.md
+  sha256: 6fab70e21281d6da36a9a1370938bbf7266bf1620791e5566bd36099272a42a4
+- name: policy_exceptions
+  path: frameworks/qa-test/artifacts/2025-09/policy_exceptions.md
+  sha256: 7f61cd07b7e791bcce415acceb62a450d91efcc45120d20dfcbedcfe610af8a9
+- name: integration_hooks
+  path: frameworks/qa-test/artifacts/2025-09/integration_hooks.md
+  sha256: c1a76d86b0d42976c708f19d6cc15d413475131bc4b7ac24a787f867504d390e
+- name: qa_risk_register
+  path: frameworks/qa-test/artifacts/2025-09/qa_risk_register.md
+  sha256: b6eb789a133c4d5d08acd2461a2af3dcf716ecb741589f7e7517529f54e8414e
+quality_gates:
+  schema_lint: pass
+  cross_stream_consistency: pass
+  parity_coverage:
+    status: pass
+    coverage_pct: 100.0
+
+END FILE: /workspace/frameworks/qa-test/artifacts/2025-09/handoff_manifest.yaml
+
+
+================================================================================
+START FILE: /workspace/frameworks/qa-test/artifacts/2025-09/integration_hooks.md
+### Integration Hooks — 2025-09
+
+- Jenkins:
+  - job: qa-framework-schema-lint
+  - job: qa-framework-gates
+- Jira:
+  - project_keys: [SEC, QA]
+  - exception_label: policy-exception
+- Grafana:
+  - dashboard: QA KPIs — frameworks/qa-test/digests
+  - alerts: Gate Failures, Flake Rate Threshold
+END FILE: /workspace/frameworks/qa-test/artifacts/2025-09/integration_hooks.md
+
+
+================================================================================
+START FILE: /workspace/frameworks/qa-test/artifacts/2025-09/policy_exceptions.md
+### Policy Exceptions — 2025-09
+
+- id: EX-2025-09-001
+  scope: payments-api/orders-pagination
+  related_tests: [QA-API-ORD-LIST-001]
+  justification: Pagination perf tuning in progress
+  risk: Low
+  compensating_controls: increased monitoring on error rate
+  approved_by: QA Lead (sig: sha256:placeholder)
+  requested: 2025-09-02
+  expires: 2025-10-15
+END FILE: /workspace/frameworks/qa-test/artifacts/2025-09/policy_exceptions.md
+
+
+================================================================================
+START FILE: /workspace/frameworks/qa-test/artifacts/2025-09/qa_evidence_index.yaml
+schema_version: 1
+cycle_id: 2025-09
+files:
+  - path: frameworks/qa-test/artifacts/2025-09/evidence/addr_validate_postman.json
+    sha256: "0000000000000000000000000000000000000000000000000000000000000000"
+    content_type: application/json
+  - path: frameworks/qa-test/artifacts/2025-09/evidence/a11y_report.html
+    sha256: "0000000000000000000000000000000000000000000000000000000000000000"
+    content_type: text/html
+  - path: frameworks/qa-test/artifacts/2025-09/evidence/orders_pagination.md
+    sha256: "0000000000000000000000000000000000000000000000000000000000000000"
+    content_type: text/markdown
+END FILE: /workspace/frameworks/qa-test/artifacts/2025-09/qa_evidence_index.yaml
+
+
+================================================================================
+START FILE: /workspace/frameworks/qa-test/artifacts/2025-09/qa_risk_register.md
+### QA Risk Register — 2025-09
+
+- id: RISK-001
+  title: Flaky tests in payments-api
+  severity: Medium
+  mitigation: Quarantine list + flake threshold in digest
+  owner: qa-platform
+
+- id: RISK-002
+  title: Unmapped late stories
+  severity: High
+  mitigation: Gap alert; block handoff if P0 gaps remain
+  owner: qa-platform
+END FILE: /workspace/frameworks/qa-test/artifacts/2025-09/qa_risk_register.md
+
+
+================================================================================
+START FILE: /workspace/frameworks/qa-test/artifacts/2025-09/test_matrix.yaml
+schema_version: 1
+cycle_id: 2025-09
+snapshot_rev: git:abcdef1234
+rulebook_hash: sha256:rulebookhashhere
+mappings:
+  - story_ref: FE-CRIT-001
+    endpoint_ref: ep-address-validate
+    test_id: QA-API-ADDR-VAL-001
+    type: integration
+    env: staging
+    coverage: 1.0
+    evidence_ref: evidence/addr_validate_postman.json
+    governance:
+      tags: [PII, logging]
+  - story_ref: FE-CRIT-002
+    test_id: QA-FE-A11Y-SEL-001
+    type: e2e
+    env: staging
+    coverage: 1.0
+    evidence_ref: evidence/a11y_report.html
+    governance:
+      tags: [a11y]
+  - story_ref: FE-102
+    endpoint_ref: ep-orders-list
+    test_id: QA-API-ORD-LIST-001
+    type: integration
+    env: dev
+    coverage: 0.8
+    evidence_ref: evidence/orders_pagination.md
+    governance:
+      tags: [infra]
+END FILE: /workspace/frameworks/qa-test/artifacts/2025-09/test_matrix.yaml
+
+
+================================================================================
+START FILE: /workspace/frameworks/qa-test/artifacts/2025-09/traceability_map.md
+### Traceability Map — 2025-09
+
+- story_ref FE-CRIT-001 → tests: [QA-API-ADDR-VAL-001]
+- story_ref FE-CRIT-002 → tests: [QA-FE-A11Y-SEL-001]
+- story_ref FE-102 → tests: [QA-API-ORD-LIST-001]
+
+#### Gaps
+- None. All planned FE critical_path stories mapped and covered.
+END FILE: /workspace/frameworks/qa-test/artifacts/2025-09/traceability_map.md
+
+
+================================================================================
+START FILE: /workspace/frameworks/qa-test/digests/2025-09-02-digest.md
+## Cycle Digest — 2025-09-02
+
+- Cycle: 2025-09
+- Snapshot Rev: git:abcdef1234
+- Rulebook Hash: sha256:rulebookhashhere
+
+### KPI Summary
+- Time to VALIDATED: <24h (sample)
+- Gate pass rate: schema_lint 100%, consistency 100%, parity/coverage 100%
+- Critical at PACKAGED: 0 → at VALIDATED: 0
+- Exceptions: 1 new, 1 active, 0 expired
+- Coverage: 100% of critical path stories (parity=100%)
+
+### Gate Outcomes
+- schema_lint: pass (test_matrix, evidence index)
+- cross_stream_consistency: pass (story_ref and endpoint_ref align)
+- parity/coverage: pass (≥90%, actual 100% for critical path)
+- compliance check: pass (controls mapped in compliance_map.md)
+
+### Exceptions Summary
+- EX-2025-09-001 (orders pagination): approved, expires 2025-10-15
+
+### Top Risks & Actions
+- Flaky tests → quarantine threshold in digest; Owner: qa-platform; Due: 2025-09-09
+- Late stories unmapped → enable gap alerting; Owner: qa-platform; Due: 2025-09-06
+
+---
+
+Artifacts
+- test_matrix.yaml
+- traceability_map.md
+- qa_evidence_index.yaml
+- policy_exceptions.md
+- compliance_map.md
+- integration_hooks.md
+- qa_risk_register.md
+- handoff_manifest.yaml (sealed)
+END FILE: /workspace/frameworks/qa-test/digests/2025-09-02-digest.md
