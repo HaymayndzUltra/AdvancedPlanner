@@ -1,0 +1,17 @@
+manifest_version: 1
+cycle: "2025-09"
+snapshot_rev: "git:abcdef1234"
+rulebook_hash: "sha256:rulebookhashhere"
+governance:
+  tags: [observability, release]
+sealed: true
+artifacts:
+  - name: digest_2025-09-02
+    path: frameworks/observability/digests/2025-09-02-digest.md
+    sha256: "6251ba7c45ef7d9cacd4b61f962be3246fb54ab3799e4e97b438c26b0bbf55cf"
+quality_gates:
+  schema_lint: pass
+  cross_stream_consistency: pass
+  parity_coverage:
+    status: pass
+    coverage_pct: 100.0

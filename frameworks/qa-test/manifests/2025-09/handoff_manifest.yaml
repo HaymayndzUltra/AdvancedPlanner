@@ -1,0 +1,17 @@
+manifest_version: 1
+cycle: "2025-09"
+snapshot_rev: "git:abcdef1234"
+rulebook_hash: "sha256:rulebookhashhere"
+governance:
+  tags: [qa, release, compliance]
+sealed: true
+artifacts:
+  - name: compliance_map
+    path: frameworks/qa-test/artifacts/2025-09/compliance_map.md
+    sha256: "a2cd820d8f64f21a46535cf916f7e67b63fef20bce2626450c632ff2ba17b67a"
+quality_gates:
+  schema_lint: pass
+  cross_stream_consistency: pass
+  parity_coverage:
+    status: pass
+    coverage_pct: 100.0

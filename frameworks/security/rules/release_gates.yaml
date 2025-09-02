@@ -1,0 +1,10 @@
+policy_version: 1
+rules:
+  - id: "critical_zero_enforcement"
+    description: "Block release if critical_open > 0"
+    source: "frameworks/security/findings.yaml"
+    evaluation:
+      condition: "summary.critical_open == 0"
+      on_fail: "block_release"
+governance:
+  tags: [security, gate]
