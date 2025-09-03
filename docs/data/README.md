@@ -5,3 +5,4 @@
 - Datasets: `docs/data/datasets/*.yaml`
 - ML: `docs/ml/*`
 - Pipelines: `data/pipelines/*`
+- Privacy: `docs/data/privacy.md`
