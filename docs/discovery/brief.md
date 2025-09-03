@@ -154,4 +154,25 @@ Program KPIs (ongoing, informed by Strategy B)
 ## 10) Approvals
 
 - Product Lead: Name, Date, Signature
+
+## 11) Traceability & Handoffs
+
+- Backlog links (Planning):
+  - BL-001 (PRD/Roadmap/Backlog) → seeds Planning artifacts for M1
+  - BL-004 (API Contract) → informs Architecture contract-first approach
+  - BL-006 (Contract Tests) → gates FE/BE integration on integration branch
+  - BL-007 (CI Security & SBOM) → enforces policy-as-code from M2
+
+- Acceptance Criteria references (PRD):
+  - AC-UX-1, AC-UX-2 → UX tokens and component previews
+  - AC-FE-2, AC-BE-1 → contract-first FE/BE integration
+  - AC-REL-1 → merge train stability gates
+  - AC-SEC-1 → zero-critical security gate
+  - AC-OBS-1 → dashboards and alert readiness
+
+- Handoffs prepared for:
+  - UX: tokens and flows scope
+  - Architecture: API contract scope and ADR focus
+  - Implementation: MVP slice inputs and sequencing
+  - QA/Security/Release/Observability: gate expectations and evidence
 - Engineering Lead: Name, Date, Signature

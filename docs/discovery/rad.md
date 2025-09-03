@@ -88,4 +88,10 @@
 ## Sign-offs
 
 - Product Lead: Name, Date, Signature
+
+## Definition of Done (Discovery)
+- Discovery Brief (DISC-BRIEF-001) approved by Product and Engineering.
+- RAD Register (RAD-REGISTER-001) initialized with owners and mitigations.
+- Traceability established (RISK-*, ASM-*, DEP-* linked to Planning/PRD refs).
+- Handoffs documented for UX, Architecture, Implementation, QA, Security, Release, Observability.
 - Engineering Lead: Name, Date, Signature
