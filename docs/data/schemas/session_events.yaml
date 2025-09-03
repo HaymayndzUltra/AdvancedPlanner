@@ -1,0 +1,102 @@
+version: 1
+entity: session_events
+description: Canonical application event stream emitted by clients and services
+owner: data-platform
+pii_classification: contains_pii
+fields:
+  - name: event_id
+    type: string
+    nullable: false
+    description: Unique identifier for the event (UUIDv4)
+    constraints:
+      - unique
+  - name: user_id
+    type: string
+    nullable: false
+    description: Foreign key to users.user_id
+  - name: session_id
+    type: string
+    nullable: false
+    description: Client session identifier
+  - name: event_type
+    type: string
+    nullable: false
+    description: Type/category of the event
+    constraints:
+      - enum: [session_start, session_end, page_view, click, purchase, login, logout, error]
+  - name: event_properties
+    type: object
+    nullable: true
+    description: JSON blob of event-specific attributes
+  - name: device_type
+    type: string
+    nullable: true
+    description: Device category
+    constraints:
+      - enum: [mobile, desktop, tablet, tv]
+  - name: user_agent
+    type: string
+    nullable: true
+    description: Raw user agent string
+  - name: ip_address
+    type: string
+    nullable: true
+    description: IPv4/IPv6 address collected at event time
+    pii: ip
+    constraints:
+      - format: ipv4_or_ipv6
+  - name: event_ts
+    type: timestamp
+    nullable: false
+    description: Event timestamp in UTC
+  - name: event_date
+    type: date
+    nullable: false
+    description: Partition key derived from event_ts (UTC date)
+primary_key:
+  - event_id
+partitioning:
+  type: daily
+  column: event_date
+retention:
+  type: delete
+  period: P365D
+data_quality:
+  freshness_sla: PT1H
+  thresholds:
+    row_count_change_pct:
+      warn: 100
+      fail: 200
+    null_ratio:
+      event_id:
+        warn: 0
+        fail: 0
+      event_ts:
+        warn: 0
+        fail: 0
+    enum_valid_ratio:
+      event_type:
+        warn: 0.99
+        fail: 0.95
+security:
+  encryption: at_rest_and_in_transit
+  access_tiers:
+    - role: analyst
+      access: masked
+    - role: data_scientist
+      access: masked
+    - role: admin
+      access: full
+privacy:
+  policies:
+    - name: ip_truncation
+      action: mask
+      method: anonymize_ip_v4_v6
+      window: immediate
+lineage:
+  sources:
+    - app.web.tracker
+    - app.services.analytics
+  targets:
+    - warehouse.fact_session_events
+

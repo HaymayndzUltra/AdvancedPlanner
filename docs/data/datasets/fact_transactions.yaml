@@ -1,0 +1,15 @@
+version: 1
+name: warehouse.fact_transactions
+source: transactions
+materialization: table
+partitioning:
+  type: monthly
+  column: created_at
+retention: P7Y
+serving:
+  access_roles: [finance_analyst, analyst, admin]
+  refresh_schedule: daily
+lineage:
+  inputs: [payments.gateway, orders.service]
+  transforms: [tokenize_card_last4, enforce_amount_min]
+  outputs: [warehouse.fact_transactions]
