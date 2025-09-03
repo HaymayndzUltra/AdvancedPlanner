@@ -36,6 +36,9 @@ fields:
   - name: card_last4
     type: string
     nullable: true
+  - name: card_last4_token
+    type: string
+    nullable: true
   - name: country_code
     type: string
     nullable: true

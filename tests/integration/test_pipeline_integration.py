@@ -39,7 +39,7 @@ def test_transactions_pipeline_tokenizes_last4(tmp_output_dir, samples_dir):
     assert rows
     for r in rows:
         assert r.get("card_last4", "") == ""
-        assert r.get("card_last4_token", "").startswith("tok_")
+        assert "card_last4_token" in r and r["card_last4_token"].startswith("tok_")
 
 
 @pytest.mark.integration
