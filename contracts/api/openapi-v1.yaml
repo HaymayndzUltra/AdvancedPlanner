@@ -1,0 +1,317 @@
+openapi: 3.0.3
+info:
+  title: Orchestrator API
+  description: Versioned REST API for background agent orchestration
+  version: 1.0.0
+servers:
+  - url: https://api.example.com/v1
+    description: Production v1
+  - url: https://staging.api.example.com/v1
+    description: Staging v1
+tags:
+  - name: Tasks
+  - name: Agents
+  - name: Contracts
+  - name: Artifacts
+  - name: Health
+paths:
+  /health:
+    get:
+      tags: [Health]
+      summary: Liveness and readiness
+      responses:
+        '200':
+          description: OK
+  /tasks:
+    post:
+      tags: [Tasks]
+      summary: Create a task
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateTaskRequest'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+    get:
+      tags: [Tasks]
+      summary: List tasks
+      parameters:
+        - in: query
+          name: status
+          schema:
+            $ref: '#/components/schemas/TaskStatus'
+        - in: query
+          name: limit
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 200
+            default: 50
+        - in: query
+          name: pageToken
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListTasksResponse'
+  /tasks/{taskId}:
+    get:
+      tags: [Tasks]
+      summary: Get a task by ID
+      parameters:
+        - $ref: '#/components/parameters/taskId'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+        '404':
+          description: Not found
+    patch:
+      tags: [Tasks]
+      summary: Update task status
+      parameters:
+        - $ref: '#/components/parameters/taskId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateTaskRequest'
+      responses:
+        '200':
+          description: Updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+  /tasks/{taskId}/artifacts:
+    put:
+      tags: [Artifacts]
+      summary: Upload artifact metadata and initiate storage
+      parameters:
+        - $ref: '#/components/parameters/taskId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutArtifactRequest'
+      responses:
+        '200':
+          description: Upload initiated (pre-signed URL)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutArtifactResponse'
+  /agents:
+    post:
+      tags: [Agents]
+      summary: Register or update an agent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterAgentRequest'
+      responses:
+        '200':
+          description: Registered
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Agent'
+    get:
+      tags: [Agents]
+      summary: List agents
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  agents:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Agent'
+  /contracts:
+    get:
+      tags: [Contracts]
+      summary: List API/data contracts
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Contract'
+components:
+  parameters:
+    taskId:
+      in: path
+      name: taskId
+      required: true
+      schema:
+        type: string
+        format: uuid
+  schemas:
+    TaskStatus:
+      type: string
+      enum: [QUEUED, ASSIGNED, IN_PROGRESS, COMPLETED, FAILED, CANCELLED]
+    CreateTaskRequest:
+      type: object
+      required: [type, input]
+      properties:
+        type:
+          type: string
+          example: "architecture.generate"
+        input:
+          type: object
+          additionalProperties: true
+        priority:
+          type: integer
+          minimum: 0
+          maximum: 10
+          default: 5
+        webhookUrl:
+          type: string
+          format: uri
+    UpdateTaskRequest:
+      type: object
+      required: [status]
+      properties:
+        status:
+          $ref: '#/components/schemas/TaskStatus'
+        message:
+          type: string
+    Task:
+      type: object
+      required: [id, type, status, createdAt]
+      properties:
+        id:
+          type: string
+          format: uuid
+        type:
+          type: string
+        status:
+          $ref: '#/components/schemas/TaskStatus'
+        input:
+          type: object
+          additionalProperties: true
+        priority:
+          type: integer
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        artifacts:
+          type: array
+          items:
+            $ref: '#/components/schemas/Artifact'
+    ListTasksResponse:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Task'
+        nextPageToken:
+          type: string
+    Artifact:
+      type: object
+      required: [id, taskId, name, contentType, size]
+      properties:
+        id:
+          type: string
+          format: uuid
+        taskId:
+          type: string
+          format: uuid
+        name:
+          type: string
+        contentType:
+          type: string
+        size:
+          type: integer
+        url:
+          type: string
+          format: uri
+    PutArtifactRequest:
+      type: object
+      required: [name, contentType, size]
+      properties:
+        name:
+          type: string
+        contentType:
+          type: string
+        size:
+          type: integer
+    PutArtifactResponse:
+      type: object
+      properties:
+        uploadUrl:
+          type: string
+          format: uri
+        artifact:
+          $ref: '#/components/schemas/Artifact'
+    Agent:
+      type: object
+      required: [id, name, capabilities]
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        capabilities:
+          type: array
+          items:
+            type: string
+        status:
+          type: string
+          enum: [ONLINE, OFFLINE, UNKNOWN]
+    RegisterAgentRequest:
+      type: object
+      required: [name, capabilities]
+      properties:
+        name:
+          type: string
+        capabilities:
+          type: array
+          items:
+            type: string
+    Contract:
+      type: object
+      required: [id, type, version]
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+          enum: [OPENAPI, GRAPHQL, GRPC, DATA]
+        version:
+          type: string
+        location:
+          type: string

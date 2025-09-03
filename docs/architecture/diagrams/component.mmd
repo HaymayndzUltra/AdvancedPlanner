@@ -1,0 +1,35 @@
+%% Mermaid Component Diagram - Orchestrator internals
+
+flowchart TB
+    subgraph Orchestrator API (Service)
+        GW[HTTP Gateway / Router]
+        AUTH[AuthN/Z Middleware]
+        CTRL[REST Controllers]
+        SVC_REG[AgentRegistryService]
+        SVC_TASK[TaskService]
+        SVC_EVT[EventService]
+        SVC_CON[ContractService]
+        SCHED[Scheduler Worker]
+    end
+
+    GW --> AUTH --> CTRL
+    CTRL --> SVC_REG
+    CTRL --> SVC_TASK
+    CTRL --> SVC_EVT
+    CTRL --> SVC_CON
+
+    SVC_REG --> DB[(PostgreSQL)]
+    SVC_TASK --> DB
+    SVC_EVT --> DB
+    SVC_CON --> DB
+    SCHED --> DB
+
+    SCHED <-->|Publish/Subscribe| BUS[(Message Broker)]
+    SVC_TASK --> OBJ[(Object Storage / Artifacts)]
+
+    extAgent[Background Agents] <-->|HTTPS| CTRL
+
+    classDef comp fill:#e3f2fd,stroke:#1976d2,stroke-width:1px,color:#0d47a1;
+    classDef store fill:#f5f5f5,stroke:#616161,stroke-width:1px,color:#212121;
+    class GW,AUTH,CTRL,SVC_REG,SVC_TASK,SVC_EVT,SVC_CON,SCHED comp;
+    class DB,BUS,OBJ store;

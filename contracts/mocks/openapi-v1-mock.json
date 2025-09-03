@@ -1,0 +1,85 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/v1/health",
+      "response": {"status": "ok"}
+    },
+    {
+      "method": "POST",
+      "path": "/v1/tasks",
+      "requestExample": {
+        "type": "architecture.generate",
+        "input": {"scope": "ADR+OpenAPI"},
+        "priority": 5
+      },
+      "response": {
+        "id": "018f4f5e-f1d5-7a2b-a0e1-5fcd0b12a111",
+        "type": "architecture.generate",
+        "status": "QUEUED",
+        "priority": 5,
+        "createdAt": "2025-09-03T12:00:00Z"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/v1/tasks",
+      "response": {
+        "items": [
+          {"id": "018f4f5e-f1d5-7a2b-a0e1-5fcd0b12a111", "type": "architecture.generate", "status": "QUEUED"}
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/v1/tasks/:taskId",
+      "response": {
+        "id": "018f4f5e-f1d5-7a2b-a0e1-5fcd0b12a111",
+        "type": "architecture.generate",
+        "status": "IN_PROGRESS",
+        "artifacts": []
+      }
+    },
+    {
+      "method": "PATCH",
+      "path": "/v1/tasks/:taskId",
+      "requestExample": {"status": "COMPLETED"},
+      "response": {
+        "id": "018f4f5e-f1d5-7a2b-a0e1-5fcd0b12a111",
+        "type": "architecture.generate",
+        "status": "COMPLETED"
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/v1/tasks/:taskId/artifacts",
+      "requestExample": {"name": "diagram.png", "contentType": "image/png", "size": 1024},
+      "response": {
+        "uploadUrl": "https://object-store/upload/signed",
+        "artifact": {
+          "id": "018f4f76-c1ab-764a-9d10-48f0e1b67123",
+          "taskId": "018f4f5e-f1d5-7a2b-a0e1-5fcd0b12a111",
+          "name": "diagram.png",
+          "contentType": "image/png",
+          "size": 1024
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/v1/agents",
+      "requestExample": {"name": "Agent-Architecture", "capabilities": ["OpenAPI", "ADR"]},
+      "response": {"id": "018f4f88-a1e2-79c2-8a12-12ac34bd89fe", "name": "Agent-Architecture", "capabilities": ["OpenAPI", "ADR"], "status": "ONLINE"}
+    },
+    {
+      "method": "GET",
+      "path": "/v1/agents",
+      "response": {"agents": [{"id": "018f4f88-a1e2-79c2-8a12-12ac34bd89fe", "name": "Agent-Architecture", "capabilities": ["OpenAPI", "ADR"], "status": "ONLINE"}]}
+    },
+    {
+      "method": "GET",
+      "path": "/v1/contracts",
+      "response": {"items": [{"id": "openapi-v1", "type": "OPENAPI", "version": "1.0.0", "location": "contracts/api/openapi-v1.yaml"}]}
+    }
+  ]
+}
