@@ -49,12 +49,9 @@ def write_csv_records(records: list[dict], output_path: str) -> None:
 def mask_email(email: str) -> str:
     if not email:
         return email
-    parts = email.split("@")
-    if len(parts) != 2:
-        return "***@redacted"
-    local, domain = parts
-    masked_local = (local[0] + "***") if local else "***"
-    return f"{masked_local}@{domain}"
+    normalized = email.strip().lower()
+    token = hashlib.sha256(normalized.encode("utf-8")).hexdigest()[:8]
+    return f"u_{token}@redacted.local"
 
 
 def mask_phone(phone: str) -> str:
