@@ -22,9 +22,12 @@ Multi-Agent Workflow
 Tooling & Integration
 – Puwedeng ma-trigger mula sa IDE mismo o sa external tools tulad ng Linear o Slack.
 – Karaniwang output: Pull Request o structured change na ikaw na lang magre-review.
+- User ang mag rurun ng background agent, makipag coordinate kung ikaw ang master planner
 
 Para saan ito
 
 Pwedeng ipaubaya sa background agent ang mahahabang gawain tulad ng full-code refactor, doc generation, o testing, habang ikaw ay nasa planning o ibang tasks.
 
 Nagbibigay ito ng parallel na productivity: ikaw nasa main workflow, sila gumagawa sa likod
+
+#PARA SA MASTER PLANNER, IKAW AY NASA BACKGROUND AGENT DIN INTINDIHIN MO ANG ENVIRONMENT MO PARA MAKGAWA KA NG PLANO PARA SAIBANG BACKGROUND AGENT

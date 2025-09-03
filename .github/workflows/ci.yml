@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [ integration, main ]
+  pull_request:
+    branches: [ integration, main ]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Set up venv
+        run: |
+          python -m venv .venv
+          . .venv/bin/activate
+          python -m pip install -U pip
+          pip install -r requirements.txt
+      - name: Lint (ruff)
+        run: |
+          . .venv/bin/activate
+          ruff check src tests
+      - name: Type check (mypy)
+        run: |
+          . .venv/bin/activate
+          mypy src/backend
+      - name: Security scan (bandit)
+        run: |
+          . .venv/bin/activate
+          bandit -q -r src/backend -x tests
+      - name: Tests
+        run: |
+          . .venv/bin/activate
+          pytest -q

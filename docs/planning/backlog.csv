@@ -1,0 +1,25 @@
+ID,Title,Priority,Type,Area,Description,AcceptanceCriteria,KPI,Estimate(d),Dependencies,Milestone,ACRefs
+BL-001,Publish PRD & Roadmap,P0,Planning,Foundations,Create PRD, roadmap, and backlog with traceability.,PRD and roadmap merged; backlog.csv present; links resolve.,Lead time baseline,3,,M1,Gate: PRD-signoff
+BL-002,Design Tokens Baseline,P0,UX,UI,Export tokens and document usage.,Tokens published; contrast AA; keyboard nav spec.,Accessibility AA,5,,M1,AC-UX-1
+BL-003,Core Components in Storybook,P1,UX,UI,Build Nav/Table/Form/Status components.,5 components documented with a11y checks.,Accessibility AA,5,BL-002,M1,AC-UX-2
+BL-004,Define Onboarding API Contract,P0,Architecture,API,OpenAPI/GraphQL for POST/GET onboarding.,Spec versioned; mocks/stubs generated.,CI pass rate,4,,M1,AC-FE-2;AC-BE-1
+BL-005,Approve ADRs for Boundaries,P1,Architecture,ADRs,Service boundaries, auth, data model sketch.,ADRs merged; references in repo.,Lead time,3,BL-004,M2,AC-BE-1
+BL-006,Set Up Contract Test Suite,P0,QA,CI,Contract tests run on integration branch.,CI blocks on contract failures.,CI pass rate,4,BL-004,M2,AC-FE-2
+BL-007,CI Security Scans & SBOM,P0,Security,CI,SAST/DAST and SBOM generation in pipeline.,Pipeline fails on critical; SBOM attached.,Zero critical vulns,4,,M2,AC-SEC-1
+BL-008,Integration Branch & Merge Train,P0,Release,CI,Create integration branch and nightly merge train.,Nightly run succeeds; logs retained.,Merge train failure <5%,3,BL-006;BL-007,M2,AC-REL-1
+BL-009,BE Onboarding Service Skeleton,P0,BE,Service,Implement POST/GET with validation and flags.,Endpoints live in staging behind flag.,p95 latency <800ms,6,BL-004;BL-005;BL-007,M3,AC-BE-1;AC-BE-2
+BL-010,FE Onboarding UI (Mocked),P1,FE,Web,Form submission to mocked API with error states.,Form submits; errors handled; tests pass.,Coverage ≥80%,6,BL-002;BL-003;BL-004,M3,AC-FE-1
+BL-011,Unit & Integration Tests ≥80%,P0,QA,Testing,Achieve ≥80% for FE/BE onboarding modules.,Coverage report ≥80% in CI.,Coverage ≥80%,5,BL-009;BL-010,M3,AC-BE-2
+BL-012,Observability Dashboards,P1,Observability,Telemetry,Latency/error/RPS dashboards and alerts.,Dashboards show metrics; alerts tuned.,MTTR < 1 day,4,BL-009,M4,AC-OBS-1
+BL-013,FE Switch to Live API,P1,FE,Web,Replace mocks with live BE endpoints.,E2E smoke green; feature flags set.,CI pass rate,3,BL-009;BL-010,M4,AC-FE-1;AC-FE-2
+BL-014,E2E Smoke for Onboarding,P0,QA,Testing,E2E test creates and retrieves onboarding record.,E2E passes in staging pipeline.,Change failure rate,4,BL-009;BL-013,M4,AC-QA-1
+BL-015,Accessibility Audit (AA),P1,UX,UI,Audit and fix accessibility issues.,AA findings resolved; checks pass.,Accessibility AA,3,BL-003;BL-010,M5,AC-UX-1;AC-UX-2
+BL-016,Stabilize Merge Train,P0,Release,CI,Reduce failures via sharding/caching.,<5% failures over 7 days.,Merge train failure <5%,3,BL-008;BL-011,M5,AC-REL-1
+BL-017,Security Zero-Critical Gate,P0,Security,CI,Eliminate critical vulns; enforce policy.,Zero critical in pipeline reports.,Zero critical vulns,2,BL-007,M5,AC-SEC-1
+BL-018,Release Candidate Cut,P1,Release,Release,Tag RC with notes and rollback plan.,RC artifacts signed; notes published.,Lead time,2,BL-016;BL-017,M5,AC-REL-1
+BL-019,MVP GA/Ready in Staging,P0,Program,Delivery,Declare MVP complete with tracked KPIs.,KPIs recorded; retro actions logged.,All KPIs,2,BL-012;BL-018,M6,All-ACs
+BL-020,Retro & Next-Slice Plan,P2,Program,Planning,Run retro and prioritize next slice.,Retro doc with owner/dates; next backlog.,Lead time/MTTR,2,BL-019,M6,N/A
+
+
+
+APPROVED:MASTER REHJ
