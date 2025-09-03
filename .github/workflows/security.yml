@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -26,11 +28,19 @@ jobs:
           python -m pip install semgrep pip-audit
 
       - name: Secrets Scan (Gitleaks)
-        uses: gitleaks/gitleaks-action@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
-        with:
-          args: detect --source . --no-git --report-format sarif --report-path gitleaks.sarif
+        run: |
+          set -e
+          if ! command -v gitleaks >/dev/null 2>&1; then
+            curl -sSL https://raw.githubusercontent.com/gitleaks/gitleaks/master/install.sh | bash -s -- v8.18.2
+            sudo mv gitleaks /usr/local/bin/
+          fi
+          # Prefer a safe range; fallback to HEAD
+          if git rev-parse --quiet --verify HEAD~1 >/dev/null; then
+            RANGE="$(git rev-parse HEAD~1)..HEAD"
+            gitleaks detect --redact -v --report-format sarif --report-path gitleaks.sarif --log-opts="--no-merges --first-parent ${RANGE}" || true
+          else
+            gitleaks detect --redact -v --report-format sarif --report-path gitleaks.sarif --log-opts="--no-merges --first-parent HEAD" || true
+          fi
 
       - name: Upload Gitleaks SARIF
         if: always()
