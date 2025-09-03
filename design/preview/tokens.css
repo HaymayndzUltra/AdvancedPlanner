@@ -1,0 +1,66 @@
+:root {
+  /* Typography */
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-mono: JetBrains Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /* Light mode colors */
+  --color-text: #212121;
+  --color-text-secondary: #424242;
+  --color-surface: #ffffff;
+  --color-surface-subtle: #f5f5f5;
+  --color-border: #bdbdbd;
+  --color-border-subtle: #e0e0e0;
+  --color-primary: #2196f3;
+  --color-link: #1e88e5;
+  --color-focus: #005fcc;
+  --color-success: #4caf50;
+  --color-warning: #ff9800;
+  --color-error: #f44336;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Radii */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+
+  /* Shadows */
+  --shadow-1: 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-2: 0 2px 8px rgba(0,0,0,0.10);
+  --shadow-3: 0 8px 24px rgba(0,0,0,0.12);
+
+  /* Motion */
+  --motion-quick: 120ms cubic-bezier(0.2, 0, 0, 1);
+  --motion-base: 180ms cubic-bezier(0.2, 0, 0, 1);
+  --motion-modal: 280ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: #f5f7fa;
+    --color-text-secondary: #c9d1d9;
+    --color-surface: #0f1115;
+    --color-surface-subtle: #141820;
+    --color-border: #2b3548;
+    --color-border-subtle: #212938;
+    --color-primary: #2196f3;
+    --color-link: #63b3ff;
+    --color-focus: #63b3ff;
+    --color-success: #69db7c;
+    --color-warning: #ffb84d;
+    --color-error: #ff6b6b;
+  }
+}
+

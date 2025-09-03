@@ -1,0 +1,74 @@
+html, body {
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background: var(--color-surface-subtle);
+}
+.container {
+  max-width: 960px;
+  padding: var(--space-6);
+  margin: auto;
+}
+h1, h2, h3 { margin: var(--space-4) 0; }
+label { display: block; margin-bottom: var(--space-2); }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color var(--motion-base), box-shadow var(--motion-base), transform var(--motion-quick);
+}
+.btn:focus { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.btn:disabled, .btn[aria-disabled="true"] { opacity: 0.5; cursor: not-allowed; }
+.btn-primary { background: var(--color-primary); color: #fff; }
+.btn-primary:hover { box-shadow: var(--shadow-1); }
+.btn-primary:active { transform: translateY(1px); }
+.btn-secondary { background: var(--color-surface); color: var(--color-text); border-color: var(--color-border); }
+.btn-tertiary { background: transparent; color: var(--color-link); }
+.btn-destructive { background: var(--color-error); color: #fff; }
+
+.input, .select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+.input:focus, .select:focus { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.field { margin-top: var(--space-4); }
+.error { color: var(--color-error); margin-top: var(--space-2); }
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-1);
+  padding: var(--space-4);
+}
+.card-header { margin-bottom: var(--space-3); }
+.card-footer { margin-top: var(--space-3); }
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in oklab, var(--color-surface) 20%, transparent);
+}
+.modal[aria-hidden="false"] { display: flex; }
+.modal-content {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-3);
+  padding: var(--space-6);
+  min-width: 320px;
+}
+.modal-actions { display: flex; gap: var(--space-3); justify-content: flex-end; margin-top: var(--space-4); }
+
