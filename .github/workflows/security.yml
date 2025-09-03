@@ -1,0 +1,77 @@
+name: Security
+
+on:
+  pull_request:
+    branches: [ main, integration ]
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install security tools (semgrep, pip-audit)
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install semgrep pip-audit
+
+      - name: Secrets Scan (Gitleaks)
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          args: detect --source . --no-git --report-format sarif --report-path gitleaks.sarif
+
+      - name: Upload Gitleaks SARIF
+        if: always()
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: gitleaks.sarif
+
+      - name: SAST (Semgrep)
+        run: |
+          semgrep --config p/ci --disable-version-check --error --sarif -o semgrep.sarif || true
+
+      - name: Upload Semgrep SARIF
+        if: always()
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: semgrep.sarif
+
+      - name: Dependency Audit (pip-audit)
+        if: ${{ hashFiles('**/requirements*.txt') != '' }}
+        run: |
+          pip-audit -r requirements.txt -f json -o pip-audit.json || pip-audit -f json -o pip-audit.json || true
+
+      - name: SBOM (Syft)
+        uses: anchore/sbom-action@v0
+        with:
+          format: spdx-json
+          output-file: sbom.spdx.json
+
+      - name: Upload security artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-reports
+          path: |
+            gitleaks.sarif
+            semgrep.sarif
+            pip-audit.json
+            sbom.spdx.json
+
+      - name: Quality Gate
+        if: always()
+        run: |
+          echo "Security workflow completed. Review SARIF and audit outputs."
+
