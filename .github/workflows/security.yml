@@ -20,6 +20,7 @@ jobs:
       - name: Run Gitleaks
         uses: gitleaks/gitleaks-action@v2
         with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           args: "detect --no-banner --redact --source . --config security/policies/gitleaks.toml --report-path compliance/evidence/scans/secrets/gitleaks.json --report-format json"
       - name: Upload secrets scan report
         uses: actions/upload-artifact@v4
