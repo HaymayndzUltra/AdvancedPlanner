@@ -2,9 +2,10 @@ name: CI
 
 on:
   push:
-    branches: [ main, integration ]
+    branches: [ main, integration, qa-ci-strategy ]
   pull_request:
     branches: [ main, integration ]
+  workflow_dispatch:
 
 jobs:
   build-and-test:
