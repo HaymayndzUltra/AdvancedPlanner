@@ -37,10 +37,19 @@ def read_csv_records(input_path: str) -> list[dict]:
 def write_csv_records(records: list[dict], output_path: str) -> None:
     if not records:
         raise ValueError("No records to write")
-    fieldnames = list(records[0].keys())
+    # Build a stable union of all field names across records to avoid
+    # dropping conditionally-added fields (e.g., card_last4_token)
+    fieldnames: list[str] = []
+    seen: set[str] = set()
+    for rec in records:
+        for key in rec.keys():
+            if key not in seen:
+                seen.add(key)
+                fieldnames.append(key)
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     with open(output_path, "w", encoding="utf-8", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        # Missing keys in a record will use restval=""; unexpected extras are ignored
+        writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
         writer.writeheader()
         for rec in records:
             writer.writerow(rec)
