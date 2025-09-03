@@ -27,17 +27,29 @@ fi
 
 $PYCMD -m pip install -U pip $PIP_ARGS
 
-# Install optional data/pipelines requirements if present (F5)
-if [[ -f /workspace/data/pipelines/requirements.txt ]]; then
-  $PYCMD -m pip install -r /workspace/data/pipelines/requirements.txt $PIP_ARGS
-else
-  echo "Note: /workspace/data/pipelines/requirements.txt not found; skipping pipelines deps." >&2
-fi
+# Helper to install requirements if any of the candidate paths exist
+install_if_exists() {
+  local label="$1"; shift
+  for candidate in "$@"; do
+    if [[ -f "$candidate" ]]; then
+      echo "Installing $label from $candidate"
+      $PYCMD -m pip install -r "$candidate" $PIP_ARGS
+      return 0
+    fi
+  done
+  echo "Note: none of the $label files found; skipping: $*" >&2
+  return 0
+}
 
-# Project/dev requirements (if present)
-if [[ -f /workspace/requirements-dev.txt ]]; then
-  $PYCMD -m pip install -r /workspace/requirements-dev.txt $PIP_ARGS
-fi
+# Install optional data/pipelines requirements if present (F5)
+install_if_exists "pipelines requirements" \
+  data/pipelines/requirements.txt \
+  /workspace/data/pipelines/requirements.txt
+
+# Project/dev requirements (optional)
+install_if_exists "dev requirements" \
+  requirements-dev.txt \
+  /workspace/requirements-dev.txt
 
 mkdir -p ci/reports
 
