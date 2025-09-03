@@ -66,3 +66,7 @@ Action trigger for primary and secondary operations with clear affordances and i
 ### Contrast
 - Ensure label to background ≥ 4.5:1 in light and dark; destructive variant follows same rule
 
+### Traceability
+- Tokens coverage: see `design/tokens/core.tokens.json` → `coverage_map.Button`
+- PRD refs: AC-UX-1 (contrast, a11y), AC-UX-2 (keyboard navigation)
+

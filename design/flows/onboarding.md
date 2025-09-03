@@ -1,5 +1,16 @@
 ## User Flow: New Project Onboarding
 
+### Traceability
+- BL-010 (FE Onboarding UI - Mocked)
+- BL-013 (FE Switch to Live API)
+- AC-FE-1, AC-FE-2 (from PRD)
+
+### Definition of Done (UX Onboarding)
+- Screens/wireframes complete and reviewed.
+- Tokens mapped to components; contrast AA validated.
+- Interaction states (loading, error, success) specified.
+- Contract test expectations noted for FE⇄API.
+
 ### Goal
 Guide a user from starting a project to seeing first design preview.
 
