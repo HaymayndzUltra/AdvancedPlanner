@@ -1,0 +1,22 @@
+branch,framework,files_changed
+cursor/embed-security-and-compliance-in-sdlc-a454,Release & Deployment,1
+cursor/embed-security-and-compliance-in-sdlc-a454,Security & Compliance,9
+cursor/embed-security-and-compliance-in-sdlc-a454,Data/ML,29
+qa-ci-strategy,Release & Deployment,2
+qa-ci-strategy,QA & Test Strategy,12
+qa-ci-strategy,Data/ML,30
+feat/f5-data-ml,Data/ML,29
+feat/ux-ui-f3-design,Release & Deployment,1
+feat/ux-ui-f3-design,UX/UI Design,14
+feature/f6-frontend-implementation,Data/ML,29
+feature/f6-frontend-implementation,UX/UI Design,1
+feature/f6-frontend-implementation,Implementation (Frontend),35
+cursor/implement-and-optimize-frontend-components-fb10,Data/ML,29
+cursor/implement-and-optimize-frontend-components-fb10,UX/UI Design,1
+cursor/implement-and-optimize-frontend-components-fb10,Implementation (Frontend),35
+fix/pr-39-merge-resolution,Data/ML,29
+feature/observability-f10,Data/ML,29
+feature/observability-f10,Observability & Improve,5
+chore/release-cicd-rollouts,Release & Deployment,17
+chore/release-cicd-rollouts,Data/ML,29
+feat/architecture-api-f4,Architecture & API,18
