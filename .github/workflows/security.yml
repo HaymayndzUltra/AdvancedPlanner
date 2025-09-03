@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: read
+  pull-requests: read
 
 jobs:
   secrets-scan:
@@ -15,10 +16,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Prepare directories
         run: mkdir -p compliance/evidence/scans/secrets
       - name: Run Gitleaks
         uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           args: "detect --no-banner --redact --source . --config security/policies/gitleaks.toml --report-path compliance/evidence/scans/secrets/gitleaks.json --report-format json"
