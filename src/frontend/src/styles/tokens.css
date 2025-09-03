@@ -1,0 +1,32 @@
+:root {
+	--color-bg: #ffffff;
+	--color-fg: #213547;
+	--color-accent: #646cff;
+	--space-1: 4px;
+	--space-2: 8px;
+	--space-3: 12px;
+	--space-4: 16px;
+	--radius-2: 8px;
+	--font-base: system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+[data-theme="dark"] {
+	--color-bg: #242424;
+	--color-fg: rgba(255, 255, 255, 0.87);
+}
+
+body {
+	background: var(--color-bg);
+	color: var(--color-fg);
+	font-family: var(--font-base);
+}
+
+button {
+	border-radius: var(--radius-2);
+	padding: var(--space-3) var(--space-4);
+}
+
+a {
+	color: var(--color-accent);
+}
+
