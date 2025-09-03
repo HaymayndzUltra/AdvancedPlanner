@@ -20,7 +20,8 @@ export default function OrderHistory() {
 	const seenIdsRef = useRef<Set<string>>(new Set())
 
 	useEffect(() => {
-		loadMore()
+		// initial fetch
+		void loadMore()
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
 
@@ -36,7 +37,7 @@ export default function OrderHistory() {
 		})
 		observer.observe(node)
 		return () => observer.disconnect()
-	}, [hasMore, isLoading])
+	}, [hasMore, isLoading, cursor, loadMore])
 
 	async function loadMore() {
 		if (isLoading || !hasMore) return

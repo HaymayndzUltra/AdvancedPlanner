@@ -2,7 +2,7 @@ import { trackEvent } from '../../src/telemetry/events'
 
 describe('telemetry trackEvent', () => {
 	it('redacts likely PII fields', async () => {
-		const calls: any[] = []
+		const calls: Array<Record<string, unknown>> = []
 		// @ts-expect-error override
 		global.fetch = async (_url: string, init?: RequestInit) => {
 			calls.push(JSON.parse(String(init?.body)))
