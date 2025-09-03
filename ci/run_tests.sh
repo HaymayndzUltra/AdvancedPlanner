@@ -26,8 +26,18 @@ else
 fi
 
 $PYCMD -m pip install -U pip $PIP_ARGS
-$PYCMD -m pip install -r /workspace/data/pipelines/requirements.txt $PIP_ARGS
-$PYCMD -m pip install -r /workspace/requirements-dev.txt $PIP_ARGS
+
+# Install optional data/pipelines requirements if present (F5)
+if [[ -f /workspace/data/pipelines/requirements.txt ]]; then
+  $PYCMD -m pip install -r /workspace/data/pipelines/requirements.txt $PIP_ARGS
+else
+  echo "Note: /workspace/data/pipelines/requirements.txt not found; skipping pipelines deps." >&2
+fi
+
+# Project/dev requirements (if present)
+if [[ -f /workspace/requirements-dev.txt ]]; then
+  $PYCMD -m pip install -r /workspace/requirements-dev.txt $PIP_ARGS
+fi
 
 mkdir -p ci/reports
 
