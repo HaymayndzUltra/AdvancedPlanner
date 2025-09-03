@@ -1,1 +1,144 @@
-{"title":"Service Golden Signals","schemaVersion":38}
+{
+  "title": "Service Golden Signals",
+  "timezone": "browser",
+  "schemaVersion": 38,
+  "version": 1,
+  "editable": true,
+  "refresh": "10s",
+  "tags": ["observability", "golden-signals"],
+  "time": { "from": "now-6h", "to": "now" },
+  "templating": {
+    "list": [
+      {
+        "name": "ds_prometheus",
+        "type": "datasource",
+        "query": "prometheus",
+        "label": "Prometheus",
+        "current": { "text": "Prometheus", "value": "Prometheus" }
+      },
+      {
+        "name": "service",
+        "type": "query",
+        "datasource": { "type": "prometheus", "uid": "${ds_prometheus}" },
+        "query": "label_values(http_requests_total, service)",
+        "refresh": 2,
+        "label": "Service",
+        "current": { "text": "payments", "value": "payments" },
+        "hide": 0
+      },
+      {
+        "name": "environment",
+        "type": "query",
+        "datasource": { "type": "prometheus", "uid": "${ds_prometheus}" },
+        "query": "label_values(http_requests_total{service=\"$service\"}, environment)",
+        "refresh": 2,
+        "label": "Environment",
+        "current": { "text": "production", "value": "production" },
+        "hide": 0
+      }
+    ]
+  },
+  "annotations": {
+    "list": [
+      {
+        "name": "Deployments (Prometheus)",
+        "type": "dashboard",
+        "datasource": { "type": "prometheus", "uid": "${ds_prometheus}" },
+        "enable": true,
+        "iconColor": "rgba(255, 96, 96, 1)",
+        "expr": "increase(deployment_marker_total{service=\"$service\",environment=\"$environment\"}[5m]) > 0",
+        "titleFormat": "Deploy",
+        "tagKeys": "service,environment",
+        "tags": ["deploy"]
+      }
+    ]
+  },
+  "panels": [
+    {
+      "type": "timeseries",
+      "title": "Request Rate (RPS)",
+      "gridPos": { "x": 0, "y": 0, "w": 12, "h": 8 },
+      "datasource": { "type": "prometheus", "uid": "${ds_prometheus}" },
+      "targets": [
+        {
+          "expr": "sum(rate(http_requests_total{service=\"$service\",environment=\"$environment\"}[5m]))",
+          "legendFormat": "RPS (http_requests_total)",
+          "refId": "A"
+        },
+        {
+          "expr": "sum(payments_request_rate{service=\"$service\",environment=\"$environment\"})",
+          "legendFormat": "RPS (payments.request_rate)",
+          "refId": "B"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "Error Rate (%)",
+      "gridPos": { "x": 12, "y": 0, "w": 12, "h": 8 },
+      "datasource": { "type": "prometheus", "uid": "${ds_prometheus}" },
+      "fieldConfig": { "defaults": { "unit": "percentunit", "decimals": 2 } },
+      "targets": [
+        {
+          "expr": "(sum(rate(http_requests_total{service=\"$service\",environment=\"$environment\",status=~\"5..\"}[5m])) by (service,environment) / sum(rate(http_requests_total{service=\"$service\",environment=\"$environment\"}[5m])) by (service,environment))",
+          "legendFormat": "Error % (http_requests_total)",
+          "refId": "A"
+        },
+        {
+          "expr": "avg_over_time(payments_error_rate{service=\"$service\",environment=\"$environment\"}[5m])",
+          "legendFormat": "Error % (payments.error_rate)",
+          "refId": "B"
+        }
+      ],
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          { "color": "green" },
+          { "value": 0.01, "color": "yellow" },
+          { "value": 0.05, "color": "red" }
+        ]
+      }
+    },
+    {
+      "type": "timeseries",
+      "title": "Latency p95 (ms)",
+      "gridPos": { "x": 0, "y": 8, "w": 12, "h": 8 },
+      "datasource": { "type": "prometheus", "uid": "${ds_prometheus}" },
+      "fieldConfig": { "defaults": { "unit": "ms" } },
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket{service=\"$service\",environment=\"$environment\"}[5m])) by (le)) * 1000",
+          "legendFormat": "p95 (http_request_duration_seconds)",
+          "refId": "A"
+        },
+        {
+          "expr": "avg_over_time(payments_p95_latency_ms{service=\"$service\",environment=\"$environment\"}[5m])",
+          "legendFormat": "p95 (payments.p95_latency)",
+          "refId": "B"
+        }
+      ],
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          { "color": "green" },
+          { "value": 300, "color": "yellow" },
+          { "value": 500, "color": "red" }
+        ]
+      }
+    },
+    {
+      "type": "timeseries",
+      "title": "Saturation (CPU %)",
+      "gridPos": { "x": 12, "y": 8, "w": 12, "h": 8 },
+      "datasource": { "type": "prometheus", "uid": "${ds_prometheus}" },
+      "fieldConfig": { "defaults": { "unit": "percentunit", "decimals": 1 } },
+      "targets": [
+        {
+          "expr": "sum(rate(container_cpu_usage_seconds_total{container!=\"\",service=\"$service\",environment=\"$environment\"}[5m])) by (service,environment) / sum(container_spec_cpu_quota{service=\"$service\",environment=\"$environment\"} / container_spec_cpu_period{service=\"$service\",environment=\"$environment\"}) by (service,environment)",
+          "legendFormat": "CPU %",
+          "refId": "A"
+        }
+      ]
+    }
+  ]
+}
