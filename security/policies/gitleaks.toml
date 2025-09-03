@@ -1,0 +1,20 @@
+# Gitleaks policy configuration
+# Keep allowlists minimal; prefer explicit findings and fix them.
+
+[allowlist]
+# Evidence and sample directories may contain generated content
+paths = [
+  "^compliance/evidence/",
+  "^security/sbom/",
+]
+
+[[rules]]
+id = "generic-credential"
+description = "Generic credential-like assignment"
+regex = "(?i)(api[_-]?key|secret|token|password)\\s*[:=]\\s*[\\"'][A-Za-z0-9_\\-\\.=]{12,}[\\"']"
+keywords = ["api key", "secret", "token", "password"]
+
+[[rules]]
+id = "aws-access-key"
+regex = "AKIA[0-9A-Z]{16}"
+keywords = ["AKIA"]

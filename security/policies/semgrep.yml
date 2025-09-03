@@ -1,0 +1,26 @@
+rules:
+  - id: python-dangerous-eval
+    patterns:
+      - pattern: eval(...)
+    message: Avoid eval; insecure and forbidden by policy
+    severity: ERROR
+    languages: [python]
+  - id: python-dangerous-exec
+    patterns:
+      - pattern: exec(...)
+    message: Avoid exec; insecure and forbidden by policy
+    severity: ERROR
+    languages: [python]
+  - id: python-subprocess-shell-true
+    patterns:
+      - pattern: subprocess.$FUNC(..., shell=True, ...)
+    message: Do not use shell=True in subprocess calls
+    severity: WARNING
+    languages: [python]
+  - id: repo-no-plaintext-secrets
+    message: Potential secret pattern detected; ensure no secrets committed
+    severity: WARNING
+    patterns:
+      - pattern-regex: "(?i)(api[-_]?key|secret|token|password)\s*[:=]\s*['\"][A-Za-z0-9_\-\.=]{12,}['\"]"
+    languages: [generic]
+
