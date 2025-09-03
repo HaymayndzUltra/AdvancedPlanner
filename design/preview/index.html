@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>AI Governor Design Preview</title>
+    <link rel="stylesheet" href="tokens.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Design System Preview</h1>
+      <section>
+        <h2>Buttons</h2>
+        <button class="btn btn-primary">Primary</button>
+        <button class="btn btn-secondary">Secondary</button>
+        <button class="btn btn-tertiary">Tertiary</button>
+        <button class="btn btn-destructive">Destructive</button>
+        <button class="btn btn-primary" disabled aria-disabled="true">Disabled</button>
+      </section>
+
+      <section>
+        <h2>Inputs</h2>
+        <label for="email">Email</label>
+        <input id="email" type="email" class="input" placeholder="you@example.com" />
+        <div class="field invalid">
+          <label for="username">Username</label>
+          <input id="username" class="input" aria-invalid="true" aria-describedby="username-error" />
+          <p id="username-error" class="error" role="alert">Username is required</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Select</h2>
+        <label for="project">Project</label>
+        <select id="project" class="select">
+          <option>Web Application</option>
+          <option>Mobile App</option>
+          <option>Service</option>
+        </select>
+      </section>
+
+      <section>
+        <h2>Card</h2>
+        <div class="card">
+          <div class="card-header">
+            <h3>Framework Card</h3>
+          </div>
+          <div class="card-body">
+            <p>Requirements gathering and stakeholder analysis</p>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-secondary">Review Details</button>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Modal</h2>
+        <button class="btn btn-primary" id="openModal">Open modal</button>
+        <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+          <div class="modal-content" tabindex="-1">
+            <h3 id="modalTitle">Confirm Action</h3>
+            <p>Are you sure you want to proceed?</p>
+            <div class="modal-actions">
+              <button class="btn btn-secondary" id="cancelBtn">Cancel</button>
+              <button class="btn btn-primary" id="confirmBtn">Confirm</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="preview.js"></script>
+  </body>
+  </html>
+
