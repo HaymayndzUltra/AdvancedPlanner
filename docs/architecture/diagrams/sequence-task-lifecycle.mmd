@@ -1,0 +1,37 @@
+%% Mermaid Sequence Diagram - Task lifecycle through API
+
+sequenceDiagram
+    participant User as UI/User
+    participant API as Orchestrator API
+    participant Task as TaskService
+    participant Sched as Scheduler
+    participant Bus as Message Broker
+    participant Agent as Background Agent
+    participant DB as PostgreSQL
+
+    User->>API: POST /v1/tasks {spec}
+    API->>Task: validateAndCreate(spec)
+    Task->>DB: INSERT task (status=QUEUED)
+    Task-->>API: taskId
+    API-->>User: 201 Created {task}
+
+    Sched->>DB: poll QUEUED tasks
+    DB-->>Sched: task rows
+    Sched->>Bus: publish task.assigned
+    Sched->>DB: UPDATE task (status=ASSIGNED)
+
+    Agent->>Bus: subscribe task.assigned
+    Agent->>API: GET /v1/tasks/{id}
+    API->>DB: SELECT task
+    DB-->>API: task
+    API-->>Agent: task spec
+
+    Agent->>API: PATCH /v1/tasks/{id} status=IN_PROGRESS
+    API->>DB: UPDATE task
+
+    Agent->>API: PUT /v1/tasks/{id}/artifacts
+    API->>DB: INSERT artifact
+
+    Agent->>API: PATCH /v1/tasks/{id} status=COMPLETED
+    API->>DB: UPDATE task
+    API-->>User: Webhook/Signal task.completed

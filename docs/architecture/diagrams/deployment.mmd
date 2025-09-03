@@ -1,0 +1,36 @@
+%% Mermaid Deployment Diagram - Logical deployment topology
+
+flowchart LR
+    subgraph Cloud
+        subgraph VPC
+            subgraph Public Subnet
+                LB[API Load Balancer]
+            end
+            subgraph Private Subnet
+                API[Orchestrator API Pods]
+                SCHED[Scheduler Workers]
+                MQ[(Managed Message Broker)]
+                DB[(Managed PostgreSQL)]
+                OBJ[(Object Storage / Bucket)]
+                OBS[(Observability Stack)]
+            end
+        end
+    end
+
+    LB --> API
+    API --> DB
+    API --> MQ
+    SCHED --> MQ
+    SCHED --> DB
+    API --> OBJ
+    API --> OBS
+    SCHED --> OBS
+
+    AGENTS[Background Agent Runners]
+    AGENTS --> LB
+    AGENTS --> OBS
+
+    classDef node fill:#e3f2fd,stroke:#1976d2,stroke-width:1px,color:#0d47a1;
+    classDef svc fill:#f5f5f5,stroke:#616161,stroke-width:1px,color:#212121;
+    class LB,API,SCHED,AGENTS node;
+    class MQ,DB,OBJ,OBS svc;

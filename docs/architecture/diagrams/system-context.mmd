@@ -1,0 +1,58 @@
+%% Mermaid System Context Diagram for the AI Governor Orchestration Platform
+%% Focus: High-level boundaries, primary actors, and integrations
+
+flowchart LR
+    subgraph Users
+        U[Product & Eng Users]
+    end
+
+    U -->|Operate & Review| UI[Web UI / Dashboard]
+    UI -->|HTTPS (REST)| API[Orchestrator API (v1)]
+
+    subgraph Core Platform
+        API --> REG[Agent Registry]
+        API --> SCHED[Task Scheduler]
+        API --> EVT[Event Ingestor]
+        API --> CTR[Contract Registry]
+    end
+
+    REG --> DB[(PostgreSQL)]
+    SCHED --> DB
+    EVT --> DB
+    CTR --> DB
+
+    SCHED <-->|Pub/Sub| BUS[(Message Broker)]
+
+    subgraph Background Agents
+        AG1[Agent: Discovery]
+        AG2[Agent: Planning]
+        AG3[Agent: UX]
+        AG4[Agent: Architecture/API]
+        AG5[Agent: Data/ML]
+        AG6[Agent: Implementation-FE]
+        AG7[Agent: Implementation-BE]
+        AG8[Agent: QA]
+        AG9[Agent: Security]
+        AG10[Agent: Release]
+        AG11[Agent: Observability]
+    end
+
+    AG1 -->|HTTPS (REST)| API
+    AG2 -->|HTTPS (REST)| API
+    AG3 -->|HTTPS (REST)| API
+    AG4 -->|HTTPS (REST)| API
+    AG5 -->|HTTPS (REST)| API
+    AG6 -->|HTTPS (REST)| API
+    AG7 -->|HTTPS (REST)| API
+    AG8 -->|HTTPS (REST)| API
+    AG9 -->|HTTPS (REST)| API
+    AG10 -->|HTTPS (REST)| API
+    AG11 -->|HTTPS (REST)| API
+
+    API --> OBJ[(Object Storage / Artifacts)]
+    API --> OBSV[(Observability / Metrics & Traces)]
+
+    classDef comp fill:#e3f2fd,stroke:#1976d2,stroke-width:1px,color:#0d47a1;
+    classDef store fill:#f5f5f5,stroke:#616161,stroke-width:1px,color:#212121;
+    class API,UI,REG,SCHED,EVT,CTR,AG1,AG2,AG3,AG4,AG5,AG6,AG7,AG8,AG9,AG10,AG11 comp;
+    class DB,BUS,OBJ,OBSV store;

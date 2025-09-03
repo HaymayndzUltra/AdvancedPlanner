@@ -1,0 +1,46 @@
+%% Mermaid ER Diagram - Core entities
+
+erDiagram
+    TASKS ||--o{ TASK_EVENTS : has
+    TASKS ||--o{ ARTIFACTS : produces
+    TASKS {
+        uuid id PK
+        string type
+        string status
+        jsonb input
+        int priority
+        string webhook_url
+        timestamptz created_at
+        timestamptz updated_at
+    }
+    TASK_EVENTS {
+        uuid id PK
+        uuid task_id FK
+        string kind
+        string message
+        timestamptz created_at
+    }
+    ARTIFACTS {
+        uuid id PK
+        uuid task_id FK
+        string name
+        string content_type
+        bigint size
+        string storage_url
+        timestamptz created_at
+    }
+    AGENTS {
+        uuid id PK
+        string name
+        string[] capabilities
+        string status
+        timestamptz created_at
+        timestamptz updated_at
+    }
+    CONTRACTS {
+        string id PK
+        string kind
+        string version
+        string location
+        timestamptz created_at
+    }
