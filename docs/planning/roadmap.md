@@ -13,25 +13,31 @@
 M1 — Foundations (EOW2)
 - PRD approved; backlog prioritized with traceability IDs.
 - Design tokens and component specs drafted; initial OpenAPI/GraphQL contract for Onboarding.
+ - Coverage: BL-001, BL-002, BL-003, BL-004
 
 M2 — Contracts & Pipelines (EOW3)
 - ADRs approved; API mocks/stubs; contract test suite green on integration branch.
 - CI pipeline with security scans (SAST/DAST), SBOM, and artifact signing.
+ - Coverage: BL-005, BL-006, BL-007, BL-008
 
 M3 — Vertical Slice Ready (EOW5)
 - FE Onboarding UI integrated with mocked API; BE service skeleton live in staging behind flag.
 - Unit/integration tests ≥ 80% coverage for Onboarding modules.
+ - Coverage: BL-009, BL-010, BL-011
 
 M4 — Slice Integrated (EOW6)
 - FE switches from mocks to live API; e2e smoke green in staging; feature flags allow canary.
 - Observability dashboards show p95 latency, error rate, and RPS; alerts tuned.
+ - Coverage: BL-012, BL-013, BL-014
 
 M5 — Release Candidate (EOW7)
 - Nightly merge train stable (< 5% failure); security checks zero critical; accessibility checks AA.
 - RC cut with release notes and rollback plan.
+ - Coverage: BL-015, BL-016, BL-017, BL-018
 
 M6 — MVP Complete (EOW8)
 - Onboarding slice GA (or production-ready staging); KPIs tracked; retro completed with actions.
+ - Coverage: BL-019, BL-020
 
 ### Rough Estimates (ROM)
 - Planning artifacts (this PR): 8–12 agent-days.

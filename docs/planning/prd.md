@@ -104,3 +104,40 @@ AC-OBS-1: Dashboards display p95 latency, error rate, and RPS for Onboarding; al
 - Source: `dev-workflow/0-master-planner-output.md` (Strategy B recommended).
 - Prompts: `background-agents/prompts/01-discovery.md`, `background-agents/prompts/02-planning.md`.
 
+### 14. Definition of Done (F2 Planning)
+- PRD, roadmap, and prioritized backlog exist under `docs/planning/` and are approved by Product and Engineering leads.
+- Traceability established: every backlog item (BL-IDs) maps to a milestone and related acceptance criteria (AC-IDs) where applicable.
+- Clear FE/BE split and dependency map documented, with ROM estimates and risks/mitigations.
+- Handoffs prepared for dependent frameworks:
+  - To F3 UX: baseline design tokens and component scope references.
+  - To F4 Architecture: API contract scope and ADR focus areas.
+  - To F6 Implementation: MVP slice acceptance criteria and sequencing guidance.
+  - To F7 QA: contract test gating approach and initial e2e smoke scope.
+  - To F8 Security: CI policy baseline (SAST/DAST, SBOM) and gates.
+  - To F9 Release: integration branch, merge-train expectations, and promotion flow.
+  - To F10 Observability: initial SLO/SLI and dashboard metrics list.
+
+### 15. Traceability Matrix (Backlog ↔ AC ↔ Milestone)
+| BL-ID | Milestone | AC-Refs |
+|---|---|---|
+| BL-001 | M1 | Gate: PRD-signoff |
+| BL-002 | M1 | AC-UX-1 |
+| BL-003 | M1 | AC-UX-2 |
+| BL-004 | M1 | AC-FE-2; AC-BE-1 |
+| BL-005 | M2 | AC-BE-1 |
+| BL-006 | M2 | AC-FE-2 |
+| BL-007 | M2 | AC-SEC-1 |
+| BL-008 | M2 | AC-REL-1 |
+| BL-009 | M3 | AC-BE-1; AC-BE-2 |
+| BL-010 | M3 | AC-FE-1 |
+| BL-011 | M3 | AC-BE-2 |
+| BL-012 | M4 | AC-OBS-1 |
+| BL-013 | M4 | AC-FE-1; AC-FE-2 |
+| BL-014 | M4 | AC-QA-1 |
+| BL-015 | M5 | AC-UX-1; AC-UX-2 |
+| BL-016 | M5 | AC-REL-1 |
+| BL-017 | M5 | AC-SEC-1 |
+| BL-018 | M5 | AC-REL-1 |
+| BL-019 | M6 | All-ACs |
+| BL-020 | M6 | N/A |
+
