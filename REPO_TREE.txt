@@ -1,0 +1,2474 @@
+/workspace:
+total 704
+drwxr-xr-x 8 ubuntu ubuntu   4096 Sep  2 23:43 .
+drwxr-xr-x 1 root   root     4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu   4096 Sep  2 23:38 branch_exports
+drwxr-xr-x 3 ubuntu ubuntu   4096 Sep  2 23:44 .cursor
+drwxr-xr-x 3 ubuntu ubuntu   4096 Sep  2 23:38 dev-workflow
+drwxr-xr-x 2 ubuntu ubuntu   4096 Sep  2 23:38 FINAL_CONSOLIDATED
+drwxr-xr-x 8 ubuntu ubuntu   4096 Sep  2 23:38 frameworks
+drwxr-xr-x 7 ubuntu ubuntu   4096 Sep  2 23:39 .git
+-rw-r--r-- 1 ubuntu ubuntu   6984 Sep  2 23:38 AI_CONTEXT_KIT_SINGLE_FILE.md
+-rw-r--r-- 1 ubuntu ubuntu   1383 Sep  2 23:38 BA-EXPLAINATION.md
+-rw-r--r-- 1 ubuntu ubuntu   8982 Sep  2 23:38 CHANGELOG.md
+-rw-r--r-- 1 ubuntu ubuntu   1694 Sep  2 23:38 CLAUDE.md
+-rw-r--r-- 1 ubuntu ubuntu  14848 Sep  2 23:38 CONSOLIDATED_DOCUMENTATION.md
+-rw-r--r-- 1 ubuntu ubuntu   1095 Sep  2 23:38 CONTRIBUTING.md
+-rw-r--r-- 1 ubuntu ubuntu  10023 Sep  2 23:38 DEV_WORKFLOW_DOCUMENTATION.md
+-rw-r--r-- 1 ubuntu ubuntu   6148 Sep  2 23:38 .DS_Store
+-rw-r--r-- 1 ubuntu ubuntu 344919 Sep  2 23:38 End_to_End_Master_Plan_WITH_Instructions.md
+-rw-r--r-- 1 ubuntu ubuntu     94 Sep  2 23:38 environment.json
+-rw-r--r-- 1 ubuntu ubuntu  29288 Sep  2 23:38 FINAL_CONSOLIDATED_REPORT_V3.md
+-rw-r--r-- 1 ubuntu ubuntu    706 Sep  2 23:38 .gitignore
+-rw-r--r-- 1 ubuntu ubuntu  11362 Sep  2 23:38 LICENSE
+-rw-r--r-- 1 ubuntu ubuntu  42742 Sep  2 23:38 Observability_Framework_Master_Plan.md
+-rw-r--r-- 1 ubuntu ubuntu   1672 Sep  2 23:38 OpenCode.md
+-rw-r--r-- 1 ubuntu ubuntu  43194 Sep  2 23:38 Planning_Framework_Master_Plan.md
+-rw-r--r-- 1 ubuntu ubuntu  40083 Sep  2 23:38 QA_Framework_Merged_Report.md
+-rw-r--r-- 1 ubuntu ubuntu   5435 Sep  2 23:38 README.md
+-rw-r--r-- 1 ubuntu ubuntu      0 Sep  2 23:44 REPO_TREE.txt
+-rw-r--r-- 1 ubuntu ubuntu  14798 Sep  2 23:38 RULES_DOCUMENTATION.md
+-rw-r--r-- 1 ubuntu ubuntu  52312 Sep  2 23:38 security_framework_master_plan.md
+-rw-r--r-- 1 ubuntu ubuntu   1708 Sep  2 23:38 TASK_CHECKLIST.md
+
+/workspace/branch_exports:
+total 24
+drwxr-xr-x  3 ubuntu ubuntu  4096 Sep  2 23:38 .
+drwxr-xr-x  8 ubuntu ubuntu  4096 Sep  2 23:43 ..
+drwxr-xr-x 32 ubuntu ubuntu  4096 Sep  2 23:38 cursor
+-rw-r--r--  1 ubuntu ubuntu 11328 Sep  2 23:38 FOLDER_TREE_OVERVIEW.md
+
+/workspace/branch_exports/cursor:
+total 128
+drwxr-xr-x 32 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x  2 ubuntu ubuntu 4096 Sep  2 23:38 analyze-and-remediate-framework-alignment-889d
+drwxr-xr-x  2 ubuntu ubuntu 4096 Sep  2 23:38 analyze-and-remediate-framework-alignment-a2eb
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 bc-1114e741-a737-4c43-b6bd-74bdd29ce1f8-e61a
+drwxr-xr-x  6 ubuntu ubuntu 4096 Sep  2 23:38 bc-12a73b1f-5763-4835-901e-28cf59b53f43-6a8b
+drwxr-xr-x  2 ubuntu ubuntu 4096 Sep  2 23:38 bc-17d7b4ff-6a3f-4605-9e13-00c34d2bad9a-4a0c
+drwxr-xr-x  5 ubuntu ubuntu 4096 Sep  2 23:38 bc-43f832d5-c51f-4e07-ae5b-138d201f60d8-ea3c
+drwxr-xr-x  5 ubuntu ubuntu 4096 Sep  2 23:38 bc-47104f7f-906f-4563-9aef-ec112728417e-61f8
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 bc-d68dffba-8c1c-4c95-b1df-1215b8043fca-5ae1
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 bc-e5d96ca7-4193-4943-9e7b-662105469622-410b
+drwxr-xr-x  2 ubuntu ubuntu 4096 Sep  2 23:38 bc-e949323d-a0dc-4835-bae3-debac5bed4b5-eb8d
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 bc-f9a6246f-cc1d-46ad-a8ae-1ddc0915e266-b0d7
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 bc-fdd750e4-d233-475d-a02d-97128803d555-c53d
+drwxr-xr-x  6 ubuntu ubuntu 4096 Sep  2 23:38 consolidate-analysis-and-plan-for-next-version-8825
+drwxr-xr-x  6 ubuntu ubuntu 4096 Sep  2 23:38 consolidate-analysis-and-plan-for-next-version-f0c7
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 define-system-background-process-logic-3aec
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 define-system-background-process-logic-6b80
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 design-artifact-first-qa-test-framework-0b77
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 design-artifact-first-qa-test-framework-14c8
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 design-artifact-first-qa-test-framework-910f
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 design-observability-and-monitoring-framework-5c3d
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 design-observability-and-monitoring-framework-65ed
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 design-observability-and-monitoring-framework-ff48
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 design-planning-framework-module-6a22
+drwxr-xr-x  2 ubuntu ubuntu 4096 Sep  2 23:38 design-planning-framework-module-a0aa
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 design-planning-framework-module-c332
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 design-security-and-compliance-framework-1002
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 design-security-and-compliance-framework-7c88
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 design-security-and-compliance-framework-9a6a
+drwxr-xr-x  2 ubuntu ubuntu 4096 Sep  2 23:38 prepare-and-validate-project-readiness-plan-25d0
+drwxr-xr-x  2 ubuntu ubuntu 4096 Sep  2 23:38 prepare-and-validate-project-readiness-plan-9ea9
+
+/workspace/branch_exports/cursor/analyze-and-remediate-framework-alignment-889d:
+total 20
+drwxr-xr-x  2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 32 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r--  1 ubuntu ubuntu    0 Sep  2 23:38 GLOBAL_ANALYSIS_vNext.md
+-rw-r--r--  1 ubuntu ubuntu 9941 Sep  2 23:38 GLOBAL_PLAN_vNext.md.md
+
+/workspace/branch_exports/cursor/analyze-and-remediate-framework-alignment-a2eb:
+total 32
+drwxr-xr-x  2 ubuntu ubuntu  4096 Sep  2 23:38 .
+drwxr-xr-x 32 ubuntu ubuntu  4096 Sep  2 23:38 ..
+-rw-r--r--  1 ubuntu ubuntu 13773 Sep  2 23:38 CHANGESET_PLAN_vNext.md
+-rw-r--r--  1 ubuntu ubuntu  7069 Sep  2 23:38 GLOBAL_ANALYSIS_vNext.md
+
+/workspace/branch_exports/cursor/bc-1114e741-a737-4c43-b6bd-74bdd29ce1f8-e61a:
+total 20
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 32 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 frameworks
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 .github
+-rw-r--r--  1 ubuntu ubuntu   32 Sep  2 23:38 requirements.txt
+
+/workspace/branch_exports/cursor/bc-1114e741-a737-4c43-b6bd-74bdd29ce1f8-e61a/frameworks:
+total 12
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 10 ubuntu ubuntu 4096 Sep  2 23:38 security
+
+/workspace/branch_exports/cursor/bc-1114e741-a737-4c43-b6bd-74bdd29ce1f8-e61a/frameworks/security:
+total 40
+drwxr-xr-x 10 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 artifacts
+drwxr-xr-x  2 ubuntu ubuntu 4096 Sep  2 23:38 bin
+drwxr-xr-x  2 ubuntu ubuntu 4096 Sep  2 23:38 config
+drwxr-xr-x  2 ubuntu ubuntu 4096 Sep  2 23:38 digests
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 manifests
+drwxr-xr-x  2 ubuntu ubuntu 4096 Sep  2 23:38 policy
+drwxr-xr-x  2 ubuntu ubuntu 4096 Sep  2 23:38 reference
+drwxr-xr-x  2 ubuntu ubuntu 4096 Sep  2 23:38 schemas
+
+/workspace/branch_exports/cursor/bc-1114e741-a737-4c43-b6bd-74bdd29ce1f8-e61a/frameworks/security/artifacts:
+total 12
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 10 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x  2 ubuntu ubuntu 4096 Sep  2 23:38 2025-09
+
+/workspace/branch_exports/cursor/bc-1114e741-a737-4c43-b6bd-74bdd29ce1f8-e61a/frameworks/security/artifacts/2025-09:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  725 Sep  2 23:38 sec_findings.yaml
+
+/workspace/branch_exports/cursor/bc-1114e741-a737-4c43-b6bd-74bdd29ce1f8-e61a/frameworks/security/bin:
+total 24
+drwxr-xr-x  2 ubuntu ubuntu  4096 Sep  2 23:38 .
+drwxr-xr-x 10 ubuntu ubuntu  4096 Sep  2 23:38 ..
+-rw-r--r--  1 ubuntu ubuntu  2005 Sep  2 23:38 aggregate_reference.sh
+-rw-r--r--  1 ubuntu ubuntu 10821 Sep  2 23:38 security_framework.py
+
+/workspace/branch_exports/cursor/bc-1114e741-a737-4c43-b6bd-74bdd29ce1f8-e61a/frameworks/security/config:
+total 16
+drwxr-xr-x  2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 10 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r--  1 ubuntu ubuntu   41 Sep  2 23:38 streams.md
+-rw-r--r--  1 ubuntu ubuntu  118 Sep  2 23:38 tags.md
+
+/workspace/branch_exports/cursor/bc-1114e741-a737-4c43-b6bd-74bdd29ce1f8-e61a/frameworks/security/digests:
+total 12
+drwxr-xr-x  2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 10 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r--  1 ubuntu ubuntu  613 Sep  2 23:38 2025-09-02-digest.md
+
+/workspace/branch_exports/cursor/bc-1114e741-a737-4c43-b6bd-74bdd29ce1f8-e61a/frameworks/security/manifests:
+total 16
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 10 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x  2 ubuntu ubuntu 4096 Sep  2 23:38 2025-09
+-rw-r--r--  1 ubuntu ubuntu  296 Sep  2 23:38 README.md
+
+/workspace/branch_exports/cursor/bc-1114e741-a737-4c43-b6bd-74bdd29ce1f8-e61a/frameworks/security/manifests/2025-09:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  685 Sep  2 23:38 handoff_manifest.yaml
+
+/workspace/branch_exports/cursor/bc-1114e741-a737-4c43-b6bd-74bdd29ce1f8-e61a/frameworks/security/policy:
+total 16
+drwxr-xr-x  2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 10 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r--  1 ubuntu ubuntu  570 Sep  2 23:38 exceptions.md
+-rw-r--r--  1 ubuntu ubuntu  726 Sep  2 23:38 policy_map.md
+
+/workspace/branch_exports/cursor/bc-1114e741-a737-4c43-b6bd-74bdd29ce1f8-e61a/frameworks/security/reference:
+total 32
+drwxr-xr-x  2 ubuntu ubuntu  4096 Sep  2 23:38 .
+drwxr-xr-x 10 ubuntu ubuntu  4096 Sep  2 23:38 ..
+-rw-r--r--  1 ubuntu ubuntu 23132 Sep  2 23:38 created-files-reference.md
+
+/workspace/branch_exports/cursor/bc-1114e741-a737-4c43-b6bd-74bdd29ce1f8-e61a/frameworks/security/schemas:
+total 28
+drwxr-xr-x  2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 10 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r--  1 ubuntu ubuntu  648 Sep  2 23:38 digest.schema.json
+-rw-r--r--  1 ubuntu ubuntu 1093 Sep  2 23:38 exceptions.schema.json
+-rw-r--r--  1 ubuntu ubuntu 1428 Sep  2 23:38 handoff_manifest.schema.json
+-rw-r--r--  1 ubuntu ubuntu  910 Sep  2 23:38 policy_map.schema.json
+-rw-r--r--  1 ubuntu ubuntu 1854 Sep  2 23:38 sec_findings.schema.json
+
+/workspace/branch_exports/cursor/bc-1114e741-a737-4c43-b6bd-74bdd29ce1f8-e61a/.github:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 workflows
+
+/workspace/branch_exports/cursor/bc-1114e741-a737-4c43-b6bd-74bdd29ce1f8-e61a/.github/workflows:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 1070 Sep  2 23:38 security-framework.yml
+
+/workspace/branch_exports/cursor/bc-12a73b1f-5763-4835-901e-28cf59b53f43-6a8b:
+total 28
+drwxr-xr-x  6 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 32 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 dev-workflow
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 frameworks
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 reports
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 rules
+-rw-r--r--  1 ubuntu ubuntu   67 Sep  2 23:38 copy.md
+
+/workspace/branch_exports/cursor/bc-12a73b1f-5763-4835-901e-28cf59b53f43-6a8b/dev-workflow:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 tools
+
+/workspace/branch_exports/cursor/bc-12a73b1f-5763-4835-901e-28cf59b53f43-6a8b/dev-workflow/tools:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 2172 Sep  2 23:38 concat_all.sh
+
+/workspace/branch_exports/cursor/bc-12a73b1f-5763-4835-901e-28cf59b53f43-6a8b/frameworks:
+total 16
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 planning-be
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 planning-fe
+
+/workspace/branch_exports/cursor/bc-12a73b1f-5763-4835-901e-28cf59b53f43-6a8b/frameworks/planning-be:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 digests
+
+/workspace/branch_exports/cursor/bc-12a73b1f-5763-4835-901e-28cf59b53f43-6a8b/frameworks/planning-be/digests:
+total 16
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 6792 Sep  2 23:38 PLN-BE-2024-01-digest.md
+
+/workspace/branch_exports/cursor/bc-12a73b1f-5763-4835-901e-28cf59b53f43-6a8b/frameworks/planning-fe:
+total 28
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 digests
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 manifests
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 storymaps
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 tasks
+-rw-r--r-- 1 ubuntu ubuntu  413 Sep  2 23:38 README.md
+
+/workspace/branch_exports/cursor/bc-12a73b1f-5763-4835-901e-28cf59b53f43-6a8b/frameworks/planning-fe/digests:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 1595 Sep  2 23:38 2025-09-02-digest.md
+
+/workspace/branch_exports/cursor/bc-12a73b1f-5763-4835-901e-28cf59b53f43-6a8b/frameworks/planning-fe/manifests:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  822 Sep  2 23:38 2025-09-02-handoff_manifest.yaml
+
+/workspace/branch_exports/cursor/bc-12a73b1f-5763-4835-901e-28cf59b53f43-6a8b/frameworks/planning-fe/storymaps:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  789 Sep  2 23:38 2025-09-02-story_map.md
+
+/workspace/branch_exports/cursor/bc-12a73b1f-5763-4835-901e-28cf59b53f43-6a8b/frameworks/planning-fe/tasks:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 1440 Sep  2 23:38 2025-09-02-fe_task_breakdown.yaml
+
+/workspace/branch_exports/cursor/bc-12a73b1f-5763-4835-901e-28cf59b53f43-6a8b/reports:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 agent_reviews
+
+/workspace/branch_exports/cursor/bc-12a73b1f-5763-4835-901e-28cf59b53f43-6a8b/reports/agent_reviews:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 planning
+
+/workspace/branch_exports/cursor/bc-12a73b1f-5763-4835-901e-28cf59b53f43-6a8b/reports/agent_reviews/planning:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 1860 Sep  2 23:38 2025-09-02-planning-framework-master-plan.md
+
+/workspace/branch_exports/cursor/bc-12a73b1f-5763-4835-901e-28cf59b53f43-6a8b/rules:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 master-rules
+
+/workspace/branch_exports/cursor/bc-12a73b1f-5763-4835-901e-28cf59b53f43-6a8b/rules/master-rules:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 planning-fe
+
+/workspace/branch_exports/cursor/bc-12a73b1f-5763-4835-901e-28cf59b53f43-6a8b/rules/master-rules/planning-fe:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  464 Sep  2 23:38 rulebook.v1.yaml
+
+/workspace/branch_exports/cursor/bc-17d7b4ff-6a3f-4605-9e13-00c34d2bad9a-4a0c:
+total 24
+drwxr-xr-x  2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 32 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r--  1 ubuntu ubuntu 4823 Sep  2 23:38 CHANGESET_PLAN.md
+-rw-r--r--  1 ubuntu ubuntu 7985 Sep  2 23:38 GLOBAL_ANALYSIS.md
+
+/workspace/branch_exports/cursor/bc-43f832d5-c51f-4e07-ae5b-138d201f60d8-ea3c:
+total 44
+drwxr-xr-x  5 ubuntu ubuntu  4096 Sep  2 23:38 .
+drwxr-xr-x 32 ubuntu ubuntu  4096 Sep  2 23:38 ..
+drwxr-xr-x  5 ubuntu ubuntu  4096 Sep  2 23:38 frameworks
+drwxr-xr-x  3 ubuntu ubuntu  4096 Sep  2 23:38 .github
+drwxr-xr-x  2 ubuntu ubuntu  4096 Sep  2 23:38 scripts
+-rw-r--r--  1 ubuntu ubuntu 23997 Sep  2 23:38 QA_REPORTS_COMBINED.txt
+
+/workspace/branch_exports/cursor/bc-43f832d5-c51f-4e07-ae5b-138d201f60d8-ea3c/frameworks:
+total 20
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 planning-be
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 planning-fe
+drwxr-xr-x 7 ubuntu ubuntu 4096 Sep  2 23:38 qa-test
+
+/workspace/branch_exports/cursor/bc-43f832d5-c51f-4e07-ae5b-138d201f60d8-ea3c/frameworks/planning-be:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 backlog
+
+/workspace/branch_exports/cursor/bc-43f832d5-c51f-4e07-ae5b-138d201f60d8-ea3c/frameworks/planning-be/backlog:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  735 Sep  2 23:38 2025-09-02-be_backlog.yaml
+
+/workspace/branch_exports/cursor/bc-43f832d5-c51f-4e07-ae5b-138d201f60d8-ea3c/frameworks/planning-fe:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 tasks
+
+/workspace/branch_exports/cursor/bc-43f832d5-c51f-4e07-ae5b-138d201f60d8-ea3c/frameworks/planning-fe/tasks:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  967 Sep  2 23:38 2025-09-02-fe_task_breakdown.yaml
+
+/workspace/branch_exports/cursor/bc-43f832d5-c51f-4e07-ae5b-138d201f60d8-ea3c/frameworks/qa-test:
+total 28
+drwxr-xr-x 7 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 artifacts
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 cli
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 digests
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 rules
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 schemas
+
+/workspace/branch_exports/cursor/bc-43f832d5-c51f-4e07-ae5b-138d201f60d8-ea3c/frameworks/qa-test/artifacts:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 7 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 2025-09
+
+/workspace/branch_exports/cursor/bc-43f832d5-c51f-4e07-ae5b-138d201f60d8-ea3c/frameworks/qa-test/artifacts/2025-09:
+total 40
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  409 Sep  2 23:38 compliance_map.md
+-rw-r--r-- 1 ubuntu ubuntu 1454 Sep  2 23:38 handoff_manifest.yaml
+-rw-r--r-- 1 ubuntu ubuntu  294 Sep  2 23:38 integration_hooks.md
+-rw-r--r-- 1 ubuntu ubuntu  353 Sep  2 23:38 policy_exceptions.md
+-rw-r--r-- 1 ubuntu ubuntu  607 Sep  2 23:38 qa_evidence_index.yaml
+-rw-r--r-- 1 ubuntu ubuntu  325 Sep  2 23:38 qa_risk_register.md
+-rw-r--r-- 1 ubuntu ubuntu  777 Sep  2 23:38 test_matrix.yaml
+-rw-r--r-- 1 ubuntu ubuntu  274 Sep  2 23:38 traceability_map.md
+
+/workspace/branch_exports/cursor/bc-43f832d5-c51f-4e07-ae5b-138d201f60d8-ea3c/frameworks/qa-test/cli:
+total 16
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 7 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 6771 Sep  2 23:38 qa_framework.py
+
+/workspace/branch_exports/cursor/bc-43f832d5-c51f-4e07-ae5b-138d201f60d8-ea3c/frameworks/qa-test/digests:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 7 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 1145 Sep  2 23:38 2025-09-02-digest.md
+
+/workspace/branch_exports/cursor/bc-43f832d5-c51f-4e07-ae5b-138d201f60d8-ea3c/frameworks/qa-test/rules:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 7 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  857 Sep  2 23:38 rulebook.yaml
+
+/workspace/branch_exports/cursor/bc-43f832d5-c51f-4e07-ae5b-138d201f60d8-ea3c/frameworks/qa-test/schemas:
+total 24
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 7 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  896 Sep  2 23:38 compliance_map.schema.json
+-rw-r--r-- 1 ubuntu ubuntu 1926 Sep  2 23:38 handoff_manifest.schema.json
+-rw-r--r-- 1 ubuntu ubuntu  808 Sep  2 23:38 qa_evidence_index.schema.json
+-rw-r--r-- 1 ubuntu ubuntu 1377 Sep  2 23:38 test_matrix.schema.json
+
+/workspace/branch_exports/cursor/bc-43f832d5-c51f-4e07-ae5b-138d201f60d8-ea3c/.github:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 workflows
+
+/workspace/branch_exports/cursor/bc-43f832d5-c51f-4e07-ae5b-138d201f60d8-ea3c/.github/workflows:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  716 Sep  2 23:38 qa-framework.yml
+
+/workspace/branch_exports/cursor/bc-43f832d5-c51f-4e07-ae5b-138d201f60d8-ea3c/scripts:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 2310 Sep  2 23:38 collect_qa_reports.py
+
+/workspace/branch_exports/cursor/bc-47104f7f-906f-4563-9aef-ec112728417e-61f8:
+total 24
+drwxr-xr-x  5 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 32 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 frameworks
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 _ref_copy
+drwxr-xr-x  2 ubuntu ubuntu 4096 Sep  2 23:38 scripts
+-rw-r--r--  1 ubuntu ubuntu 1649 Sep  2 23:38 copy.md
+
+/workspace/branch_exports/cursor/bc-47104f7f-906f-4563-9aef-ec112728417e-61f8/frameworks:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 planning-fe
+
+/workspace/branch_exports/cursor/bc-47104f7f-906f-4563-9aef-ec112728417e-61f8/frameworks/planning-fe:
+total 24
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 digests
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 manifests
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 storymaps
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 tasks
+
+/workspace/branch_exports/cursor/bc-47104f7f-906f-4563-9aef-ec112728417e-61f8/frameworks/planning-fe/digests:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 1285 Sep  2 23:38 2025-09-02-digest.md
+
+/workspace/branch_exports/cursor/bc-47104f7f-906f-4563-9aef-ec112728417e-61f8/frameworks/planning-fe/manifests:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  492 Sep  2 23:38 2025-09-02-handoff_manifest.yaml
+
+/workspace/branch_exports/cursor/bc-47104f7f-906f-4563-9aef-ec112728417e-61f8/frameworks/planning-fe/storymaps:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 1332 Sep  2 23:38 2025-09-02-story_map.md
+
+/workspace/branch_exports/cursor/bc-47104f7f-906f-4563-9aef-ec112728417e-61f8/frameworks/planning-fe/tasks:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 2342 Sep  2 23:38 2025-09-02-fe_task_breakdown.yaml
+
+/workspace/branch_exports/cursor/bc-47104f7f-906f-4563-9aef-ec112728417e-61f8/_ref_copy:
+total 16
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 _ref_copy
+-rw-r--r-- 1 ubuntu ubuntu  681 Sep  2 23:38 .gitignore
+
+/workspace/branch_exports/cursor/bc-47104f7f-906f-4563-9aef-ec112728417e-61f8/_ref_copy/_ref_copy:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  681 Sep  2 23:38 .gitignore
+
+/workspace/branch_exports/cursor/bc-47104f7f-906f-4563-9aef-ec112728417e-61f8/scripts:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 2812 Sep  2 23:38 copy_and_concat.sh
+
+/workspace/branch_exports/cursor/bc-d68dffba-8c1c-4c95-b1df-1215b8043fca-5ae1:
+total 16
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 32 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 frameworks
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 .github
+
+/workspace/branch_exports/cursor/bc-d68dffba-8c1c-4c95-b1df-1215b8043fca-5ae1/frameworks:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 observability
+
+/workspace/branch_exports/cursor/bc-d68dffba-8c1c-4c95-b1df-1215b8043fca-5ae1/frameworks/observability:
+total 40
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 digests
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 out
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 schemas
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 tools
+-rw-r--r-- 1 ubuntu ubuntu  754 Sep  2 23:38 alert_rules.md
+-rw-r--r-- 1 ubuntu ubuntu  370 Sep  2 23:38 logs_index.yaml
+-rw-r--r-- 1 ubuntu ubuntu  775 Sep  2 23:38 metrics_catalog.yaml
+-rw-r--r-- 1 ubuntu ubuntu 1409 Sep  2 23:38 README.md
+
+/workspace/branch_exports/cursor/bc-d68dffba-8c1c-4c95-b1df-1215b8043fca-5ae1/frameworks/observability/digests:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 1106 Sep  2 23:38 2025-09-02-digest.md
+
+/workspace/branch_exports/cursor/bc-d68dffba-8c1c-4c95-b1df-1215b8043fca-5ae1/frameworks/observability/out:
+total 16
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 bundle
+-rw-r--r-- 1 ubuntu ubuntu  698 Sep  2 23:38 handoff_manifest.yaml
+
+/workspace/branch_exports/cursor/bc-d68dffba-8c1c-4c95-b1df-1215b8043fca-5ae1/frameworks/observability/out/bundle:
+total 204
+drwxr-xr-x  3 ubuntu ubuntu   4096 Sep  2 23:38 .
+drwxr-xr-x  3 ubuntu ubuntu   4096 Sep  2 23:38 ..
+drwxr-xr-x 10 ubuntu ubuntu   4096 Sep  2 23:38 copy
+-rw-r--r--  1 ubuntu ubuntu 167380 Sep  2 23:38 all_files_reference.md
+-rw-r--r--  1 ubuntu ubuntu  25249 Sep  2 23:38 observability_reference.md
+
+/workspace/branch_exports/cursor/bc-d68dffba-8c1c-4c95-b1df-1215b8043fca-5ae1/frameworks/observability/out/bundle/copy:
+total 96
+drwxr-xr-x 10 ubuntu ubuntu  4096 Sep  2 23:38 .
+drwxr-xr-x  3 ubuntu ubuntu  4096 Sep  2 23:38 ..
+drwxr-xr-x  2 ubuntu ubuntu  4096 Sep  2 23:38 dev-workflow
+drwxr-xr-x  2 ubuntu ubuntu  4096 Sep  2 23:38 digests
+drwxr-xr-x  3 ubuntu ubuntu  4096 Sep  2 23:38 frameworks
+drwxr-xr-x  3 ubuntu ubuntu  4096 Sep  2 23:38 .github
+drwxr-xr-x  2 ubuntu ubuntu  4096 Sep  2 23:38 out
+drwxr-xr-x  4 ubuntu ubuntu  4096 Sep  2 23:38 rules
+drwxr-xr-x  2 ubuntu ubuntu  4096 Sep  2 23:38 schemas
+drwxr-xr-x  2 ubuntu ubuntu  4096 Sep  2 23:38 tools
+-rw-r--r--  1 ubuntu ubuntu   754 Sep  2 23:38 alert_rules.md
+-rw-r--r--  1 ubuntu ubuntu  8982 Sep  2 23:38 CHANGELOG.md
+-rw-r--r--  1 ubuntu ubuntu  1694 Sep  2 23:38 CLAUDE.md
+-rw-r--r--  1 ubuntu ubuntu  1095 Sep  2 23:38 CONTRIBUTING.md
+-rw-r--r--  1 ubuntu ubuntu   681 Sep  2 23:38 .gitignore
+-rw-r--r--  1 ubuntu ubuntu 11362 Sep  2 23:38 LICENSE
+-rw-r--r--  1 ubuntu ubuntu   370 Sep  2 23:38 logs_index.yaml
+-rw-r--r--  1 ubuntu ubuntu   775 Sep  2 23:38 metrics_catalog.yaml
+-rw-r--r--  1 ubuntu ubuntu  1672 Sep  2 23:38 OpenCode.md
+-rw-r--r--  1 ubuntu ubuntu  1409 Sep  2 23:38 README.md
+
+/workspace/branch_exports/cursor/bc-d68dffba-8c1c-4c95-b1df-1215b8043fca-5ae1/frameworks/observability/out/bundle/copy/dev-workflow:
+total 60
+drwxr-xr-x  2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 10 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r--  1 ubuntu ubuntu 6915 Sep  2 23:38 0-bootstrap-your-project.md
+-rw-r--r--  1 ubuntu ubuntu 6185 Sep  2 23:38 1-create-prd.md
+-rw-r--r--  1 ubuntu ubuntu 8324 Sep  2 23:38 2-generate-tasks.md
+-rw-r--r--  1 ubuntu ubuntu 6579 Sep  2 23:38 3-process-tasks.md
+-rw-r--r--  1 ubuntu ubuntu 5055 Sep  2 23:38 4-implementation-retrospective.md
+-rw-r--r--  1 ubuntu ubuntu 4704 Sep  2 23:38 README.md
+
+/workspace/branch_exports/cursor/bc-d68dffba-8c1c-4c95-b1df-1215b8043fca-5ae1/frameworks/observability/out/bundle/copy/digests:
+total 12
+drwxr-xr-x  2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 10 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r--  1 ubuntu ubuntu 1106 Sep  2 23:38 2025-09-02-digest.md
+
+/workspace/branch_exports/cursor/bc-d68dffba-8c1c-4c95-b1df-1215b8043fca-5ae1/frameworks/observability/out/bundle/copy/frameworks:
+total 12
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 10 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x  6 ubuntu ubuntu 4096 Sep  2 23:38 observability
+
+/workspace/branch_exports/cursor/bc-d68dffba-8c1c-4c95-b1df-1215b8043fca-5ae1/frameworks/observability/out/bundle/copy/frameworks/observability:
+total 40
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 digests
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 out
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 schemas
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 tools
+-rw-r--r-- 1 ubuntu ubuntu  754 Sep  2 23:38 alert_rules.md
+-rw-r--r-- 1 ubuntu ubuntu  370 Sep  2 23:38 logs_index.yaml
+-rw-r--r-- 1 ubuntu ubuntu  775 Sep  2 23:38 metrics_catalog.yaml
+-rw-r--r-- 1 ubuntu ubuntu 1409 Sep  2 23:38 README.md
+
+/workspace/branch_exports/cursor/bc-d68dffba-8c1c-4c95-b1df-1215b8043fca-5ae1/frameworks/observability/out/bundle/copy/frameworks/observability/digests:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 1106 Sep  2 23:38 2025-09-02-digest.md
+
+/workspace/branch_exports/cursor/bc-d68dffba-8c1c-4c95-b1df-1215b8043fca-5ae1/frameworks/observability/out/bundle/copy/frameworks/observability/out:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  698 Sep  2 23:38 handoff_manifest.yaml
+
+/workspace/branch_exports/cursor/bc-d68dffba-8c1c-4c95-b1df-1215b8043fca-5ae1/frameworks/observability/out/bundle/copy/frameworks/observability/schemas:
+total 20
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 1634 Sep  2 23:38 handoff_manifest.schema.json
+-rw-r--r-- 1 ubuntu ubuntu 1368 Sep  2 23:38 logs_index.schema.json
+-rw-r--r-- 1 ubuntu ubuntu 1445 Sep  2 23:38 metrics_catalog.schema.json
+
+/workspace/branch_exports/cursor/bc-d68dffba-8c1c-4c95-b1df-1215b8043fca-5ae1/frameworks/observability/out/bundle/copy/frameworks/observability/tools:
+total 32
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 4681 Sep  2 23:38 bundle_reference.py
+-rw-r--r-- 1 ubuntu ubuntu 2965 Sep  2 23:38 generate_manifest_stdlib.py
+-rw-r--r-- 1 ubuntu ubuntu 7378 Sep  2 23:38 obs_cli.py
+-rw-r--r-- 1 ubuntu ubuntu   80 Sep  2 23:38 requirements.txt
+
+/workspace/branch_exports/cursor/bc-d68dffba-8c1c-4c95-b1df-1215b8043fca-5ae1/frameworks/observability/out/bundle/copy/.github:
+total 12
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 10 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x  2 ubuntu ubuntu 4096 Sep  2 23:38 workflows
+
+/workspace/branch_exports/cursor/bc-d68dffba-8c1c-4c95-b1df-1215b8043fca-5ae1/frameworks/observability/out/bundle/copy/.github/workflows:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 1366 Sep  2 23:38 observability.yml
+
+/workspace/branch_exports/cursor/bc-d68dffba-8c1c-4c95-b1df-1215b8043fca-5ae1/frameworks/observability/out/bundle/copy/out:
+total 12
+drwxr-xr-x  2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 10 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r--  1 ubuntu ubuntu  698 Sep  2 23:38 handoff_manifest.yaml
+
+/workspace/branch_exports/cursor/bc-d68dffba-8c1c-4c95-b1df-1215b8043fca-5ae1/frameworks/observability/out/bundle/copy/rules:
+total 16
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 10 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x  2 ubuntu ubuntu 4096 Sep  2 23:38 common-rules
+drwxr-xr-x  2 ubuntu ubuntu 4096 Sep  2 23:38 master-rules
+
+/workspace/branch_exports/cursor/bc-d68dffba-8c1c-4c95-b1df-1215b8043fca-5ae1/frameworks/observability/out/bundle/copy/rules/common-rules:
+total 24
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 3895 Sep  2 23:38 common-rule-ui-foundation-design-system.mdc
+-rw-r--r-- 1 ubuntu ubuntu 3391 Sep  2 23:38 common-rule-ui-interaction-a11y-perf.mdc
+-rw-r--r-- 1 ubuntu ubuntu 4232 Sep  2 23:38 common-rule-ui-premium-brand-dataviz-enterprise-gated.mdc
+
+/workspace/branch_exports/cursor/bc-d68dffba-8c1c-4c95-b1df-1215b8043fca-5ae1/frameworks/observability/out/bundle/copy/rules/master-rules:
+total 76
+drwxr-xr-x 2 ubuntu ubuntu  4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu  4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  7271 Sep  2 23:38 0-how-to-create-effective-rules.md
+-rw-r--r-- 1 ubuntu ubuntu 11659 Sep  2 23:38 1-master-rule-context-discovery.md
+-rw-r--r-- 1 ubuntu ubuntu 13425 Sep  2 23:38 2-master-rule-ai-collaboration-guidelines.md
+-rw-r--r-- 1 ubuntu ubuntu  3151 Sep  2 23:38 3-master-rule-code-quality-checklist.md
+-rw-r--r-- 1 ubuntu ubuntu  9637 Sep  2 23:38 4-master-rule-code-modification-safety-protocol.md
+-rw-r--r-- 1 ubuntu ubuntu  5899 Sep  2 23:38 5-master-rule-documentation-and-context-guidelines.md
+-rw-r--r-- 1 ubuntu ubuntu  7699 Sep  2 23:38 6-master-rule-complex-feature-context-preservation.md
+
+/workspace/branch_exports/cursor/bc-d68dffba-8c1c-4c95-b1df-1215b8043fca-5ae1/frameworks/observability/out/bundle/copy/schemas:
+total 20
+drwxr-xr-x  2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 10 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r--  1 ubuntu ubuntu 1634 Sep  2 23:38 handoff_manifest.schema.json
+-rw-r--r--  1 ubuntu ubuntu 1368 Sep  2 23:38 logs_index.schema.json
+-rw-r--r--  1 ubuntu ubuntu 1445 Sep  2 23:38 metrics_catalog.schema.json
+
+/workspace/branch_exports/cursor/bc-d68dffba-8c1c-4c95-b1df-1215b8043fca-5ae1/frameworks/observability/out/bundle/copy/tools:
+total 32
+drwxr-xr-x  2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 10 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r--  1 ubuntu ubuntu 4681 Sep  2 23:38 bundle_reference.py
+-rw-r--r--  1 ubuntu ubuntu 2965 Sep  2 23:38 generate_manifest_stdlib.py
+-rw-r--r--  1 ubuntu ubuntu 7378 Sep  2 23:38 obs_cli.py
+-rw-r--r--  1 ubuntu ubuntu   80 Sep  2 23:38 requirements.txt
+
+/workspace/branch_exports/cursor/bc-d68dffba-8c1c-4c95-b1df-1215b8043fca-5ae1/frameworks/observability/schemas:
+total 20
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 1634 Sep  2 23:38 handoff_manifest.schema.json
+-rw-r--r-- 1 ubuntu ubuntu 1368 Sep  2 23:38 logs_index.schema.json
+-rw-r--r-- 1 ubuntu ubuntu 1445 Sep  2 23:38 metrics_catalog.schema.json
+
+/workspace/branch_exports/cursor/bc-d68dffba-8c1c-4c95-b1df-1215b8043fca-5ae1/frameworks/observability/tools:
+total 32
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 4681 Sep  2 23:38 bundle_reference.py
+-rw-r--r-- 1 ubuntu ubuntu 2965 Sep  2 23:38 generate_manifest_stdlib.py
+-rw-r--r-- 1 ubuntu ubuntu 7378 Sep  2 23:38 obs_cli.py
+-rw-r--r-- 1 ubuntu ubuntu   80 Sep  2 23:38 requirements.txt
+
+/workspace/branch_exports/cursor/bc-d68dffba-8c1c-4c95-b1df-1215b8043fca-5ae1/.github:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 workflows
+
+/workspace/branch_exports/cursor/bc-d68dffba-8c1c-4c95-b1df-1215b8043fca-5ae1/.github/workflows:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 1366 Sep  2 23:38 observability.yml
+
+/workspace/branch_exports/cursor/bc-e5d96ca7-4193-4943-9e7b-662105469622-410b:
+total 188
+drwxr-xr-x  4 ubuntu ubuntu   4096 Sep  2 23:38 .
+drwxr-xr-x 32 ubuntu ubuntu   4096 Sep  2 23:38 ..
+drwxr-xr-x  3 ubuntu ubuntu   4096 Sep  2 23:38 frameworks
+drwxr-xr-x  3 ubuntu ubuntu   4096 Sep  2 23:38 .github
+-rw-r--r--  1 ubuntu ubuntu 170214 Sep  2 23:38 copy.md
+-rw-r--r--  1 ubuntu ubuntu   1559 Sep  2 23:38 pack_reference.sh
+
+/workspace/branch_exports/cursor/bc-e5d96ca7-4193-4943-9e7b-662105469622-410b/frameworks:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 observability
+
+/workspace/branch_exports/cursor/bc-e5d96ca7-4193-4943-9e7b-662105469622-410b/frameworks/observability:
+total 36
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 artifacts
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 digests
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 schemas
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 tools
+-rw-r--r-- 1 ubuntu ubuntu  766 Sep  2 23:38 Makefile
+-rw-r--r-- 1 ubuntu ubuntu 1271 Sep  2 23:38 README.md
+-rw-r--r-- 1 ubuntu ubuntu  130 Sep  2 23:38 requirements.txt
+
+/workspace/branch_exports/cursor/bc-e5d96ca7-4193-4943-9e7b-662105469622-410b/frameworks/observability/artifacts:
+total 24
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  823 Sep  2 23:38 alert_rules.md
+-rw-r--r-- 1 ubuntu ubuntu  850 Sep  2 23:38 handoff_manifest.yaml
+-rw-r--r-- 1 ubuntu ubuntu  408 Sep  2 23:38 logs_index.yaml
+-rw-r--r-- 1 ubuntu ubuntu  870 Sep  2 23:38 metrics_catalog.yaml
+
+/workspace/branch_exports/cursor/bc-e5d96ca7-4193-4943-9e7b-662105469622-410b/frameworks/observability/digests:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  903 Sep  2 23:38 2025-09-02-digest.md
+
+/workspace/branch_exports/cursor/bc-e5d96ca7-4193-4943-9e7b-662105469622-410b/frameworks/observability/schemas:
+total 24
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  473 Sep  2 23:38 alert_rules.schema.yaml
+-rw-r--r-- 1 ubuntu ubuntu  629 Sep  2 23:38 handoff_manifest.schema.yaml
+-rw-r--r-- 1 ubuntu ubuntu  829 Sep  2 23:38 logs_index.schema.yaml
+-rw-r--r-- 1 ubuntu ubuntu  882 Sep  2 23:38 metrics_catalog.schema.yaml
+
+/workspace/branch_exports/cursor/bc-e5d96ca7-4193-4943-9e7b-662105469622-410b/frameworks/observability/tools:
+total 28
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 digest
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 manifest
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 __pycache__
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 validators
+-rw-r--r-- 1 ubuntu ubuntu    1 Sep  2 23:38 __init__.py
+
+/workspace/branch_exports/cursor/bc-e5d96ca7-4193-4943-9e7b-662105469622-410b/frameworks/observability/tools/digest:
+total 20
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 __pycache__
+-rw-r--r-- 1 ubuntu ubuntu 2476 Sep  2 23:38 generate_digest.py
+-rw-r--r-- 1 ubuntu ubuntu    1 Sep  2 23:38 __init__.py
+
+/workspace/branch_exports/cursor/bc-e5d96ca7-4193-4943-9e7b-662105469622-410b/frameworks/observability/tools/digest/__pycache__:
+total 20
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 4581 Sep  2 23:38 generate_digest.cpython-313.pyc
+-rw-r--r-- 1 ubuntu ubuntu  157 Sep  2 23:38 __init__.cpython-313.pyc
+
+/workspace/branch_exports/cursor/bc-e5d96ca7-4193-4943-9e7b-662105469622-410b/frameworks/observability/tools/manifest:
+total 24
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 __pycache__
+-rw-r--r-- 1 ubuntu ubuntu    1 Sep  2 23:38 __init__.py
+-rw-r--r-- 1 ubuntu ubuntu 2487 Sep  2 23:38 seal_manifest.py
+-rw-r--r-- 1 ubuntu ubuntu 1005 Sep  2 23:38 verify_manifest.py
+
+/workspace/branch_exports/cursor/bc-e5d96ca7-4193-4943-9e7b-662105469622-410b/frameworks/observability/tools/manifest/__pycache__:
+total 24
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  159 Sep  2 23:38 __init__.cpython-313.pyc
+-rw-r--r-- 1 ubuntu ubuntu 4117 Sep  2 23:38 seal_manifest.cpython-313.pyc
+-rw-r--r-- 1 ubuntu ubuntu 1750 Sep  2 23:38 verify_manifest.cpython-313.pyc
+
+/workspace/branch_exports/cursor/bc-e5d96ca7-4193-4943-9e7b-662105469622-410b/frameworks/observability/tools/__pycache__:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  150 Sep  2 23:38 __init__.cpython-313.pyc
+
+/workspace/branch_exports/cursor/bc-e5d96ca7-4193-4943-9e7b-662105469622-410b/frameworks/observability/tools/validators:
+total 32
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 __pycache__
+-rw-r--r-- 1 ubuntu ubuntu 1972 Sep  2 23:38 common.py
+-rw-r--r-- 1 ubuntu ubuntu 2290 Sep  2 23:38 cross_stream_consistency.py
+-rw-r--r-- 1 ubuntu ubuntu    1 Sep  2 23:38 __init__.py
+-rw-r--r-- 1 ubuntu ubuntu 1482 Sep  2 23:38 parity_coverage.py
+-rw-r--r-- 1 ubuntu ubuntu 2018 Sep  2 23:38 schema_lint.py
+
+/workspace/branch_exports/cursor/bc-e5d96ca7-4193-4943-9e7b-662105469622-410b/frameworks/observability/tools/validators/__pycache__:
+total 32
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 4529 Sep  2 23:38 common.cpython-313.pyc
+-rw-r--r-- 1 ubuntu ubuntu 3845 Sep  2 23:38 cross_stream_consistency.cpython-313.pyc
+-rw-r--r-- 1 ubuntu ubuntu  161 Sep  2 23:38 __init__.cpython-313.pyc
+-rw-r--r-- 1 ubuntu ubuntu 2811 Sep  2 23:38 parity_coverage.cpython-313.pyc
+-rw-r--r-- 1 ubuntu ubuntu 2812 Sep  2 23:38 schema_lint.cpython-313.pyc
+
+/workspace/branch_exports/cursor/bc-e5d96ca7-4193-4943-9e7b-662105469622-410b/.github:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 workflows
+
+/workspace/branch_exports/cursor/bc-e5d96ca7-4193-4943-9e7b-662105469622-410b/.github/workflows:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  868 Sep  2 23:38 observability-ci.yaml
+
+/workspace/branch_exports/cursor/bc-e949323d-a0dc-4835-bae3-debac5bed4b5-eb8d:
+total 24
+drwxr-xr-x  2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 32 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r--  1 ubuntu ubuntu 4197 Sep  2 23:38 CHANGESET_PLAN.md
+-rw-r--r--  1 ubuntu ubuntu 6233 Sep  2 23:38 GLOBAL_ANALYSIS.md
+
+/workspace/branch_exports/cursor/bc-f9a6246f-cc1d-46ad-a8ae-1ddc0915e266-b0d7:
+total 16
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 32 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 frameworks
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 reports
+
+/workspace/branch_exports/cursor/bc-f9a6246f-cc1d-46ad-a8ae-1ddc0915e266-b0d7/frameworks:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 8 ubuntu ubuntu 4096 Sep  2 23:38 security
+
+/workspace/branch_exports/cursor/bc-f9a6246f-cc1d-46ad-a8ae-1ddc0915e266-b0d7/frameworks/security:
+total 32
+drwxr-xr-x 8 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 artifacts
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 digests
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 manifests
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 policy
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 reference
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 schemas
+
+/workspace/branch_exports/cursor/bc-f9a6246f-cc1d-46ad-a8ae-1ddc0915e266-b0d7/frameworks/security/artifacts:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 8 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 2025-09
+
+/workspace/branch_exports/cursor/bc-f9a6246f-cc1d-46ad-a8ae-1ddc0915e266-b0d7/frameworks/security/artifacts/2025-09:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  722 Sep  2 23:38 sec_findings.yaml
+
+/workspace/branch_exports/cursor/bc-f9a6246f-cc1d-46ad-a8ae-1ddc0915e266-b0d7/frameworks/security/digests:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 8 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  609 Sep  2 23:38 2025-09-02-digest.md
+
+/workspace/branch_exports/cursor/bc-f9a6246f-cc1d-46ad-a8ae-1ddc0915e266-b0d7/frameworks/security/manifests:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 8 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 2025-09
+
+/workspace/branch_exports/cursor/bc-f9a6246f-cc1d-46ad-a8ae-1ddc0915e266-b0d7/frameworks/security/manifests/2025-09:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  739 Sep  2 23:38 handoff_manifest.yaml
+
+/workspace/branch_exports/cursor/bc-f9a6246f-cc1d-46ad-a8ae-1ddc0915e266-b0d7/frameworks/security/policy:
+total 16
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 8 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  319 Sep  2 23:38 exceptions.md
+-rw-r--r-- 1 ubuntu ubuntu  361 Sep  2 23:38 policy_map.md
+
+/workspace/branch_exports/cursor/bc-f9a6246f-cc1d-46ad-a8ae-1ddc0915e266-b0d7/frameworks/security/reference:
+total 16
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 8 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 6596 Sep  2 23:38 2025-09-02-reference-bundle.md
+
+/workspace/branch_exports/cursor/bc-f9a6246f-cc1d-46ad-a8ae-1ddc0915e266-b0d7/frameworks/security/schemas:
+total 16
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 8 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 1217 Sep  2 23:38 handoff_manifest.schema.json
+-rw-r--r-- 1 ubuntu ubuntu 1354 Sep  2 23:38 sec_findings.schema.json
+
+/workspace/branch_exports/cursor/bc-f9a6246f-cc1d-46ad-a8ae-1ddc0915e266-b0d7/reports:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 agent_reviews
+
+/workspace/branch_exports/cursor/bc-f9a6246f-cc1d-46ad-a8ae-1ddc0915e266-b0d7/reports/agent_reviews:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 security
+
+/workspace/branch_exports/cursor/bc-f9a6246f-cc1d-46ad-a8ae-1ddc0915e266-b0d7/reports/agent_reviews/security:
+total 16
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 7469 Sep  2 23:38 2025-09-02-proposal.md
+
+/workspace/branch_exports/cursor/bc-fdd750e4-d233-475d-a02d-97128803d555-c53d:
+total 20
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 32 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 frameworks
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 .github
+-rw-r--r--  1 ubuntu ubuntu  546 Sep  2 23:38 Makefile
+
+/workspace/branch_exports/cursor/bc-fdd750e4-d233-475d-a02d-97128803d555-c53d/frameworks:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 9 ubuntu ubuntu 4096 Sep  2 23:38 qa-test
+
+/workspace/branch_exports/cursor/bc-fdd750e4-d233-475d-a02d-97128803d555-c53d/frameworks/qa-test:
+total 52
+drwxr-xr-x 9 ubuntu ubuntu  4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu  4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu  4096 Sep  2 23:38 artifacts
+drwxr-xr-x 2 ubuntu ubuntu  4096 Sep  2 23:38 digests
+drwxr-xr-x 2 ubuntu ubuntu  4096 Sep  2 23:38 integration
+drwxr-xr-x 3 ubuntu ubuntu  4096 Sep  2 23:38 manifests
+drwxr-xr-x 2 ubuntu ubuntu  4096 Sep  2 23:38 schemas
+drwxr-xr-x 2 ubuntu ubuntu  4096 Sep  2 23:38 templates
+drwxr-xr-x 2 ubuntu ubuntu  4096 Sep  2 23:38 tools
+-rw-r--r-- 1 ubuntu ubuntu 15932 Sep  2 23:38 QA_REFERENCE_BUNDLE.md
+
+/workspace/branch_exports/cursor/bc-fdd750e4-d233-475d-a02d-97128803d555-c53d/frameworks/qa-test/artifacts:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 9 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 2025-09
+
+/workspace/branch_exports/cursor/bc-fdd750e4-d233-475d-a02d-97128803d555-c53d/frameworks/qa-test/artifacts/2025-09:
+total 32
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  132 Sep  2 23:38 compliance_map.md
+-rw-r--r-- 1 ubuntu ubuntu   40 Sep  2 23:38 policy_exceptions.md
+-rw-r--r-- 1 ubuntu ubuntu  184 Sep  2 23:38 qa_evidence_index.yaml
+-rw-r--r-- 1 ubuntu ubuntu  110 Sep  2 23:38 qa_risk_register.md
+-rw-r--r-- 1 ubuntu ubuntu  333 Sep  2 23:38 test_matrix.yaml
+-rw-r--r-- 1 ubuntu ubuntu   89 Sep  2 23:38 traceability_map.md
+
+/workspace/branch_exports/cursor/bc-fdd750e4-d233-475d-a02d-97128803d555-c53d/frameworks/qa-test/digests:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 9 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  538 Sep  2 23:38 2025-09-02-digest.md
+
+/workspace/branch_exports/cursor/bc-fdd750e4-d233-475d-a02d-97128803d555-c53d/frameworks/qa-test/integration:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 9 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu   96 Sep  2 23:38 integration_hooks.md
+
+/workspace/branch_exports/cursor/bc-fdd750e4-d233-475d-a02d-97128803d555-c53d/frameworks/qa-test/manifests:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 9 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 2025-09
+
+/workspace/branch_exports/cursor/bc-fdd750e4-d233-475d-a02d-97128803d555-c53d/frameworks/qa-test/manifests/2025-09:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  767 Sep  2 23:38 handoff_manifest.yaml
+
+/workspace/branch_exports/cursor/bc-fdd750e4-d233-475d-a02d-97128803d555-c53d/frameworks/qa-test/schemas:
+total 20
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 9 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 1705 Sep  2 23:38 handoff_manifest.schema.json
+-rw-r--r-- 1 ubuntu ubuntu  698 Sep  2 23:38 qa_evidence_index.schema.json
+-rw-r--r-- 1 ubuntu ubuntu 1336 Sep  2 23:38 test_matrix.schema.json
+
+/workspace/branch_exports/cursor/bc-fdd750e4-d233-475d-a02d-97128803d555-c53d/frameworks/qa-test/templates:
+total 20
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 9 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  625 Sep  2 23:38 handoff_manifest.yaml
+-rw-r--r-- 1 ubuntu ubuntu  184 Sep  2 23:38 qa_evidence_index.yaml
+-rw-r--r-- 1 ubuntu ubuntu  333 Sep  2 23:38 test_matrix.yaml
+
+/workspace/branch_exports/cursor/bc-fdd750e4-d233-475d-a02d-97128803d555-c53d/frameworks/qa-test/tools:
+total 24
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 9 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 2794 Sep  2 23:38 export_qa_reference.sh
+-rw-r--r-- 1 ubuntu ubuntu 4448 Sep  2 23:38 qa_cli.py
+-rw-r--r-- 1 ubuntu ubuntu   33 Sep  2 23:38 requirements.txt
+
+/workspace/branch_exports/cursor/bc-fdd750e4-d233-475d-a02d-97128803d555-c53d/.github:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 workflows
+
+/workspace/branch_exports/cursor/bc-fdd750e4-d233-475d-a02d-97128803d555-c53d/.github/workflows:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  455 Sep  2 23:38 qa.yml
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-8825:
+total 32
+drwxr-xr-x  6 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 32 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 dev-workflow
+drwxr-xr-x  8 ubuntu ubuntu 4096 Sep  2 23:38 frameworks
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 .github
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 memory-bank
+-rw-r--r--  1 ubuntu ubuntu 2213 Sep  2 23:38 CHANGESET_PLAN_vNext.md
+-rw-r--r--  1 ubuntu ubuntu 3455 Sep  2 23:38 GLOBAL_ANALYSIS_vNext.md
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-8825/dev-workflow:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 ci
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-8825/dev-workflow/ci:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  315 Sep  2 23:38 gates_config.yaml
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-8825/frameworks:
+total 32
+drwxr-xr-x 8 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 observability
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 planning
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 planning-be
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 planning-fe
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 qa-test
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 security
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-8825/frameworks/observability:
+total 16
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 8 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 digests
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 manifests
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-8825/frameworks/observability/digests:
+total 20
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  704 Sep  2 23:38 2025-09-02-digest.md
+-rw-r--r-- 1 ubuntu ubuntu  260 Sep  2 23:38 2025-09-02-gate-evidence.json
+-rw-r--r-- 1 ubuntu ubuntu   81 Sep  2 23:38 README.md
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-8825/frameworks/observability/manifests:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 2025-09
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-8825/frameworks/observability/manifests/2025-09:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  477 Sep  2 23:38 handoff_manifest.yaml
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-8825/frameworks/planning:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 8 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 manifests
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-8825/frameworks/planning/manifests:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 2025-09
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-8825/frameworks/planning/manifests/2025-09:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  581 Sep  2 23:38 handoff_manifest.yaml
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-8825/frameworks/planning-be:
+total 16
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 8 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 backlog
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 manifests
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-8825/frameworks/planning-be/backlog:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  303 Sep  2 23:38 2025-09-02-be_backlog.yaml
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-8825/frameworks/planning-be/manifests:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  414 Sep  2 23:38 2025-09-02-handoff_manifest.yaml
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-8825/frameworks/planning-fe:
+total 20
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 8 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 manifests
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 storymaps
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 tasks
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-8825/frameworks/planning-fe/manifests:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  565 Sep  2 23:38 2025-09-02-handoff_manifest.yaml
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-8825/frameworks/planning-fe/storymaps:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  337 Sep  2 23:38 2025-09-02-story_map.md
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-8825/frameworks/planning-fe/tasks:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  309 Sep  2 23:38 2025-09-02-fe_task_breakdown.yaml
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-8825/frameworks/qa-test:
+total 20
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 8 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 artifacts
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 manifests
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 rules
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-8825/frameworks/qa-test/artifacts:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 2025-09
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-8825/frameworks/qa-test/artifacts/2025-09:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  336 Sep  2 23:38 compliance_map.md
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-8825/frameworks/qa-test/manifests:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 2025-09
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-8825/frameworks/qa-test/manifests/2025-09:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  476 Sep  2 23:38 handoff_manifest.yaml
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-8825/frameworks/qa-test/rules:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  225 Sep  2 23:38 gates.yaml
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-8825/frameworks/security:
+total 24
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 8 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 manifests
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 policy
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 rules
+-rw-r--r-- 1 ubuntu ubuntu  322 Sep  2 23:38 findings.yaml
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-8825/frameworks/security/manifests:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 2025-09
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-8825/frameworks/security/manifests/2025-09:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  697 Sep  2 23:38 handoff_manifest.yaml
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-8825/frameworks/security/policy:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  564 Sep  2 23:38 exceptions.yaml
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-8825/frameworks/security/rules:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  293 Sep  2 23:38 release_gates.yaml
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-8825/.github:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 workflows
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-8825/.github/workflows:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  398 Sep  2 23:38 frameworks-governance.yml
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-8825/memory-bank:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 digests
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-8825/memory-bank/digests:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 2025-09
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-8825/memory-bank/digests/2025-09:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  347 Sep  2 23:38 index.md
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-f0c7:
+total 32
+drwxr-xr-x  6 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 32 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 dev-workflow
+drwxr-xr-x  8 ubuntu ubuntu 4096 Sep  2 23:38 frameworks
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 .github
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 memory-bank
+-rw-r--r--  1 ubuntu ubuntu 2283 Sep  2 23:38 CHANGESET_PLAN_vNext.md
+-rw-r--r--  1 ubuntu ubuntu 3017 Sep  2 23:38 GLOBAL_ANALYSIS_vNext.md
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-f0c7/dev-workflow:
+total 28
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 ci
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 validation
+-rw-r--r-- 1 ubuntu ubuntu 3055 Sep  2 23:38 seal.py
+-rw-r--r-- 1 ubuntu ubuntu 7464 Sep  2 23:38 validate.py
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-f0c7/dev-workflow/ci:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  306 Sep  2 23:38 gates_config.yaml
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-f0c7/dev-workflow/validation:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 1230 Sep  2 23:38 results.json
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-f0c7/frameworks:
+total 32
+drwxr-xr-x 8 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 observability
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 planning
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 planning-be
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 planning-fe
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 qa-test
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 security
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-f0c7/frameworks/observability:
+total 16
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 8 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 digests
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 manifests
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-f0c7/frameworks/observability/digests:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  561 Sep  2 23:38 2025-09-02-digest.md
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-f0c7/frameworks/observability/manifests:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 2025-09
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-f0c7/frameworks/observability/manifests/2025-09:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  476 Sep  2 23:38 handoff_manifest.yaml
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-f0c7/frameworks/planning:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 8 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 manifests
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-f0c7/frameworks/planning/manifests:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 2025-09
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-f0c7/frameworks/planning/manifests/2025-09:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  582 Sep  2 23:38 handoff_manifest.yaml
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-f0c7/frameworks/planning-be:
+total 16
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 8 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 backlog
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 manifests
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-f0c7/frameworks/planning-be/backlog:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  330 Sep  2 23:38 2025-09-02-be_backlog.yaml
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-f0c7/frameworks/planning-be/manifests:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  413 Sep  2 23:38 2025-09-02-handoff_manifest.yaml
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-f0c7/frameworks/planning-fe:
+total 20
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 8 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 manifests
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 storymaps
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 tasks
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-f0c7/frameworks/planning-fe/manifests:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  562 Sep  2 23:38 2025-09-02-handoff_manifest.yaml
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-f0c7/frameworks/planning-fe/storymaps:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  304 Sep  2 23:38 2025-09-02-story_map.md
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-f0c7/frameworks/planning-fe/tasks:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  294 Sep  2 23:38 2025-09-02-fe_task_breakdown.yaml
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-f0c7/frameworks/qa-test:
+total 20
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 8 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 artifacts
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 manifests
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 rules
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-f0c7/frameworks/qa-test/artifacts:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 2025-09
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-f0c7/frameworks/qa-test/artifacts/2025-09:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  337 Sep  2 23:38 compliance_map.md
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-f0c7/frameworks/qa-test/manifests:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 2025-09
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-f0c7/frameworks/qa-test/manifests/2025-09:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  475 Sep  2 23:38 handoff_manifest.yaml
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-f0c7/frameworks/qa-test/rules:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  226 Sep  2 23:38 gates.yaml
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-f0c7/frameworks/security:
+total 28
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 8 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 manifests
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 policy
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 rules
+-rw-r--r-- 1 ubuntu ubuntu  338 Sep  2 23:38 findings.yaml
+-rw-r--r-- 1 ubuntu ubuntu  537 Sep  2 23:38 waivers.yaml
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-f0c7/frameworks/security/manifests:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 2025-09
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-f0c7/frameworks/security/manifests/2025-09:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  694 Sep  2 23:38 handoff_manifest.yaml
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-f0c7/frameworks/security/policy:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  565 Sep  2 23:38 exceptions.yaml
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-f0c7/frameworks/security/rules:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  294 Sep  2 23:38 release_gates.yaml
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-f0c7/.github:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 workflows
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-f0c7/.github/workflows:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  399 Sep  2 23:38 frameworks-governance.yml
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-f0c7/memory-bank:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 digests
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-f0c7/memory-bank/digests:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 2025-09
+
+/workspace/branch_exports/cursor/consolidate-analysis-and-plan-for-next-version-f0c7/memory-bank/digests/2025-09:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  348 Sep  2 23:38 index.md
+
+/workspace/branch_exports/cursor/define-system-background-process-logic-3aec:
+total 16
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 32 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 frameworks
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 reports
+
+/workspace/branch_exports/cursor/define-system-background-process-logic-3aec/frameworks:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 release-mgmt
+
+/workspace/branch_exports/cursor/define-system-background-process-logic-3aec/frameworks/release-mgmt:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 digests
+
+/workspace/branch_exports/cursor/define-system-background-process-logic-3aec/frameworks/release-mgmt/digests:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  960 Sep  2 23:38 20250902-digest.md
+
+/workspace/branch_exports/cursor/define-system-background-process-logic-3aec/reports:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 agent_reviews
+
+/workspace/branch_exports/cursor/define-system-background-process-logic-3aec/reports/agent_reviews:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 Release Management
+
+/workspace/branch_exports/cursor/define-system-background-process-logic-3aec/reports/agent_reviews/Release Management:
+total 20
+drwxr-xr-x 2 ubuntu ubuntu  4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu  4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 10609 Sep  2 23:38 20250902-proposal.md
+
+/workspace/branch_exports/cursor/define-system-background-process-logic-6b80:
+total 16
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 32 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 frameworks
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 reports
+
+/workspace/branch_exports/cursor/define-system-background-process-logic-6b80/frameworks:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 release-mgmt
+
+/workspace/branch_exports/cursor/define-system-background-process-logic-6b80/frameworks/release-mgmt:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 digests
+
+/workspace/branch_exports/cursor/define-system-background-process-logic-6b80/frameworks/release-mgmt/digests:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 1181 Sep  2 23:38 20250902-digest.md
+
+/workspace/branch_exports/cursor/define-system-background-process-logic-6b80/reports:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 agent_reviews
+
+/workspace/branch_exports/cursor/define-system-background-process-logic-6b80/reports/agent_reviews:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 release
+
+/workspace/branch_exports/cursor/define-system-background-process-logic-6b80/reports/agent_reviews/release:
+total 16
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 8190 Sep  2 23:38 20250902-proposal.md
+
+/workspace/branch_exports/cursor/design-artifact-first-qa-test-framework-0b77:
+total 16
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 32 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 frameworks
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 reports
+
+/workspace/branch_exports/cursor/design-artifact-first-qa-test-framework-0b77/frameworks:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 qa-test
+
+/workspace/branch_exports/cursor/design-artifact-first-qa-test-framework-0b77/frameworks/qa-test:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 digests
+
+/workspace/branch_exports/cursor/design-artifact-first-qa-test-framework-0b77/frameworks/qa-test/digests:
+total 16
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 5227 Sep  2 23:38 2024-01-qa-framework-digest.md
+
+/workspace/branch_exports/cursor/design-artifact-first-qa-test-framework-0b77/reports:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 agent_reviews
+
+/workspace/branch_exports/cursor/design-artifact-first-qa-test-framework-0b77/reports/agent_reviews:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 qa
+
+/workspace/branch_exports/cursor/design-artifact-first-qa-test-framework-0b77/reports/agent_reviews/qa:
+total 20
+drwxr-xr-x 2 ubuntu ubuntu  4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu  4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 10199 Sep  2 23:38 2024-01-qa-test-framework-proposal.md
+
+/workspace/branch_exports/cursor/design-artifact-first-qa-test-framework-14c8:
+total 16
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 32 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 frameworks
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 reports
+
+/workspace/branch_exports/cursor/design-artifact-first-qa-test-framework-14c8/frameworks:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 qa-test
+
+/workspace/branch_exports/cursor/design-artifact-first-qa-test-framework-14c8/frameworks/qa-test:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 digests
+
+/workspace/branch_exports/cursor/design-artifact-first-qa-test-framework-14c8/frameworks/qa-test/digests:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  839 Sep  2 23:38 2025-09-02-digest.md
+
+/workspace/branch_exports/cursor/design-artifact-first-qa-test-framework-14c8/reports:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 agent_reviews
+
+/workspace/branch_exports/cursor/design-artifact-first-qa-test-framework-14c8/reports/agent_reviews:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 qa
+
+/workspace/branch_exports/cursor/design-artifact-first-qa-test-framework-14c8/reports/agent_reviews/qa:
+total 16
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 7555 Sep  2 23:38 2025-09-02-proposal.md
+
+/workspace/branch_exports/cursor/design-artifact-first-qa-test-framework-910f:
+total 16
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 32 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 frameworks
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 reports
+
+/workspace/branch_exports/cursor/design-artifact-first-qa-test-framework-910f/frameworks:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 qa-test
+
+/workspace/branch_exports/cursor/design-artifact-first-qa-test-framework-910f/frameworks/qa-test:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 digests
+
+/workspace/branch_exports/cursor/design-artifact-first-qa-test-framework-910f/frameworks/qa-test/digests:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 1841 Sep  2 23:38 2025-09-02-digest.md
+
+/workspace/branch_exports/cursor/design-artifact-first-qa-test-framework-910f/reports:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 agent_reviews
+
+/workspace/branch_exports/cursor/design-artifact-first-qa-test-framework-910f/reports/agent_reviews:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 qa
+
+/workspace/branch_exports/cursor/design-artifact-first-qa-test-framework-910f/reports/agent_reviews/qa:
+total 24
+drwxr-xr-x 2 ubuntu ubuntu  4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu  4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 12723 Sep  2 23:38 2025-09-02-proposal.md
+
+/workspace/branch_exports/cursor/design-observability-and-monitoring-framework-5c3d:
+total 16
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 32 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 frameworks
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 reports
+
+/workspace/branch_exports/cursor/design-observability-and-monitoring-framework-5c3d/frameworks:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 observability
+
+/workspace/branch_exports/cursor/design-observability-and-monitoring-framework-5c3d/frameworks/observability:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 digests
+
+/workspace/branch_exports/cursor/design-observability-and-monitoring-framework-5c3d/frameworks/observability/digests:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  979 Sep  2 23:38 2025-09-02-digest.md
+
+/workspace/branch_exports/cursor/design-observability-and-monitoring-framework-5c3d/reports:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 agent_reviews
+
+/workspace/branch_exports/cursor/design-observability-and-monitoring-framework-5c3d/reports/agent_reviews:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 observability
+
+/workspace/branch_exports/cursor/design-observability-and-monitoring-framework-5c3d/reports/agent_reviews/observability:
+total 20
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 8799 Sep  2 23:38 2025-09-02-proposal.md
+
+/workspace/branch_exports/cursor/design-observability-and-monitoring-framework-65ed:
+total 16
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 32 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 frameworks
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 reports
+
+/workspace/branch_exports/cursor/design-observability-and-monitoring-framework-65ed/frameworks:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 observability
+
+/workspace/branch_exports/cursor/design-observability-and-monitoring-framework-65ed/frameworks/observability:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 digests
+
+/workspace/branch_exports/cursor/design-observability-and-monitoring-framework-65ed/frameworks/observability/digests:
+total 16
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 7218 Sep  2 23:38 20250902-digest.md
+
+/workspace/branch_exports/cursor/design-observability-and-monitoring-framework-65ed/reports:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 agent_reviews
+
+/workspace/branch_exports/cursor/design-observability-and-monitoring-framework-65ed/reports/agent_reviews:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 observability
+
+/workspace/branch_exports/cursor/design-observability-and-monitoring-framework-65ed/reports/agent_reviews/observability:
+total 24
+drwxr-xr-x 2 ubuntu ubuntu  4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu  4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 13011 Sep  2 23:38 20250902-proposal.md
+
+/workspace/branch_exports/cursor/design-observability-and-monitoring-framework-ff48:
+total 16
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 32 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 frameworks
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 reports
+
+/workspace/branch_exports/cursor/design-observability-and-monitoring-framework-ff48/frameworks:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 observability
+
+/workspace/branch_exports/cursor/design-observability-and-monitoring-framework-ff48/frameworks/observability:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 digests
+
+/workspace/branch_exports/cursor/design-observability-and-monitoring-framework-ff48/frameworks/observability/digests:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 1357 Sep  2 23:38 2025-09-02-digest.md
+
+/workspace/branch_exports/cursor/design-observability-and-monitoring-framework-ff48/reports:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 agent_reviews
+
+/workspace/branch_exports/cursor/design-observability-and-monitoring-framework-ff48/reports/agent_reviews:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 observability
+
+/workspace/branch_exports/cursor/design-observability-and-monitoring-framework-ff48/reports/agent_reviews/observability:
+total 20
+drwxr-xr-x 2 ubuntu ubuntu  4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu  4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 11111 Sep  2 23:38 2025-09-02-proposal.md
+
+/workspace/branch_exports/cursor/design-planning-framework-module-6a22:
+total 16
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 32 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 frameworks
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 reports
+
+/workspace/branch_exports/cursor/design-planning-framework-module-6a22/frameworks:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 planning-fe
+
+/workspace/branch_exports/cursor/design-planning-framework-module-6a22/frameworks/planning-fe:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 digests
+
+/workspace/branch_exports/cursor/design-planning-framework-module-6a22/frameworks/planning-fe/digests:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 1285 Sep  2 23:38 2025-09-02-digest.md
+
+/workspace/branch_exports/cursor/design-planning-framework-module-6a22/reports:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 agent_reviews
+
+/workspace/branch_exports/cursor/design-planning-framework-module-6a22/reports/agent_reviews:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 planning-fe
+
+/workspace/branch_exports/cursor/design-planning-framework-module-6a22/reports/agent_reviews/planning-fe:
+total 16
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 7833 Sep  2 23:38 2025-09-02-proposal.md
+
+/workspace/branch_exports/cursor/design-planning-framework-module-a0aa:
+total 24
+drwxr-xr-x  2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 32 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r--  1 ubuntu ubuntu 1406 Sep  2 23:38 planning-fe.md
+-rw-r--r--  1 ubuntu ubuntu 8750 Sep  2 23:38 proposal.md
+
+/workspace/branch_exports/cursor/design-planning-framework-module-c332:
+total 16
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 32 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 frameworks
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 reports
+
+/workspace/branch_exports/cursor/design-planning-framework-module-c332/frameworks:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 planning-be
+
+/workspace/branch_exports/cursor/design-planning-framework-module-c332/frameworks/planning-be:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 digests
+
+/workspace/branch_exports/cursor/design-planning-framework-module-c332/frameworks/planning-be/digests:
+total 16
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 6791 Sep  2 23:38 2024-01-15-digest.md
+
+/workspace/branch_exports/cursor/design-planning-framework-module-c332/reports:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 agent_reviews
+
+/workspace/branch_exports/cursor/design-planning-framework-module-c332/reports/agent_reviews:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 planning-be
+
+/workspace/branch_exports/cursor/design-planning-framework-module-c332/reports/agent_reviews/planning-be:
+total 28
+drwxr-xr-x 2 ubuntu ubuntu  4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu  4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 16823 Sep  2 23:38 2024-01-15-proposal.md
+
+/workspace/branch_exports/cursor/design-security-and-compliance-framework-1002:
+total 16
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 32 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 frameworks
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 reports
+
+/workspace/branch_exports/cursor/design-security-and-compliance-framework-1002/frameworks:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 security
+
+/workspace/branch_exports/cursor/design-security-and-compliance-framework-1002/frameworks/security:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 digests
+
+/workspace/branch_exports/cursor/design-security-and-compliance-framework-1002/frameworks/security/digests:
+total 20
+drwxr-xr-x 2 ubuntu ubuntu  4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu  4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 11636 Sep  2 23:38 2025-01-27-digest.md
+
+/workspace/branch_exports/cursor/design-security-and-compliance-framework-1002/reports:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 agent_reviews
+
+/workspace/branch_exports/cursor/design-security-and-compliance-framework-1002/reports/agent_reviews:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 security
+
+/workspace/branch_exports/cursor/design-security-and-compliance-framework-1002/reports/agent_reviews/security:
+total 24
+drwxr-xr-x 2 ubuntu ubuntu  4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu  4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 14933 Sep  2 23:38 2025-01-27-proposal.md
+
+/workspace/branch_exports/cursor/design-security-and-compliance-framework-7c88:
+total 16
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 32 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 frameworks
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 reports
+
+/workspace/branch_exports/cursor/design-security-and-compliance-framework-7c88/frameworks:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 security
+
+/workspace/branch_exports/cursor/design-security-and-compliance-framework-7c88/frameworks/security:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 digests
+
+/workspace/branch_exports/cursor/design-security-and-compliance-framework-7c88/frameworks/security/digests:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  610 Sep  2 23:38 2025-09-02-digest.md
+
+/workspace/branch_exports/cursor/design-security-and-compliance-framework-7c88/reports:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 agent_reviews
+
+/workspace/branch_exports/cursor/design-security-and-compliance-framework-7c88/reports/agent_reviews:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 security
+
+/workspace/branch_exports/cursor/design-security-and-compliance-framework-7c88/reports/agent_reviews/security:
+total 20
+drwxr-xr-x 2 ubuntu ubuntu  4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu  4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 12285 Sep  2 23:38 2025-09-02-proposal.md
+
+/workspace/branch_exports/cursor/design-security-and-compliance-framework-9a6a:
+total 16
+drwxr-xr-x  4 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 32 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 frameworks
+drwxr-xr-x  3 ubuntu ubuntu 4096 Sep  2 23:38 reports
+
+/workspace/branch_exports/cursor/design-security-and-compliance-framework-9a6a/frameworks:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 security
+
+/workspace/branch_exports/cursor/design-security-and-compliance-framework-9a6a/frameworks/security:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 digests
+
+/workspace/branch_exports/cursor/design-security-and-compliance-framework-9a6a/frameworks/security/digests:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 1279 Sep  2 23:38 2025-09-02-digest.md
+
+/workspace/branch_exports/cursor/design-security-and-compliance-framework-9a6a/reports:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 agent_reviews
+
+/workspace/branch_exports/cursor/design-security-and-compliance-framework-9a6a/reports/agent_reviews:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 security
+
+/workspace/branch_exports/cursor/design-security-and-compliance-framework-9a6a/reports/agent_reviews/security:
+total 20
+drwxr-xr-x 2 ubuntu ubuntu  4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu  4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 11528 Sep  2 23:38 2025-09-02-proposal.md
+
+/workspace/branch_exports/cursor/prepare-and-validate-project-readiness-plan-25d0:
+total 28
+drwxr-xr-x  2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 32 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r--  1 ubuntu ubuntu 9519 Sep  2 23:38 CHANGESET_PLAN_vNext.md
+-rw-r--r--  1 ubuntu ubuntu 4558 Sep  2 23:38 GLOBAL_ANALYSIS_vNext.md
+
+/workspace/branch_exports/cursor/prepare-and-validate-project-readiness-plan-9ea9:
+total 28
+drwxr-xr-x  2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 32 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r--  1 ubuntu ubuntu 9848 Sep  2 23:38 CHANGESET_PLAN_vNext.md
+-rw-r--r--  1 ubuntu ubuntu 5210 Sep  2 23:38 GLOBAL_ANALYSIS_vNext.md
+
+/workspace/.cursor:
+total 16
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:44 .
+drwxr-xr-x 8 ubuntu ubuntu 4096 Sep  2 23:43 ..
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:42 rules
+-rw-r--r-- 1 ubuntu ubuntu 1383 Sep  2 23:44 BA-EXPLAINATION.md
+
+/workspace/.cursor/rules:
+total 16
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:42 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:44 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:42 common-rules
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:42 master-rules
+
+/workspace/.cursor/rules/common-rules:
+total 24
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:42 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:42 ..
+-rw-r--r-- 1 ubuntu ubuntu 3895 Sep  2 23:38 common-rule-ui-foundation-design-system.mdc
+-rw-r--r-- 1 ubuntu ubuntu 3391 Sep  2 23:38 common-rule-ui-interaction-a11y-perf.mdc
+-rw-r--r-- 1 ubuntu ubuntu 4232 Sep  2 23:38 common-rule-ui-premium-brand-dataviz-enterprise-gated.mdc
+
+/workspace/.cursor/rules/master-rules:
+total 76
+drwxr-xr-x 2 ubuntu ubuntu  4096 Sep  2 23:42 .
+drwxr-xr-x 4 ubuntu ubuntu  4096 Sep  2 23:42 ..
+-rw-r--r-- 1 ubuntu ubuntu  7272 Sep  2 23:38 0-how-to-create-effective-rules.mdc
+-rw-r--r-- 1 ubuntu ubuntu 11660 Sep  2 23:38 1-master-rule-context-discovery.mdc
+-rw-r--r-- 1 ubuntu ubuntu 13426 Sep  2 23:38 2-master-rule-ai-collaboration-guidelines.mdc
+-rw-r--r-- 1 ubuntu ubuntu  3152 Sep  2 23:38 3-master-rule-code-quality-checklist.mdc
+-rw-r--r-- 1 ubuntu ubuntu  9639 Sep  2 23:38 4-master-rule-code-modification-safety-protocol.mdc
+-rw-r--r-- 1 ubuntu ubuntu  5900 Sep  2 23:38 5-master-rule-documentation-and-context-guidelines.mdc
+-rw-r--r-- 1 ubuntu ubuntu  7701 Sep  2 23:38 6-master-rule-complex-feature-context-preservation.mdc
+
+/workspace/dev-workflow:
+total 76
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 8 ubuntu ubuntu 4096 Sep  2 23:43 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 ci
+-rw-r--r-- 1 ubuntu ubuntu 7047 Sep  2 23:38 0-bootstrap-your-project.md
+-rw-r--r-- 1 ubuntu ubuntu 4425 Sep  2 23:38 0-master-planner.md
+-rw-r--r-- 1 ubuntu ubuntu 6185 Sep  2 23:38 1-create-prd.md
+-rw-r--r-- 1 ubuntu ubuntu 8488 Sep  2 23:38 2-generate-tasks.md
+-rw-r--r-- 1 ubuntu ubuntu 6807 Sep  2 23:38 3-process-tasks.md
+-rw-r--r-- 1 ubuntu ubuntu 5055 Sep  2 23:38 4-implementation-retrospective.md
+-rw-r--r-- 1 ubuntu ubuntu 3172 Sep  2 23:38 5-background-agent-coordination.md
+-rw-r--r-- 1 ubuntu ubuntu 5794 Sep  2 23:38 README.md
+
+/workspace/dev-workflow/ci:
+total 16
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu 1113 Sep  2 23:38 gates_config.yaml
+-rw-r--r-- 1 ubuntu ubuntu 2918 Sep  2 23:38 run_gates.py
+
+/workspace/FINAL_CONSOLIDATED:
+total 160
+drwxr-xr-x 2 ubuntu ubuntu  4096 Sep  2 23:38 .
+drwxr-xr-x 8 ubuntu ubuntu  4096 Sep  2 23:43 ..
+-rw-r--r-- 1 ubuntu ubuntu 18935 Sep  2 23:38 FINAL_CONSOLIDATED_REPORT1_V4.md
+-rw-r--r-- 1 ubuntu ubuntu 20848 Sep  2 23:38 FINAL_CONSOLIDATED_REPORT2_V4.md
+-rw-r--r-- 1 ubuntu ubuntu  2236 Sep  2 23:38 FINAL_CONSOLIDATED_REPORT.md
+-rw-r--r-- 1 ubuntu ubuntu 29380 Sep  2 23:38 FINAL_CONSOLIDATED_REPORT_V2.md
+-rw-r--r-- 1 ubuntu ubuntu 29288 Sep  2 23:38 FINAL_CONSOLIDATED_REPORT_V3.md
+-rw-r--r-- 1 ubuntu ubuntu 39907 Sep  2 23:38 FINAL_CONSOLIDATED_REPORT_V5.md
+
+/workspace/frameworks:
+total 36
+drwxr-xr-x 8 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 8 ubuntu ubuntu 4096 Sep  2 23:43 ..
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 observability
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 planning
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 planning-be
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 planning-fe
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 qa-test
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 security
+-rw-r--r-- 1 ubuntu ubuntu    1 Sep  2 23:38 .snapshot_rev
+
+/workspace/frameworks/observability:
+total 16
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 8 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 digests
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 manifests
+
+/workspace/frameworks/observability/digests:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  142 Sep  2 23:38 2025-09-02-digest.md
+
+/workspace/frameworks/observability/manifests:
+total 16
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 2025-09
+-rw-r--r-- 1 ubuntu ubuntu  426 Sep  2 23:38 handoff_manifest.yaml
+
+/workspace/frameworks/observability/manifests/2025-09:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  426 Sep  2 23:38 handoff_manifest.yaml
+
+/workspace/frameworks/planning:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 8 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 manifests
+
+/workspace/frameworks/planning/manifests:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 2025-09
+
+/workspace/frameworks/planning/manifests/2025-09:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  614 Sep  2 23:38 handoff_manifest.yaml
+
+/workspace/frameworks/planning-be:
+total 20
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 8 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 backlog
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 digests
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 manifests
+
+/workspace/frameworks/planning-be/backlog:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu   47 Sep  2 23:38 2025-09-02-be_backlog.yaml
+
+/workspace/frameworks/planning-be/digests:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  359 Sep  2 23:38 2025-09-02-digest.md
+
+/workspace/frameworks/planning-be/manifests:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  429 Sep  2 23:38 2025-09-02-handoff_manifest.yaml
+
+/workspace/frameworks/planning-fe:
+total 24
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 8 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 digests
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 manifests
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 storymaps
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 tasks
+
+/workspace/frameworks/planning-fe/digests:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  359 Sep  2 23:38 2025-09-02-digest.md
+
+/workspace/frameworks/planning-fe/manifests:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  601 Sep  2 23:38 2025-09-02-handoff_manifest.yaml
+
+/workspace/frameworks/planning-fe/storymaps:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu   39 Sep  2 23:38 2025-09-02-story_map.md
+
+/workspace/frameworks/planning-fe/tasks:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu   45 Sep  2 23:38 2025-09-02-fe_task_breakdown.yaml
+
+/workspace/frameworks/qa-test:
+total 24
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 8 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 digests
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 evidence
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 manifests
+-rw-r--r-- 1 ubuntu ubuntu   24 Sep  2 23:38 traceability_map.md
+
+/workspace/frameworks/qa-test/digests:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  407 Sep  2 23:38 2025-09-02-digest.md
+
+/workspace/frameworks/qa-test/evidence:
+total 16
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu   40 Sep  2 23:38 evidence_index.yaml
+-rw-r--r-- 1 ubuntu ubuntu   38 Sep  2 23:38 test_matrix.yaml
+
+/workspace/frameworks/qa-test/manifests:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 2025-09
+
+/workspace/frameworks/qa-test/manifests/2025-09:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  724 Sep  2 23:38 handoff_manifest.yaml
+
+/workspace/frameworks/security:
+total 24
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 8 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 digests
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 manifests
+-rw-r--r-- 1 ubuntu ubuntu  279 Sep  2 23:38 findings.yaml
+-rw-r--r-- 1 ubuntu ubuntu  261 Sep  2 23:38 waivers.yaml
+
+/workspace/frameworks/security/digests:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  460 Sep  2 23:38 2025-09-02-digest.md
+
+/workspace/frameworks/security/manifests:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 2025-09
+
+/workspace/frameworks/security/manifests/2025-09:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  650 Sep  2 23:38 handoff_manifest.yaml
+
+/workspace/.git:
+total 136
+drwxr-xr-x 7 ubuntu ubuntu  4096 Sep  2 23:39 .
+drwxr-xr-x 8 ubuntu ubuntu  4096 Sep  2 23:43 ..
+drwxr-xr-x 2 ubuntu ubuntu  4096 Sep  2 23:38 hooks
+drwxr-xr-x 2 ubuntu ubuntu  4096 Sep  2 23:38 info
+drwxr-xr-x 3 ubuntu ubuntu  4096 Sep  2 23:38 logs
+drwxr-xr-x 4 ubuntu ubuntu  4096 Sep  2 23:39 objects
+drwxr-xr-x 5 ubuntu ubuntu  4096 Sep  2 23:38 refs
+-rw-r--r-- 1 ubuntu ubuntu   395 Sep  2 23:39 config
+-rw-r--r-- 1 ubuntu ubuntu    73 Sep  2 23:38 description
+-rw-r--r-- 1 ubuntu ubuntu   123 Sep  2 23:39 FETCH_HEAD
+-rw-r--r-- 1 ubuntu ubuntu    64 Sep  2 23:39 HEAD
+-rw-r--r-- 1 ubuntu ubuntu 88502 Sep  2 23:39 index
+-rw-r--r-- 1 ubuntu ubuntu  3394 Sep  2 23:38 packed-refs
+
+/workspace/.git/hooks:
+total 72
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 7 ubuntu ubuntu 4096 Sep  2 23:39 ..
+-rwxr-xr-x 1 ubuntu ubuntu  478 Sep  2 23:38 applypatch-msg.sample
+-rwxr-xr-x 1 ubuntu ubuntu  896 Sep  2 23:38 commit-msg.sample
+-rwxr-xr-x 1 ubuntu ubuntu 4726 Sep  2 23:38 fsmonitor-watchman.sample
+-rwxr-xr-x 1 ubuntu ubuntu  189 Sep  2 23:38 post-update.sample
+-rwxr-xr-x 1 ubuntu ubuntu  424 Sep  2 23:38 pre-applypatch.sample
+-rwxr-xr-x 1 ubuntu ubuntu 1649 Sep  2 23:38 pre-commit.sample
+-rwxr-xr-x 1 ubuntu ubuntu  416 Sep  2 23:38 pre-merge-commit.sample
+-rwxr-xr-x 1 ubuntu ubuntu 1492 Sep  2 23:38 prepare-commit-msg.sample
+-rwxr-xr-x 1 ubuntu ubuntu 1374 Sep  2 23:38 pre-push.sample
+-rwxr-xr-x 1 ubuntu ubuntu 4898 Sep  2 23:38 pre-rebase.sample
+-rwxr-xr-x 1 ubuntu ubuntu  544 Sep  2 23:38 pre-receive.sample
+-rwxr-xr-x 1 ubuntu ubuntu 2783 Sep  2 23:38 push-to-checkout.sample
+-rwxr-xr-x 1 ubuntu ubuntu 2308 Sep  2 23:38 sendemail-validate.sample
+-rwxr-xr-x 1 ubuntu ubuntu 3650 Sep  2 23:38 update.sample
+
+/workspace/.git/info:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 7 ubuntu ubuntu 4096 Sep  2 23:39 ..
+-rw-r--r-- 1 ubuntu ubuntu  240 Sep  2 23:38 exclude
+
+/workspace/.git/logs:
+total 16
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 7 ubuntu ubuntu 4096 Sep  2 23:39 ..
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 refs
+-rw-r--r-- 1 ubuntu ubuntu  642 Sep  2 23:39 HEAD
+
+/workspace/.git/logs/refs:
+total 16
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:39 heads
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 remotes
+
+/workspace/.git/logs/refs/heads:
+total 16
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:39 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:39 cursor
+-rw-r--r-- 1 ubuntu ubuntu  191 Sep  2 23:38 main
+
+/workspace/.git/logs/refs/heads/cursor:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:39 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:39 ..
+-rw-r--r-- 1 ubuntu ubuntu  163 Sep  2 23:39 bootstrap-project-from-instructions-d787
+
+/workspace/.git/logs/refs/remotes:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 origin
+
+/workspace/.git/logs/refs/remotes/origin:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu  191 Sep  2 23:38 HEAD
+
+/workspace/.git/objects:
+total 16
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:39 .
+drwxr-xr-x 7 ubuntu ubuntu 4096 Sep  2 23:39 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 info
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 pack
+
+/workspace/.git/objects/info:
+total 8
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep  2 23:39 ..
+
+/workspace/.git/objects/pack:
+total 524
+drwxr-xr-x 2 ubuntu ubuntu   4096 Sep  2 23:38 .
+drwxr-xr-x 4 ubuntu ubuntu   4096 Sep  2 23:39 ..
+-r--r--r-- 1 ubuntu ubuntu  32320 Sep  2 23:38 pack-ba8235aa11bb06057895f50f0ea7fed8f84e3687.idx
+-r--r--r-- 1 ubuntu ubuntu 483836 Sep  2 23:38 pack-ba8235aa11bb06057895f50f0ea7fed8f84e3687.pack
+-r--r--r-- 1 ubuntu ubuntu   4516 Sep  2 23:38 pack-ba8235aa11bb06057895f50f0ea7fed8f84e3687.rev
+
+/workspace/.git/refs:
+total 20
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 7 ubuntu ubuntu 4096 Sep  2 23:39 ..
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:39 heads
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 remotes
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 tags
+
+/workspace/.git/refs/heads:
+total 16
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:39 .
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:39 cursor
+-rw-r--r-- 1 ubuntu ubuntu   41 Sep  2 23:38 main
+
+/workspace/.git/refs/heads/cursor:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:39 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:39 ..
+-rw-r--r-- 1 ubuntu ubuntu   41 Sep  2 23:39 bootstrap-project-from-instructions-d787
+
+/workspace/.git/refs/remotes:
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 origin
+
+/workspace/.git/refs/remotes/origin:
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep  2 23:38 ..
+-rw-r--r-- 1 ubuntu ubuntu   30 Sep  2 23:38 HEAD
+
+/workspace/.git/refs/tags:
+total 8
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep  2 23:38 .
+drwxr-xr-x 5 ubuntu ubuntu 4096 Sep  2 23:38 ..
