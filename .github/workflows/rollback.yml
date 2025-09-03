@@ -1,0 +1,49 @@
+name: Rollback Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Target environment (staging|production)"
+        required: true
+        default: production
+      reason:
+        description: "Reason for rollback"
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  rollback:
+    runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment }}
+    steps:
+      - name: Install Argo Rollouts plugin
+        run: |
+          curl -sLO https://github.com/argoproj/argo-rollouts/releases/download/v1.6.2/kubectl-argo-rollouts-linux-amd64
+          sudo install kubectl-argo-rollouts-linux-amd64 /usr/local/bin/kubectl-argo-rollouts
+
+      - name: Configure kubeconfig
+        env:
+          KUBECONFIG_B64: ${{ secrets.KUBECONFIG_B64 }}
+        run: |
+          echo "$KUBECONFIG_B64" | base64 -d > $HOME/.kube/config
+
+      - name: Abort canary and rollback
+        env:
+          NS: app-prod
+        run: |
+          if [ "${{ github.event.inputs.environment }}" = "staging" ]; then NS=app-staging; fi
+          kubectl-argo-rollouts -n "$NS" abort app-rollout || true
+          kubectl-argo-rollouts -n "$NS" undo app-rollout
+
+      - name: Post rollback marker to Observability
+        env:
+          OBS_MARKER_URL: ${{ secrets.OBSERVABILITY_WEBHOOK_URL }}
+        run: |
+          if [ -n "$OBS_MARKER_URL" ]; then
+            curl -sS -X POST "$OBS_MARKER_URL" -H 'Content-Type: application/json' \
+              -d "{\"type\":\"rollback\",\"env\":\"${{ github.event.inputs.environment }}\",\"reason\":\"${{ github.event.inputs.reason }}\"}" || true
+          fi
+
