@@ -2,13 +2,14 @@ PY=python
 PIP=pip
 VENV=.venv
 
-.PHONY: venv install data-pipelines users events transactions clean
+.PHONY: venv install data-pipelines users events transactions clean test ci
 
 venv:
 	python3 -m venv $(VENV)
 	. $(VENV)/bin/activate; $(PIP) install -r data/pipelines/requirements.txt
 
 install: venv
+	. $(VENV)/bin/activate; $(PIP) install -r requirements-dev.txt
 
 data-pipelines:
 	$(PY) data/pipelines/pipeline.py --dataset users --input data/pipelines/samples/users.csv --output data/pipelines/out
@@ -26,3 +27,9 @@ transactions:
 
 clean:
 	rm -rf data/pipelines/out
+
+test:
+	. $(VENV)/bin/activate; pytest -q
+
+ci:
+	bash ci/run_ci.sh | cat

@@ -1,0 +1,26 @@
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-q --maxfail=1 --strict-markers --cov=data/pipelines --cov-report=term-missing --cov-report=xml:ci/reports/coverage.xml --junitxml=ci/reports/junit.xml"
+testpaths = [
+  "tests"
+]
+markers = [
+  "e2e: marks end-to-end tests",
+  "integration: marks integration tests",
+  "contract: marks contract tests"
+]
+pythonpath = [
+  "."
+]
+
+[tool.coverage.run]
+branch = true
+source = ["data/pipelines"]
+omit = [
+  "*/__init__.py"
+]
+
+[tool.coverage.report]
+fail_under = 80
+show_missing = true
+skip_covered = true

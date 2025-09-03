@@ -7,52 +7,39 @@ fields:
   - name: event_id
     type: string
     nullable: false
-    description: Unique identifier for the event (UUIDv4)
     constraints:
       - unique
   - name: user_id
     type: string
     nullable: false
-    description: Foreign key to users.user_id
   - name: session_id
     type: string
     nullable: false
-    description: Client session identifier
   - name: event_type
     type: string
     nullable: false
-    description: Type/category of the event
     constraints:
-      - enum: [session_start, session_end, page_view, click, purchase, login, logout, error]
+      - { enum: [session_start, session_end, page_view, click, purchase, login, logout, error] }
   - name: event_properties
-    type: object
+    type: string
     nullable: true
-    description: JSON blob of event-specific attributes
   - name: device_type
     type: string
     nullable: true
-    description: Device category
-    constraints:
-      - enum: [mobile, desktop, tablet, tv]
   - name: user_agent
     type: string
     nullable: true
-    description: Raw user agent string
   - name: ip_address
     type: string
     nullable: true
-    description: IPv4/IPv6 address collected at event time
-    pii: ip
     constraints:
-      - format: ipv4_or_ipv6
+      - { format: ipv4_or_ipv6 }
   - name: event_ts
-    type: timestamp
+    type: string
     nullable: false
-    description: Event timestamp in UTC
   - name: event_date
-    type: date
+    type: string
     nullable: false
-    description: Partition key derived from event_ts (UTC date)
 primary_key:
   - event_id
 partitioning:
