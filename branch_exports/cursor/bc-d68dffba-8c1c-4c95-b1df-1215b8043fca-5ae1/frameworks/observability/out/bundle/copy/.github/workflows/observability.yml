@@ -1,0 +1,46 @@
+name: Observability Gates
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r frameworks/observability/tools/requirements.txt
+
+      - name: Run schema lint
+        working-directory: frameworks/observability
+        run: python tools/obs_cli.py schema-lint
+
+      - name: Run cross-stream consistency
+        working-directory: frameworks/observability
+        run: python tools/obs_cli.py cross-consistency
+
+      - name: Run parity/coverage
+        working-directory: frameworks/observability
+        run: python tools/obs_cli.py parity-coverage
+
+      - name: Run governance overlay checks
+        working-directory: frameworks/observability
+        run: python tools/obs_cli.py governance-check
+
+      - name: Generate handoff manifest
+        working-directory: frameworks/observability
+        run: |
+          python tools/obs_cli.py generate-manifest --snapshot "${{ github.ref_name }}@${{ github.sha }}" --out out/handoff_manifest.yaml
+          echo "Generated manifest:" && cat out/handoff_manifest.yaml
+

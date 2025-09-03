@@ -1,0 +1,41 @@
+$schema: "http://json-schema.org/draft-07/schema#"
+title: "metrics_catalog"
+type: object
+required: [version, metrics]
+properties:
+  version:
+    type: integer
+  metrics:
+    type: array
+    items:
+      type: object
+      required: [name, type, unit, owner, tags]
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+          enum: [counter, gauge, histogram, ratio]
+        numerator:
+          type: string
+        denominator:
+          type: string
+        unit:
+          type: string
+        owner:
+          type: string
+        description:
+          type: string
+        kpi:
+          type: boolean
+        slo:
+          type: object
+          properties:
+            objective:
+              type: number
+            window:
+              type: string
+        tags:
+          type: array
+          items:
+            type: string

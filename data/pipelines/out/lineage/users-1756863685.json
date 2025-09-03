@@ -1,0 +1,11 @@
+{
+  "dataset": "users",
+  "source": "data/pipelines/samples/users.csv",
+  "target": "data/pipelines/out/warehouse/dim_users.csv",
+  "timestamp": "2025-09-03T01:41:25.334430+00:00",
+  "validation": {
+    "row_count": 2,
+    "error_count": 0,
+    "warning_count": 0
+  }
+}

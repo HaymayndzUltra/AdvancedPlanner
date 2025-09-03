@@ -1,0 +1,127 @@
+{
+  "agent": {
+    "id": "agent-1",
+    "name": "Discovery & Intake Framework Agent",
+    "framework": "discovery-intake",
+    "phase": 1,
+    "status": "active",
+    "created_at": "2024-01-15T08:00:00Z",
+    "last_updated": "2024-01-15T08:00:00Z"
+  },
+  "mission": {
+    "objective": "Establish comprehensive project discovery and requirements gathering framework",
+    "scope": "Analyze stakeholder needs, define project boundaries, and create intake processes",
+    "deliverables": [
+      "Stakeholder analysis report",
+      "Requirements specification document",
+      "Project scope and boundaries definition",
+      "Intake workflow documentation",
+      "Risk assessment and mitigation plan"
+    ]
+  },
+  "execution_plan": {
+    "timeline": "Week 1-2",
+    "milestones": [
+      {
+        "id": "milestone-1",
+        "name": "Stakeholder Analysis",
+        "duration": "2 days",
+        "deliverables": ["stakeholder-map.md", "interview-questions.md"]
+      },
+      {
+        "id": "milestone-2",
+        "name": "Requirements Gathering",
+        "duration": "3 days",
+        "deliverables": ["requirements.md", "user-needs.md", "business-requirements.md"]
+      },
+      {
+        "id": "milestone-3",
+        "name": "Scope Definition",
+        "duration": "2 days",
+        "deliverables": ["scope-document.md", "in-scope-out-scope.md", "assumptions.md"]
+      },
+      {
+        "id": "milestone-4",
+        "name": "Process Documentation",
+        "duration": "3 days",
+        "deliverables": ["intake-process.md", "workflow-diagram.md", "templates.md"]
+      }
+    ],
+    "dependencies": [],
+    "success_criteria": [
+      "All stakeholder interviews completed",
+      "Requirements traceability established",
+      "Project scope clearly defined",
+      "Intake process documented and validated"
+    ]
+  },
+  "resources": {
+    "templates": [
+      "stakeholder-analysis-template.md",
+      "requirements-gathering-template.md",
+      "scope-definition-template.md"
+    ],
+    "reference_documents": [
+      "agile-requirements-gathering.md",
+      "stakeholder-management.md",
+      "scope-management.md"
+    ],
+    "tools": [
+      "markdown-editor",
+      "diagram-generator",
+      "stakeholder-mapping-tool"
+    ]
+  },
+  "quality_gates": {
+    "gate_1": {
+      "name": "Stakeholder Validation",
+      "criteria": "All key stakeholders identified and interviewed",
+      "approver": "master_orchestrator"
+    },
+    "gate_2": {
+      "name": "Requirements Review",
+      "criteria": "Requirements approved by product owner",
+      "approver": "product_team"
+    },
+    "gate_3": {
+      "name": "Scope Approval",
+      "criteria": "Project scope signed off by all stakeholders",
+      "approver": "project_sponsor"
+    }
+  },
+  "communication": {
+    "status_reports": "daily",
+    "alerts": ["milestone_completed", "quality_gate_reached", "issue_detected"],
+    "contact_points": {
+      "master_orchestrator": "orchestration@ai-governor.dev",
+      "framework_lead": "discovery@ai-governor.dev"
+    }
+  },
+  "risk_mitigation": {
+    "risks": [
+      {
+        "id": "risk-1",
+        "description": "Incomplete stakeholder identification",
+        "mitigation": "Use stakeholder mapping templates and multiple identification methods"
+      },
+      {
+        "id": "risk-2",
+        "description": "Ambiguous requirements",
+        "mitigation": "Implement requirements validation workshops and acceptance criteria"
+      },
+      {
+        "id": "risk-3",
+        "description": "Scope creep",
+        "mitigation": "Establish clear scope boundaries and change control process"
+      }
+    ]
+  },
+  "integration_points": {
+    "handshake_with": ["agent-2-product-planning"],
+    "data_exchange": {
+      "outbound": ["requirements.md", "stakeholder-analysis.md", "scope-document.md"],
+      "inbound": []
+    },
+    "coordination_protocol": "requirements_handshake"
+  }
+}

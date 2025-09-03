@@ -1,0 +1,3 @@
+user_id,email,full_name,phone_number,country_code,created_at,updated_at
+11111111-1111-1111-1111-111111111111,u_86e0b9e5@redacted.local,J***,,US,2025-01-01T00:00:00Z,2025-01-01T00:00:00Z
+22222222-2222-2222-2222-222222222222,u_8e621e3d@redacted.local,J***,,GB,2025-01-02T12:34:56Z,2025-01-02T12:34:56Z

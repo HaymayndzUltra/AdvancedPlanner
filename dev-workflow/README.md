@@ -11,14 +11,23 @@ The goal is to make AI-powered development:
 -   **Controllable:** You are always in the loop for key decisions.
 -   **Efficient:** The AI does the heavy lifting, you provide the strategic direction.
 
-## 2. How it Works: The 4-Step Development Lifecycle
+## 2. How it Works: The Development Lifecycle
 
 This workflow guides you through the entire development process, from initial setup to continuous improvement. Each step assigns a specific role to the AI, ensuring a structured and predictable collaboration.
 
-### Step 0: Bootstrap Your Project (One-Time Setup)
+### Step 0A: Master Planner (For Large-Scale Parallel Development)
+**Role:** The AI acts as a **Master Planner & Background Agent Orchestrator**.
+
+For building complete ecosystems with multiple frameworks in parallel, use this protocol to design strategic approaches and coordinate background agents.
+
+```
+Apply instructions from .ai-governor/dev-workflow/0-master-planner.md
+```
+
+### Step 0B: Bootstrap Your Project (One-Time Setup)
 **Role:** The AI acts as a **Project Analyst**.
 
-First, the AI analyzes your entire codebase to build a "Context Kit"—a set of foundational `READMEs` and project-specific rules. This is a one-time protocol that turns a generic AI into a project-specific expert.
+For single-feature development, the AI analyzes your entire codebase to build a "Context Kit"—a set of foundational `READMEs` and project-specific rules. This is a one-time protocol that turns a generic AI into a project-specific expert.
 
 ```
 Apply instructions from .ai-governor/dev-workflow/0-bootstrap-your-project.md
@@ -50,9 +59,9 @@ Apply instructions from .ai-governor/dev-workflow/2-generate-tasks.md to @prd-my
 *(For best results, Cursor users should use Max Mode for this step.)*
 
 ### Step 3: Execute Tasks Sequentially
-**Role:** The AI acts as a **Paired Developer**.
+**Role:** The AI acts as a **Paired Developer** or **Background Agent**.
 
-Here, the AI implements the plan one parent task at a time, within a dedicated chat session. This gives you full control over the code while leveraging a clean, focused context for each major implementation step.
+For single-feature development, the AI implements the plan one parent task at a time, within a dedicated chat session. For parallel framework development, background agents execute tasks in isolated VM environments with automatic coordination.
 
 1.  **Start the first parent task in a new chat:**
     ```
@@ -78,6 +87,24 @@ Here, the AI implements the plan one parent task at a time, within a dedicated c
         Apply instructions from .ai-governor/dev-workflow/3-process-tasks.md to @tasks-my-feature.md. Start on task 2.
         ```
         *(Note: Replace `@tasks-my-feature.md` with your task list's filename and `2` with the next parent task number.)*
+
+### Step 4: Implementation Retrospective
+**Role:** The AI acts as a **QA & Process Improvement Lead**.
+
+After implementation, conduct a retrospective to improve the process and validate code quality.
+
+```
+Apply instructions from .ai-governor/dev-workflow/4-implementation-retrospective.md
+```
+
+### Step 5: Background Agent Coordination (For Parallel Development)
+**Role:** The AI acts as a **Background Agent Coordinator**.
+
+For parallel framework development, coordinate multiple background agents, manage handoffs, and resolve conflicts.
+
+```
+Apply instructions from .ai-governor/dev-workflow/5-background-agent-coordination.md
+```
 
 ---
 

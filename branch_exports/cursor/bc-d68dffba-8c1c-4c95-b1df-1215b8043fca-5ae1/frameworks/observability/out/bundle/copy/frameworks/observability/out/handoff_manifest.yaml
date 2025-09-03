@@ -1,0 +1,19 @@
+version: 1
+snapshot_rev: main@abc1234
+rulebook_hash: sha256:4b3368fed202cfb98ef2352b2161d2c03189248bad594875cbd9d4662c284126
+artifacts:
+  - path: logs_index.yaml
+    checksum: sha256:f72459216a2dcf8bb266c87cdad649ec4f2cb4886147cf1faa645a5a6ba323f3
+    size_bytes: 370
+  - path: metrics_catalog.yaml
+    checksum: sha256:006ba2a932a1e1950adc33eee6cd899ea717b455b126dd63e7119f520202faab
+    size_bytes: 775
+  - path: alert_rules.md
+    checksum: sha256:4b3368fed202cfb98ef2352b2161d2c03189248bad594875cbd9d4662c284126
+    size_bytes: 754
+quality_gates:
+  schema_lint: pending
+  cross_stream_consistency: pending
+  parity_coverage: pending
+sealed_by: local
+sealed_at: 2025-09-02T04:26:04.729234+00:00

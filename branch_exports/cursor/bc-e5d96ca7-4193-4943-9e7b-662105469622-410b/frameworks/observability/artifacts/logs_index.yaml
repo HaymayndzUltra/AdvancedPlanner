@@ -1,0 +1,17 @@
+version: 1
+streams:
+  - name: payments_api.access
+    owner: team-payments
+    retention_days: 30
+    pii: false
+    schema_version: 1
+    schema:
+      - field: timestamp
+        type: datetime
+      - field: status_code
+        type: int
+      - field: latency_ms
+        type: int
+      - field: route
+        type: string
+    tags: [service:payments, owner:team-payments, tier:backend, environment:prod]

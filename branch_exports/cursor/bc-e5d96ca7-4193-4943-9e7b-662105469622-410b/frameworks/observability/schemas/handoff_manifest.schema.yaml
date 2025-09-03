@@ -1,0 +1,31 @@
+$schema: "http://json-schema.org/draft-07/schema#"
+title: "handoff_manifest"
+type: object
+required: [version, snapshot_rev, rulebook_hash, artifacts]
+properties:
+  version:
+    type: integer
+  snapshot_rev:
+    type: string
+  rulebook_hash:
+    type: string
+  artifacts:
+    type: array
+    items:
+      type: object
+      required: [path, checksum]
+      properties:
+        path:
+          type: string
+        checksum:
+          type: string
+        size_bytes:
+          type: integer
+        content_type:
+          type: string
+  quality_gates:
+    type: object
+  sealed_by:
+    type: string
+  sealed_at:
+    type: string

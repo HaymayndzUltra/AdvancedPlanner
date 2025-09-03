@@ -1,0 +1,10 @@
+schema_version: 1
+cycle: "2025-09"
+snapshot_rev: "62ebbd7ce733388a18fb1fedcd4bbd32dc7f6a6b"
+rulebook_hash: "sha256:c87fe4c45efd3193e8907ceedc97664f27bea68ca899a0ed752de688027d25dc"
+governance:
+  tags: [security]
+summary:
+  critical_open: 0
+findings: []
+lifecycle_state: PACKAGED

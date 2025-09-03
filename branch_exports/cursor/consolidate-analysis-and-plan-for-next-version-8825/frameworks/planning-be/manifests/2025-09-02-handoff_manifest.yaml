@@ -1,0 +1,14 @@
+manifest_version: 1
+cycle_id: "2025-09-02"
+snapshot_rev: "git:abcdef1234"
+rulebook_hash: "sha256:rulebookhashhere"
+governance:
+  tags: [planning, be, release]
+  fields:
+    owner: "be-planning@company"
+    risk: "low"
+    compliance: ["none"]
+sealed: true
+artifacts:
+  - path: frameworks/planning-be/backlog/2025-09-02-be_backlog.yaml
+    sha256: "3ad469925e42fa0c76e8766dab34796c6f20fcf2fa26139a61a45f702abc8813"

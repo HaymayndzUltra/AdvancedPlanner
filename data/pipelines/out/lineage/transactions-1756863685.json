@@ -1,0 +1,11 @@
+{
+  "dataset": "transactions",
+  "source": "data/pipelines/samples/transactions.csv",
+  "target": "data/pipelines/out/warehouse/fact_transactions.csv",
+  "timestamp": "2025-09-03T01:41:25.413092+00:00",
+  "validation": {
+    "row_count": 2,
+    "error_count": 0,
+    "warning_count": 0
+  }
+}

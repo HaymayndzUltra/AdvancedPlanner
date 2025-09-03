@@ -1,0 +1,18 @@
+manifest_version: 1
+cycle: 2025-09
+snapshot_rev: git:abcdef1234
+rulebook_hash: sha256:rulebookhashhere
+sealed: true
+governance:
+  tags: [planning, sealed]
+artifacts:
+  - name: planning_fe_tasks
+    path: frameworks/planning-fe/tasks/2025-09-02-fe_task_breakdown.yaml
+    sha256: f50bf9c56e722ac9cbfa19712fc4c7235855468ace2946206fb9a9e4afa0a423
+  - name: planning_be_backlog
+    path: frameworks/planning-be/backlog/2025-09-02-be_backlog.yaml
+    sha256: a83981fee5d9d13e67322a13e4754fe8bf5626a75a38767ccbab2df9baee953a
+quality_gates:
+  schema_lint: pass
+  snapshot_integrity: pass
+

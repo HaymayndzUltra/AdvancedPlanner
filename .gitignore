@@ -64,4 +64,6 @@ temp/
 *.pem
 *.p12
 *.crt
-secrets.json 
+secrets.json runs/
+.cursor/.env
+runs/

@@ -1,0 +1,148 @@
+# Reference Dump
+# Generated: 2025-09-02T04:34:21Z
+# Root: /workspace
+
+----- FILE: .gitignore -----
+# === SYSTÈME ===
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# === NODE.JS ===
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.npm
+.eslintcache
+.node_repl_history
+*.tgz
+.yarn-integrity
+
+# === ENVIRONNEMENT ===
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# === LOGS ===
+logs
+*.log
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# === IDE/ÉDITEUR ===
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# === BUILD/DIST ===
+dist/
+build/
+.next/
+.nuxt/
+.cache/
+.parcel-cache/
+
+# === TESTING ===
+coverage/
+.nyc_output
+.coverage/
+
+# === TEMPORARY ===
+tmp/
+temp/
+*.tmp
+
+# === SÉCURITÉ ===
+*.key
+*.pem
+*.p12
+*.crt
+secrets.json 
+----- END FILE: .gitignore -----
+
+----- FILE: _ref_copy/.gitignore -----
+# === SYSTÈME ===
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# === NODE.JS ===
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.npm
+.eslintcache
+.node_repl_history
+*.tgz
+.yarn-integrity
+
+# === ENVIRONNEMENT ===
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# === LOGS ===
+logs
+*.log
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# === IDE/ÉDITEUR ===
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# === BUILD/DIST ===
+dist/
+build/
+.next/
+.nuxt/
+.cache/
+.parcel-cache/
+
+# === TESTING ===
+coverage/
+.nyc_output
+.coverage/
+
+# === TEMPORARY ===
+tmp/
+temp/
+*.tmp
+
+# === SÉCURITÉ ===
+*.key
+*.pem
+*.p12
+*.crt
+secrets.json 
+----- END FILE: _ref_copy/.gitignore -----
+
+Copied:        2
+Concatenated:  2
+SkippedBinary: 0
+SkippedLarge:  0

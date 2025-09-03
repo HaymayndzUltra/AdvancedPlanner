@@ -1,0 +1,38 @@
+{
+  "agent_template": {
+    "version": "1.0.0",
+    "environment": {
+      "type": "ubuntu-isolated-vm",
+      "auto_snapshot": true,
+      "resource_limits": {
+        "cpu_cores": 2,
+        "memory_gb": 4,
+        "storage_gb": 10,
+        "network_mbps": 100
+      }
+    },
+    "capabilities": {
+      "code_generation": true,
+      "documentation_creation": true,
+      "testing_execution": true,
+      "pr_creation": true,
+      "integration_testing": true
+    },
+    "communication": {
+      "status_updates": "every_30_minutes",
+      "alerts": ["error", "milestone_complete", "quality_gate"],
+      "channels": ["orchestration_dashboard", "master_planner"]
+    },
+    "quality_control": {
+      "auto_linting": true,
+      "test_execution": true,
+      "code_review": true,
+      "dependency_check": true
+    },
+    "integration": {
+      "framework_dependencies": [],
+      "shared_resources": ["documentation_repo", "code_repo", "test_suite"],
+      "handshake_protocol": "dependency_resolution"
+    }
+  }
+}

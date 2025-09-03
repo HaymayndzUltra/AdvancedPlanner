@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "qa_evidence_index",
+  "type": "object",
+  "required": ["schema_version", "cycle", "evidence"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "cycle": {"type": "string"},
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "path", "sha256"],
+        "properties": {
+          "id": {"type": "string"},
+          "path": {"type": "string"},
+          "sha256": {"type": "string"},
+          "tags": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
