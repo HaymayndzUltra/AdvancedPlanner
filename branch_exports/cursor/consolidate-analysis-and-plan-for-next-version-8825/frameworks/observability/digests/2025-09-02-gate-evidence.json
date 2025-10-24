@@ -1,5 +1,0 @@
-{
-  "schema_lint": {"status": "pass", "details": "YAML/MD front matter present"},
-  "cross_stream_consistency": {"status": "pass", "details": "QA story_ref maps to BE endpoint_ref and FE story"},
-  "parity_coverage": {"status": "pass", "coverage_pct": 1.0 }
-}
