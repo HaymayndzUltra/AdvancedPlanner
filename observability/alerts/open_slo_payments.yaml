@@ -1,0 +1,87 @@
+apiVersion: openslo/v1
+kind: SLO
+metadata:
+  name: payments-availability-99-9
+  labels:
+    service: payments
+    owner: team-payments
+    environment: production
+    tier: backend
+spec:
+  service: payments
+  description: Availability SLO for payments API (99.9% over 30d)
+  indicator:
+    ratioMetric:
+      total:
+        source: prometheus
+        query: |
+          sum(rate(http_requests_total{service="payments",environment="production"}[5m]))
+      good:
+        source: prometheus
+        query: |
+          sum(rate(http_requests_total{service="payments",environment="production",status!~"5..|429"}[5m]))
+  timeWindow:
+    duration: 30d
+    isRolling: true
+  objective:
+    target: 99.9
+    displayTarget: "99.9%"
+  budgetingMethod: Occurrences
+---
+apiVersion: openslo/v1
+kind: AlertPolicy
+metadata:
+  name: payments-availability-99-9-policy
+spec:
+  description: Multiwindow burn-rate paging and warning policy
+  conditions:
+    - displayName: page-fast
+      condition:
+        kind: BurnRate
+        spec:
+          threshold: 14.4
+          lookbackWindow: 5m
+          alertAfter: 5m
+    - displayName: page-long
+      condition:
+        kind: BurnRate
+        spec:
+          threshold: 6
+          lookbackWindow: 1h
+          alertAfter: 10m
+    - displayName: warn-short
+      condition:
+        kind: BurnRate
+        spec:
+          threshold: 3
+          lookbackWindow: 30m
+          alertAfter: 15m
+    - displayName: warn-long
+      condition:
+        kind: BurnRate
+        spec:
+          threshold: 1
+          lookbackWindow: 6h
+          alertAfter: 30m
+---
+apiVersion: openslo/v1
+kind: Alert
+metadata:
+  name: payments-availability-99-9-alert
+  labels:
+    service: payments
+    owner: team-payments
+    environment: production
+    Critical: "0"
+spec:
+  description: High error budget burn for payments availability SLO
+  summary: Page when burn-rate exceeds thresholds across multiwindows
+  slo: payments-availability-99-9
+  alertPolicy: payments-availability-99-9-policy
+  notificationTargets:
+    - target: oncall
+      integration: pagerduty
+  annotations:
+    runbook: docs/runbooks/payments-error-burst.md
+    dashboard_hint: grafana: Service Golden Signals (filter service=payments)
+

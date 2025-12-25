@@ -1,0 +1,85 @@
+version: 1
+entity: users
+description: Canonical user record for application identity and profile
+owner: data-platform
+pii_classification: contains_pii
+fields:
+  - name: user_id
+    type: string
+    nullable: false
+    description: Stable, immutable UUID for the user
+    constraints:
+      - unique
+  - name: email
+    type: string
+    nullable: false
+    description: User email in RFC 5322 format
+    pii: email
+    constraints:
+      - unique
+      - format: email
+  - name: full_name
+    type: string
+    nullable: true
+    description: Display name
+    pii: name
+  - name: phone_number
+    type: string
+    nullable: true
+    description: E.164 formatted phone number
+    pii: phone
+    constraints:
+      - format: e164
+  - name: country_code
+    type: string
+    nullable: true
+    description: ISO 3166-1 alpha-2 country code
+    constraints:
+      - enum: [US, CA, GB, DE, FR, ES, IT, IN, AU, BR, MX, JP, KR, CN]
+  - name: created_at
+    type: timestamp
+    nullable: false
+    description: Account creation time in UTC
+  - name: updated_at
+    type: timestamp
+    nullable: false
+    description: Last profile update time in UTC
+primary_key:
+  - user_id
+partitioning: none
+retention:
+  type: delete
+  period: P7Y
+data_quality:
+  freshness_sla: PT24H
+  thresholds:
+    row_count_change_pct:
+      warn: 50
+      fail: 90
+    null_ratio:
+      email:
+        warn: 0
+        fail: 0
+      user_id:
+        warn: 0
+        fail: 0
+security:
+  encryption: at_rest_and_in_transit
+  access_tiers:
+    - role: analyst
+      access: masked
+    - role: data_scientist
+      access: masked
+    - role: admin
+      access: full
+privacy:
+  policies:
+    - name: gdpr_right_to_erasure
+      action: delete
+      window: P30D
+lineage:
+  sources:
+    - app.db.users
+  targets:
+    - warehouse.dim_users
+

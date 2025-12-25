@@ -1,0 +1,15 @@
+version: 1
+name: warehouse.fact_session_events
+source: session_events
+materialization: table
+partitioning:
+  type: daily
+  column: event_date
+retention: P365D
+serving:
+  access_roles: [analyst, data_scientist, admin]
+  refresh_schedule: hourly
+lineage:
+  inputs: [app.web.tracker, app.services.analytics]
+  transforms: [anonymize_ip, validate_enums]
+  outputs: [warehouse.fact_session_events]

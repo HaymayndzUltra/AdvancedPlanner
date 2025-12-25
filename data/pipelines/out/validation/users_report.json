@@ -1,0 +1,13 @@
+{
+  "errors": [
+    {
+      "row": 1,
+      "field": "email",
+      "error": "duplicate_value"
+    }
+  ],
+  "warnings": [],
+  "error_count": 1,
+  "warning_count": 0,
+  "row_count": 2
+}

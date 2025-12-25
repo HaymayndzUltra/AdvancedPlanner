@@ -1,0 +1,13 @@
+version: 1
+name: warehouse.dim_users
+source: users
+materialization: table
+partitioning: none
+retention: P7Y
+serving:
+  access_roles: [analyst, data_scientist, admin]
+  refresh_schedule: daily
+lineage:
+  inputs: [app.db.users]
+  transforms: [privacy_mask_email, drop_phone]
+  outputs: [warehouse.dim_users]

@@ -1,0 +1,133 @@
+name: Build, Test, SBOM, Sign, Publish
+
+on:
+  push:
+    branches: [integration, main]
+    tags: ['v*']
+  pull_request:
+    branches: [integration]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+  id-token: write
+
+env:
+  IMAGE_NAME: ghcr.io/${{ github.repository }}
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build-test-sign:
+    name: Build, Test, Scan, SBOM, Sign
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          cache-dependency-path: |
+            data/pipelines/requirements.txt
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r data/pipelines/requirements.txt pip-audit==2.7.3
+
+      - name: Security scan (pip-audit)
+        run: |
+          pip-audit -r data/pipelines/requirements.txt --skip-editable --progress-spinner=off
+
+      - name: Run sample data pipelines (QA smoke)
+        run: |
+          make users events transactions
+
+      - name: Generate SBOM (SPDX JSON)
+        uses: anchore/sbom-action@v0
+        with:
+          path: '.'
+          output-file: sbom.spdx.json
+          format: spdx-json
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GHCR
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push container image
+        id: build
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: |
+            ${{ env.IMAGE_NAME }}:${{ github.sha }}
+          provenance: false
+
+      - name: Install Cosign
+        if: github.event_name != 'pull_request'
+        uses: sigstore/cosign-installer@v3
+
+      - name: Sign image with Cosign (keyless)
+        if: github.event_name != 'pull_request'
+        env:
+          COSIGN_EXPERIMENTAL: 'true'
+          IMAGE: ${{ env.IMAGE_NAME }}:${{ github.sha }}
+        run: |
+          cosign sign --yes $IMAGE
+
+      - name: Attest SBOM
+        if: github.event_name != 'pull_request'
+        env:
+          COSIGN_EXPERIMENTAL: 'true'
+          IMAGE: ${{ env.IMAGE_NAME }}:${{ github.sha }}
+        run: |
+          cosign attest --yes --predicate sbom.spdx.json --type spdx $IMAGE
+
+      - name: Upload SBOM artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sbom
+          path: sbom.spdx.json
+
+      - name: Quality gates summary
+        if: always()
+        run: |
+          python - << 'PY'
+import json, pathlib, os
+summary = os.environ.get('GITHUB_STEP_SUMMARY')
+p = pathlib.Path('orchestration/quality-gates/quality-gates-config.json')
+if p.exists():
+    d = json.loads(p.read_text())
+    gates = d.get('gates', {})
+    msg = f"Quality gates config detected with {len(gates)} gates\n"
+else:
+    msg = "Quality gates config not found at orchestration/quality-gates/quality-gates-config.json\n"
+open(summary, 'a').write(msg)
+PY
+
+      - name: Emit Observability build marker (optional)
+        if: success()
+        env:
+          OBS_MARKER_URL: ${{ secrets.OBSERVABILITY_WEBHOOK_URL }}
+        run: |
+          if [ -n "$OBS_MARKER_URL" ]; then
+            curl -sS -X POST "$OBS_MARKER_URL" \
+              -H 'Content-Type: application/json' \
+              -d "{\"type\":\"build\",\"image\":\"${{ env.IMAGE_NAME }}:${{ github.sha }}\",\"repo\":\"${{ github.repository }}\",\"sha\":\"${{ github.sha }}\",\"status\":\"success\"}" || true
+          fi
+

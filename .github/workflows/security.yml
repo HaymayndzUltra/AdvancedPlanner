@@ -1,0 +1,104 @@
+name: Security Gates
+
+on:
+  pull_request:
+    branches: [ "integration", "main", "master" ]
+  push:
+    branches: [ "integration" ]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  secrets-scan:
+    name: Secrets Scan (Gitleaks)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Prepare directories
+        run: mkdir -p compliance/evidence/scans/secrets
+      - name: Run Gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          args: "detect --no-banner --redact --source . --config security/policies/gitleaks.toml --report-path compliance/evidence/scans/secrets/gitleaks.json --report-format json"
+      - name: Upload secrets scan report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: secrets-scan
+          path: compliance/evidence/scans/secrets/gitleaks.json
+
+  sast:
+    name: SAST (Semgrep)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare directories
+        run: mkdir -p compliance/evidence/scans/sast
+      - name: Run Semgrep
+        uses: returntocorp/semgrep-action@v1
+        with:
+          config: "p/owasp-top-ten p/secrets p/python security/policies/semgrep.yml"
+          generateSarif: true
+          sarifFile: compliance/evidence/scans/sast/semgrep.sarif
+      - name: Upload SAST report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: sast
+          path: |
+            compliance/evidence/scans/sast/semgrep.sarif
+
+  deps-audit:
+    name: Dependency Audit (pip-audit)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pip-audit
+        run: pip install pip-audit
+      - name: Audit Python dependencies
+        run: |
+          mkdir -p compliance/evidence/scans/dependencies
+          pip-audit -r data/pipelines/requirements.txt -f json -o compliance/evidence/scans/dependencies/pip-audit.json
+      - name: Upload dependency audit report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: dependency-audit
+          path: compliance/evidence/scans/dependencies/pip-audit.json
+
+  sbom:
+    name: SBOM (Anchore Syft)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare directories
+        run: mkdir -p security/sbom
+      - name: Generate SBOM
+        uses: anchore/sbom-action@v0
+        with:
+          path: .
+          format: spdx-json
+          output-file: security/sbom/sbom.spdx.json
+      - name: Upload SBOM artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sbom
+          path: security/sbom/sbom.spdx.json
+
+  quality-gate:
+    name: Quality Gate
+    needs: [secrets-scan, sast, deps-audit, sbom]
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "All security jobs completed. Enforcing gate via job success."
+

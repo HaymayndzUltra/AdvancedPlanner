@@ -1,0 +1,124 @@
+version: 1
+entity: transactions
+description: Canonical financial transactions for orders and payments
+owner: finance-data-platform
+pii_classification: contains_pii
+fields:
+  - name: transaction_id
+    type: string
+    nullable: false
+    description: Unique identifier for the transaction (UUID)
+    constraints:
+      - unique
+  - name: user_id
+    type: string
+    nullable: false
+    description: Foreign key to users.user_id
+  - name: order_id
+    type: string
+    nullable: true
+    description: Associated order identifier if applicable
+  - name: amount
+    type: decimal
+    precision: 12
+    scale: 2
+    nullable: false
+    description: Transaction amount in the specified currency
+    constraints:
+      - min: 0
+  - name: currency
+    type: string
+    nullable: false
+    description: ISO 4217 currency code
+    constraints:
+      - enum: [USD, EUR, GBP, CAD, AUD, INR, JPY, BRL, MXN]
+  - name: status
+    type: string
+    nullable: false
+    description: Transaction lifecycle status
+    constraints:
+      - enum: [authorized, captured, settled, refunded, voided, chargeback, failed]
+  - name: payment_method
+    type: string
+    nullable: true
+    description: Payment method used
+    constraints:
+      - enum: [card, paypal, bank_transfer, digital_wallet]
+  - name: card_last4
+    type: string
+    nullable: true
+    description: Last 4 digits of the card PAN
+    pii: pan_fragment
+    constraints:
+      - regex: "^[0-9]{4}$"
+  - name: card_last4_token
+    type: string
+    nullable: true
+    description: Tokenized representation of last 4 digits
+    constraints:
+      - regex: "^tok_[a-f0-9]{8}$"
+  - name: country_code
+    type: string
+    nullable: true
+    description: ISO 3166-1 alpha-2 country code where transaction occurred
+    constraints:
+      - enum: [US, CA, GB, DE, FR, ES, IT, IN, AU, BR, MX, JP, KR]
+  - name: created_at
+    type: timestamp
+    nullable: false
+    description: Time when the transaction was created
+  - name: updated_at
+    type: timestamp
+    nullable: false
+    description: Last update time for the transaction
+  - name: settled_at
+    type: timestamp
+    nullable: true
+    description: When funds were settled, if applicable
+primary_key:
+  - transaction_id
+partitioning:
+  type: monthly
+  column: created_at
+retention:
+  type: delete
+  period: P7Y
+data_quality:
+  freshness_sla: PT24H
+  thresholds:
+    row_count_change_pct:
+      warn: 50
+      fail: 90
+    null_ratio:
+      transaction_id:
+        warn: 0
+        fail: 0
+      amount:
+        warn: 0
+        fail: 0
+    value_range:
+      amount:
+        warn_min: 0
+        fail_min: 0
+security:
+  encryption: at_rest_and_in_transit
+  access_tiers:
+    - role: analyst
+      access: masked
+    - role: finance_analyst
+      access: masked
+    - role: admin
+      access: full
+privacy:
+  policies:
+    - name: card_fragment_masking
+      action: mask
+      method: redact_last4_to_token
+      window: immediate
+lineage:
+  sources:
+    - payments.gateway
+    - orders.service
+  targets:
+    - warehouse.fact_transactions
+

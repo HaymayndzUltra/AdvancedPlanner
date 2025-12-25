@@ -1,0 +1,24 @@
+version: 1
+project: default
+features:
+  - name: user_country_code
+    entity: user_id
+    dtype: string
+    source: warehouse.dim_users
+    description: ISO country code for the user
+    privacy: non_sensitive
+    freshness_sla: PT24H
+  - name: session_events_7d
+    entity: user_id
+    dtype: integer
+    source: warehouse.fact_session_events
+    description: Count of events over the last 7 days
+    privacy: non_sensitive
+    freshness_sla: PT1H
+  - name: total_spend_30d
+    entity: user_id
+    dtype: decimal
+    source: warehouse.fact_transactions
+    description: Sum of settled transaction amounts in the last 30 days
+    privacy: sensitive_aggregate
+    freshness_sla: PT24H

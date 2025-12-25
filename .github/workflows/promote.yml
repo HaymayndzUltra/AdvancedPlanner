@@ -1,0 +1,36 @@
+name: Promote Canary to Full
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Target environment (staging|production)"
+        required: true
+        default: staging
+
+permissions:
+  contents: read
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment }}
+    steps:
+      - name: Install Argo Rollouts plugin
+        run: |
+          curl -sLO https://github.com/argoproj/argo-rollouts/releases/download/v1.6.2/kubectl-argo-rollouts-linux-amd64
+          sudo install kubectl-argo-rollouts-linux-amd64 /usr/local/bin/kubectl-argo-rollouts
+
+      - name: Configure kubeconfig
+        env:
+          KUBECONFIG_B64: ${{ secrets.KUBECONFIG_B64 }}
+        run: |
+          echo "$KUBECONFIG_B64" | base64 -d > $HOME/.kube/config
+
+      - name: Promote canary
+        env:
+          NS: app-staging
+        run: |
+          if [ "${{ github.event.inputs.environment }}" = "production" ]; then NS=app-prod; fi
+          kubectl-argo-rollouts -n "$NS" promote app-rollout --full=true
+

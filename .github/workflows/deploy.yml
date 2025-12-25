@@ -1,0 +1,87 @@
+name: Deploy - Staging and Production (Progressive)
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Target environment (staging|production)"
+        required: true
+        default: staging
+      image_sha:
+        description: "Image SHA/tag to deploy (e.g., commit SHA)"
+        required: true
+      change_summary:
+        description: "Brief description for change record"
+        required: true
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  IMAGE_NAME: ghcr.io/${{ github.repository }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set cluster credentials
+        uses: azure/setup-kubectl@v4
+
+      - name: Install kustomize
+        run: |
+          sudo curl -sSL -o /usr/local/bin/kustomize https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/kustomize/installation/kustomize_v5.4.3_linux_amd64
+          sudo chmod +x /usr/local/bin/kustomize
+
+      - name: Install Argo Rollouts kubectl plugin
+        run: |
+          curl -sLO https://github.com/argoproj/argo-rollouts/releases/download/v1.6.2/kubectl-argo-rollouts-linux-amd64
+          sudo install kubectl-argo-rollouts-linux-amd64 /usr/local/bin/kubectl-argo-rollouts
+
+      - name: Configure kubeconfig
+        env:
+          KUBECONFIG_B64: ${{ secrets.KUBECONFIG_B64 }}
+        run: |
+          echo "$KUBECONFIG_B64" | base64 -d > $HOME/.kube/config
+
+      - name: Render manifests with Kustomize
+        id: render
+        env:
+          ENV: ${{ github.event.inputs.environment }}
+          REPO: ${{ github.repository }}
+          APP_IMAGE_SHA: ${{ github.event.inputs.image_sha }}
+        run: |
+          cd infra/overlays/${ENV}
+          # bake image values via env substitution compatible with our overlays
+          sed -i "s#\${REPO}#${REPO}#g" kustomization.yaml
+          sed -i "s#\${APP_IMAGE_SHA}#${APP_IMAGE_SHA}#g" kustomization.yaml
+          kustomize build . > $GITHUB_WORKSPACE/rendered.yaml
+
+      - name: Apply manifests
+        run: |
+          kubectl apply -f rendered.yaml
+
+      - name: Start canary rollout
+        env:
+          NS: app-staging
+        run: |
+          if [ "${{ github.event.inputs.environment }}" = "production" ]; then NS=app-prod; fi
+          kubectl-argo-rollouts -n "$NS" promote app-rollout --full=false || true
+
+      - name: Post deploy marker to Observability
+        env:
+          OBS_MARKER_URL: ${{ secrets.OBSERVABILITY_WEBHOOK_URL }}
+        run: |
+          if [ -n "$OBS_MARKER_URL" ]; then
+            curl -sS -X POST "$OBS_MARKER_URL" -H 'Content-Type: application/json' \
+              -d "{\"type\":\"deploy\",\"env\":\"${{ github.event.inputs.environment }}\",\"image\":\"${{ env.IMAGE_NAME }}:${{ github.event.inputs.image_sha }}\",\"change\":\"${{ github.event.inputs.change_summary }}\"}" || true
+          fi
+
+      - name: Gate production with approvals
+        if: github.event.inputs.environment == 'production'
+        run: echo "Production requires environment approval via GitHub Environments."
+
